@@ -16,7 +16,7 @@ open to changes and is a work in progress.
 Potential order of events and API Requests
 
 Server Started / Playlist Loaded:
-    1) Query /API/GET?Type=PlaylistCheck&Checksum={0}
+    1) Query /API/GET?Type=PlaylistCheck
         1.A) Playlist Found Return Code 0
         1.B) Playlist Not Found Return Code 1 [GOTO 2]
         1.C) Webserver Error Return Code 500 (Handle on Server side)
@@ -37,7 +37,7 @@ Server Queries Ranked Inforation :
             Either just return the Rank or in a single element JSON (Need to decide)
 
 Server Posts match data:
-    1) Query /API/POST?Type=GameStats&ServerID={0}
+    1) Query /API/POST?Type=GameStats
         Request body is file of the stats json (See stats.json)
         1.A) Upload Successful return code 0
         1.B) Webser Error Return code 500 (Handle on Server side)
@@ -49,43 +49,50 @@ Server Posts match data:
 
 
 Weapon Types:
-0x000 Magnum
-0x010 Plasma Pistol
-0x020 Needler
-0x030 Sub Machine Gun
-0x040 Plasma Rifle
-0x050 Battle Rifle
-0x060 Carbine
-0x070 Shotgun
-0x080 Sniper Rifle
-0x090 Beam Rifle
-0x0A0 Brute Plasma Rifle
-0x0B0 Rocket Launcher
-0x0C0 Fuel Rod Cannon
-0x0D0 Bruteshot
-0x0E0 
-0x0F0 Sentinal Beam
-0x100 
-0x110 Energy Sword
-0x120 Frag Grenade
-0x130 Plasma Grenade
-0x140 CTF Flag
-0x150 Assault Bomb
-0x160 Oddball Skull
-0x170 Small/Large Stationary Turret
-0x180 Small/Large Plasma Turret
-0x190 Banshee
-0x1A0 Ghost
-0x1B0 
-0x1C0 Scorpion machine turret
-0x1D0 Spectre Driver
-0x1E0 Spectre Gunner (turret)
-0x1F0 Warthog Driver
-0x200 Warthog Gunner (turret)
-0x210 Wraith
-0x220 Scorpion Tank / Tank Shell Cannon
-0x230 Assult Bomb Explosion
+Magnum
+Plasma Pistol
+Needler
+Sub Machine Gun
+Plasma Rifle
+Battle Rifle
+Carbine
+Shotgun
+Sniper Rifle
+Beam Rifle
+Brute Plasma Rifle
+Rocket Launcher
+Fuel Rod Cannon
+Bruteshot
+Unused1
+Sentinal Beam
+Unused2
+Energy Sword
+Frag Grenade
+Plasma Grenade
+CTF Flag
+Assault Bomb
+Oddball Skull
+Human Turret
+Covenant Turret
+Banshee
+Ghost
+Unused3
+Scorpion Turret
+Spectre Driver
+Spectre Turrent
+Warthog Driver
+Warthog Turret
+Wraith
+Scorpion Cannon
+Assult Bomb
 
+
+kill
+death
+suicide
+shots fired
+shots hit
+kill by headshot
 
 
 Variant Types:
@@ -99,5 +106,37 @@ Variant Types:
 8 - Territories
 9 - Assault
 
-
+Medal Types:
+0 - Double Kill
+1 - Triple Kill
+2 - Killtacular
+3 - Kill Frenzy
+4 - Killtrocity
+5 - Killamanjaro
+6 - Sniper Kill
+7 - Roadkill
+8 - Bone Cracker
+9 - Assassin
+10 - Vehicle Destroyed
+11 - Carjacking
+12 - Stick It
+13 - Killing Spree
+14 - Running Riot
+15 - Rampage
+16 - Berserker
+17 - Overkill
+18 - Flag Taken
+19 - Flag Carrier Kill
+20 - Flag Returned
+21 - Bomb Planted
+22 - Bomb Carrier Kill
+23 - Bomb Returned
+24 - Unused1
+25 - Unused2
+26 - Unused3
+27 - Unused4
+28 - Unused5
+29 - Unused6
+30 - Unused7
+21 - Unused8
 

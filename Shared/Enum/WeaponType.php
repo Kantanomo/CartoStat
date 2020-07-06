@@ -1,0 +1,41 @@
+<?php
+    class WeaponType{
+        public static $Types = array(
+            0 => "Magnum",
+            1 => "Plasma Pistol",
+            2 => "Smg",
+            3 => "Plasma Rifle",
+            4 => "Battle Rifle",
+            5 => "Carbine",
+            6 => "Shotgun",
+            7 => "Sniper Rifle",
+            8 => "Beam Rifle",
+            9 => "Brute Plasma Rifle",
+            10 => "Rocket Launcher",
+            11 => "Fuel Rod Cannon",
+            12 => "Brueshot",
+            13 => "unused",
+            14 => "Sentinel Beam",
+            15 => "unused",
+            16 => "Energy Sword",
+            17 => "Frag Grenade",
+            18 => "Plasma Grenade",
+            19 => "CTF Flag",
+            20 => "Assault Bomb",
+            21 => "Oddball Skull",
+            22 => "Human Turret",
+            23 => "Covenant Turret",
+            24 => "Banshee",
+            25 => "Ghost",
+            26 => "unused",
+            27 => "Scorpion Machine Gun",
+            28 => "Spectre Horn",
+            29 => "Spectre Turret",
+            30 => "Warthog Horn",
+            31 => "Warthog Turret",
+            32 => "Wraith",
+            33 => "Scorpion Cannon",
+            34 => "Assault Nuke"
+        );
+    }
+?>

@@ -1,0 +1,1378 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Postgame_Carnage_Report>
+   <Playlist>C:\Program Files (x86)\Microsoft Games\Halo 2 Dedicated Server\Playlists\xbox\2005.12.02\big_team_battle.hpl</Playlist>
+   <Game>
+      <Map>Waterworks</Map>
+      <Game_Type>Capture the Flag</Game_Type>
+      <Variant>MultiFlag CTF</Variant>
+      <Start_Time>2012-12-18 20:11:25 UTC</Start_Time>
+      <End_Time>2012-12-18 20:24:02 UTC</End_Time>
+   </Game>
+   <Teams>
+      <Team>
+         <Color>Blue Team</Color>
+         <Place>1st</Place>
+         <Score>1</Score>
+      </Team>
+      <Team>
+         <Color>Red Team</Color>
+         <Place>1st</Place>
+         <Score>1</Score>
+      </Team>
+   </Teams>
+   <Players>
+      <Player>
+         <Name>Silverhandx70</Name>
+         <Team>Blue Team</Team>
+         <Place>1st</Place>
+         <Flag_Saves>0</Flag_Saves>
+         <Flag_Steals>1</Flag_Steals>
+         <Score>1</Score>
+         <Kills>18</Kills>
+         <Assists>2</Assists>
+         <Deaths>5</Deaths>
+         <Suicides>0</Suicides>
+         <Versus>
+            <Opponent name='DismissedSpice1'>
+               <Killed>2</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='LateRumble23341'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='iSupersniper'>
+               <Killed>2</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='ResonantRhyme84'>
+               <Killed>3</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='scorpianskill'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='StrawberryJell0'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='sharplayer'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='SwungChain99498'>
+               <Killed>3</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='AgreeingTwo999'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='WhackyOcean23'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Aeristalo'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='FK Arbitor'>
+               <Killed>0</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='punckhole'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='PridefulSauce6'>
+               <Killed>6</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='Alberich89'>
+               <Killed>1</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+         </Versus>
+         <Total_Medals>8</Total_Medals>
+         <Medals_Earned>
+             <Medal>Flag Taken</Medal>
+             <Medal>Running Riot</Medal>
+             <Medal>Roadkill</Medal>
+             <Medal>Sniper Kill</Medal>
+             <Medal>Double Kill</Medal>
+         </Medals_Earned>
+         <Shots_Hit>161</Shots_Hit>
+         <Shots_Fired>525</Shots_Fired>
+         <Hit_Percentage>30</Hit_Percentage>
+         <Head_Shots>7</Head_Shots>
+      </Player>
+      <Player>
+         <Name>DismissedSpice1</Name>
+         <Team>Red Team</Team>
+         <Place>1st</Place>
+         <Flag_Saves>1</Flag_Saves>
+         <Flag_Steals>3</Flag_Steals>
+         <Score>1</Score>
+         <Kills>11</Kills>
+         <Assists>2</Assists>
+         <Deaths>12</Deaths>
+         <Suicides>2</Suicides>
+         <Versus>
+            <Opponent name='Silverhandx70'>
+               <Killed>1</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='LateRumble23341'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='iSupersniper'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='ResonantRhyme84'>
+               <Killed>1</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='scorpianskill'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='StrawberryJell0'>
+               <Killed>3</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='sharplayer'>
+               <Killed>2</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='SwungChain99498'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='AgreeingTwo999'>
+               <Killed>0</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='WhackyOcean23'>
+               <Killed>2</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='Aeristalo'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='FK Arbitor'>
+               <Killed>2</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='punckhole'>
+               <Killed>1</Killed>
+               <Killed_By>4</Killed_By>
+            </Opponent>
+            <Opponent name='PridefulSauce6'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Alberich89'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+         </Versus>
+         <Total_Medals>13</Total_Medals>
+         <Medals_Earned>
+             <Medal>Flag Carrier Kill</Medal>
+             <Medal>Flag Taken</Medal>
+             <Medal>Stick It</Medal>
+             <Medal>Carjacking</Medal>
+             <Medal>Bonecracker</Medal>
+             <Medal>Roadkill</Medal>
+         </Medals_Earned>
+         <Shots_Hit>119</Shots_Hit>
+         <Shots_Fired>476</Shots_Fired>
+         <Hit_Percentage>25</Hit_Percentage>
+         <Head_Shots>0</Head_Shots>
+      </Player>
+      <Player>
+         <Name>LateRumble23341</Name>
+         <Team>Blue Team</Team>
+         <Place>1st</Place>
+         <Flag_Saves>0</Flag_Saves>
+         <Flag_Steals>0</Flag_Steals>
+         <Score>0</Score>
+         <Kills>0</Kills>
+         <Assists>0</Assists>
+         <Deaths>2</Deaths>
+         <Suicides>1</Suicides>
+         <Versus>
+            <Opponent name='Silverhandx70'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='DismissedSpice1'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='iSupersniper'>
+               <Killed>0</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='ResonantRhyme84'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='scorpianskill'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='StrawberryJell0'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='sharplayer'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='SwungChain99498'>
+               <Killed>0</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='AgreeingTwo999'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='WhackyOcean23'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Aeristalo'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='FK Arbitor'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='punckhole'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='PridefulSauce6'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Alberich89'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+         </Versus>
+         <Total_Medals>0</Total_Medals>
+         <Medals_Earned>
+         </Medals_Earned>
+         <Shots_Hit>0</Shots_Hit>
+         <Shots_Fired>23</Shots_Fired>
+         <Hit_Percentage>0</Hit_Percentage>
+         <Head_Shots>0</Head_Shots>
+      </Player>
+      <Player>
+         <Name>iSupersniper</Name>
+         <Team>Red Team</Team>
+         <Place>1st</Place>
+         <Flag_Saves>0</Flag_Saves>
+         <Flag_Steals>0</Flag_Steals>
+         <Score>0</Score>
+         <Kills>15</Kills>
+         <Assists>0</Assists>
+         <Deaths>10</Deaths>
+         <Suicides>2</Suicides>
+         <Versus>
+            <Opponent name='Silverhandx70'>
+               <Killed>1</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='DismissedSpice1'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='LateRumble23341'>
+               <Killed>1</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='ResonantRhyme84'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='scorpianskill'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='StrawberryJell0'>
+               <Killed>3</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='sharplayer'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='SwungChain99498'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='AgreeingTwo999'>
+               <Killed>1</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='WhackyOcean23'>
+               <Killed>2</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='Aeristalo'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='FK Arbitor'>
+               <Killed>0</Killed>
+               <Killed_By>3</Killed_By>
+            </Opponent>
+            <Opponent name='punckhole'>
+               <Killed>2</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='PridefulSauce6'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Alberich89'>
+               <Killed>1</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+         </Versus>
+         <Total_Medals>8</Total_Medals>
+         <Medals_Earned>
+             <Medal>Bonecracker</Medal>
+             <Medal>Sniper Kill</Medal>
+         </Medals_Earned>
+         <Shots_Hit>176</Shots_Hit>
+         <Shots_Fired>407</Shots_Fired>
+         <Hit_Percentage>43</Hit_Percentage>
+         <Head_Shots>7</Head_Shots>
+      </Player>
+      <Player>
+         <Name>ResonantRhyme84</Name>
+         <Team>Red Team</Team>
+         <Place>1st</Place>
+         <Flag_Saves>1</Flag_Saves>
+         <Flag_Steals>0</Flag_Steals>
+         <Score>0</Score>
+         <Kills>6</Kills>
+         <Assists>4</Assists>
+         <Deaths>12</Deaths>
+         <Suicides>0</Suicides>
+         <Versus>
+            <Opponent name='Silverhandx70'>
+               <Killed>0</Killed>
+               <Killed_By>3</Killed_By>
+            </Opponent>
+            <Opponent name='DismissedSpice1'>
+               <Killed>0</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='LateRumble23341'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='iSupersniper'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='scorpianskill'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='StrawberryJell0'>
+               <Killed>0</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='sharplayer'>
+               <Killed>1</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='SwungChain99498'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='AgreeingTwo999'>
+               <Killed>3</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='WhackyOcean23'>
+               <Killed>2</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='Aeristalo'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='FK Arbitor'>
+               <Killed>0</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='punckhole'>
+               <Killed>0</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='PridefulSauce6'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Alberich89'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+         </Versus>
+         <Total_Medals>7</Total_Medals>
+         <Medals_Earned>
+             <Medal>Flag Carrier Kill</Medal>
+             <Medal>Assassin</Medal>
+             <Medal>Bonecracker</Medal>
+             <Medal>Sniper Kill</Medal>
+         </Medals_Earned>
+         <Shots_Hit>72</Shots_Hit>
+         <Shots_Fired>741</Shots_Fired>
+         <Hit_Percentage>9</Hit_Percentage>
+         <Head_Shots>2</Head_Shots>
+      </Player>
+      <Player>
+         <Name>scorpianskill</Name>
+         <Team>Red Team</Team>
+         <Place>1st</Place>
+         <Flag_Saves>0</Flag_Saves>
+         <Flag_Steals>1</Flag_Steals>
+         <Score>0</Score>
+         <Kills>2</Kills>
+         <Assists>0</Assists>
+         <Deaths>1</Deaths>
+         <Suicides>0</Suicides>
+         <Versus>
+            <Opponent name='Silverhandx70'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='DismissedSpice1'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='LateRumble23341'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='iSupersniper'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='ResonantRhyme84'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='StrawberryJell0'>
+               <Killed>1</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='sharplayer'>
+               <Killed>1</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='SwungChain99498'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='AgreeingTwo999'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='WhackyOcean23'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Aeristalo'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='FK Arbitor'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='punckhole'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='PridefulSauce6'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Alberich89'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+         </Versus>
+         <Total_Medals>3</Total_Medals>
+         <Medals_Earned>
+             <Medal>Flag Taken</Medal>
+             <Medal>Stick It</Medal>
+             <Medal>Bonecracker</Medal>
+         </Medals_Earned>
+         <Shots_Hit>0</Shots_Hit>
+         <Shots_Fired>0</Shots_Fired>
+         <Hit_Percentage>0</Hit_Percentage>
+         <Head_Shots>0</Head_Shots>
+      </Player>
+      <Player>
+         <Name>StrawberryJell0</Name>
+         <Team>Blue Team</Team>
+         <Place>1st</Place>
+         <Flag_Saves>1</Flag_Saves>
+         <Flag_Steals>2</Flag_Steals>
+         <Score>0</Score>
+         <Kills>6</Kills>
+         <Assists>2</Assists>
+         <Deaths>10</Deaths>
+         <Suicides>2</Suicides>
+         <Versus>
+            <Opponent name='Silverhandx70'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='DismissedSpice1'>
+               <Killed>1</Killed>
+               <Killed_By>3</Killed_By>
+            </Opponent>
+            <Opponent name='LateRumble23341'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='iSupersniper'>
+               <Killed>2</Killed>
+               <Killed_By>3</Killed_By>
+            </Opponent>
+            <Opponent name='ResonantRhyme84'>
+               <Killed>1</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='scorpianskill'>
+               <Killed>0</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='sharplayer'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='SwungChain99498'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='AgreeingTwo999'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='WhackyOcean23'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Aeristalo'>
+               <Killed>1</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='FK Arbitor'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='punckhole'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='PridefulSauce6'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Alberich89'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+         </Versus>
+         <Total_Medals>6</Total_Medals>
+         <Medals_Earned>
+             <Medal>Flag Carrier Kill</Medal>
+             <Medal>Flag Taken</Medal>
+             <Medal>Carjacking</Medal>
+             <Medal>Bonecracker</Medal>
+         </Medals_Earned>
+         <Shots_Hit>58</Shots_Hit>
+         <Shots_Fired>158</Shots_Fired>
+         <Hit_Percentage>36</Hit_Percentage>
+         <Head_Shots>1</Head_Shots>
+      </Player>
+      <Player>
+         <Name>sharplayer</Name>
+         <Team>Blue Team</Team>
+         <Place>1st</Place>
+         <Flag_Saves>1</Flag_Saves>
+         <Flag_Steals>0</Flag_Steals>
+         <Score>0</Score>
+         <Kills>5</Kills>
+         <Assists>3</Assists>
+         <Deaths>5</Deaths>
+         <Suicides>0</Suicides>
+         <Versus>
+            <Opponent name='Silverhandx70'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='DismissedSpice1'>
+               <Killed>0</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='LateRumble23341'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='iSupersniper'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='ResonantRhyme84'>
+               <Killed>2</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='scorpianskill'>
+               <Killed>1</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='StrawberryJell0'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='SwungChain99498'>
+               <Killed>2</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='AgreeingTwo999'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='WhackyOcean23'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Aeristalo'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='FK Arbitor'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='punckhole'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='PridefulSauce6'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Alberich89'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+         </Versus>
+         <Total_Medals>4</Total_Medals>
+         <Medals_Earned>
+             <Medal>Flag Carrier Kill</Medal>
+             <Medal>Carjacking</Medal>
+             <Medal>Bonecracker</Medal>
+             <Medal>Roadkill</Medal>
+         </Medals_Earned>
+         <Shots_Hit>67</Shots_Hit>
+         <Shots_Fired>677</Shots_Fired>
+         <Hit_Percentage>9</Hit_Percentage>
+         <Head_Shots>1</Head_Shots>
+      </Player>
+      <Player>
+         <Name>SwungChain99498</Name>
+         <Team>Red Team</Team>
+         <Place>1st</Place>
+         <Flag_Saves>0</Flag_Saves>
+         <Flag_Steals>1</Flag_Steals>
+         <Score>0</Score>
+         <Kills>4</Kills>
+         <Assists>1</Assists>
+         <Deaths>10</Deaths>
+         <Suicides>2</Suicides>
+         <Versus>
+            <Opponent name='Silverhandx70'>
+               <Killed>0</Killed>
+               <Killed_By>3</Killed_By>
+            </Opponent>
+            <Opponent name='DismissedSpice1'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='LateRumble23341'>
+               <Killed>1</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='iSupersniper'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='ResonantRhyme84'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='scorpianskill'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='StrawberryJell0'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='sharplayer'>
+               <Killed>1</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='AgreeingTwo999'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='WhackyOcean23'>
+               <Killed>1</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Aeristalo'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='FK Arbitor'>
+               <Killed>1</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='punckhole'>
+               <Killed>0</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='PridefulSauce6'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Alberich89'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+         </Versus>
+         <Total_Medals>5</Total_Medals>
+         <Medals_Earned>
+             <Medal>Flag Taken</Medal>
+             <Medal>Sniper Kill</Medal>
+             <Medal>Double Kill</Medal>
+         </Medals_Earned>
+         <Shots_Hit>43</Shots_Hit>
+         <Shots_Fired>256</Shots_Fired>
+         <Hit_Percentage>16</Hit_Percentage>
+         <Head_Shots>2</Head_Shots>
+      </Player>
+      <Player>
+         <Name>AgreeingTwo999</Name>
+         <Team>Blue Team</Team>
+         <Place>1st</Place>
+         <Flag_Saves>0</Flag_Saves>
+         <Flag_Steals>0</Flag_Steals>
+         <Score>0</Score>
+         <Kills>8</Kills>
+         <Assists>3</Assists>
+         <Deaths>11</Deaths>
+         <Suicides>1</Suicides>
+         <Versus>
+            <Opponent name='Silverhandx70'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='DismissedSpice1'>
+               <Killed>2</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='LateRumble23341'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='iSupersniper'>
+               <Killed>1</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='ResonantRhyme84'>
+               <Killed>0</Killed>
+               <Killed_By>3</Killed_By>
+            </Opponent>
+            <Opponent name='scorpianskill'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='StrawberryJell0'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='sharplayer'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='SwungChain99498'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='WhackyOcean23'>
+               <Killed>0</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='Aeristalo'>
+               <Killed>2</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='FK Arbitor'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='punckhole'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='PridefulSauce6'>
+               <Killed>1</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='Alberich89'>
+               <Killed>0</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+         </Versus>
+         <Total_Medals>7</Total_Medals>
+         <Medals_Earned>
+             <Medal>Bonecracker</Medal>
+             <Medal>Roadkill</Medal>
+             <Medal>Sniper Kill</Medal>
+         </Medals_Earned>
+         <Shots_Hit>55</Shots_Hit>
+         <Shots_Fired>709</Shots_Fired>
+         <Hit_Percentage>7</Hit_Percentage>
+         <Head_Shots>0</Head_Shots>
+      </Player>
+      <Player>
+         <Name>WhackyOcean23</Name>
+         <Team>Blue Team</Team>
+         <Place>1st</Place>
+         <Flag_Saves>0</Flag_Saves>
+         <Flag_Steals>1</Flag_Steals>
+         <Score>0</Score>
+         <Kills>5</Kills>
+         <Assists>4</Assists>
+         <Deaths>8</Deaths>
+         <Suicides>1</Suicides>
+         <Versus>
+            <Opponent name='Silverhandx70'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='DismissedSpice1'>
+               <Killed>1</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='LateRumble23341'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='iSupersniper'>
+               <Killed>1</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='ResonantRhyme84'>
+               <Killed>1</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='scorpianskill'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='StrawberryJell0'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='sharplayer'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='SwungChain99498'>
+               <Killed>0</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='AgreeingTwo999'>
+               <Killed>1</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Aeristalo'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='FK Arbitor'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='punckhole'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='PridefulSauce6'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Alberich89'>
+               <Killed>2</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+         </Versus>
+         <Total_Medals>2</Total_Medals>
+         <Medals_Earned>
+             <Medal>Flag Taken</Medal>
+             <Medal>Bonecracker</Medal>
+         </Medals_Earned>
+         <Shots_Hit>79</Shots_Hit>
+         <Shots_Fired>316</Shots_Fired>
+         <Hit_Percentage>25</Hit_Percentage>
+         <Head_Shots>0</Head_Shots>
+      </Player>
+      <Player>
+         <Name>Aeristalo</Name>
+         <Team>Red Team</Team>
+         <Place>1st</Place>
+         <Flag_Saves>0</Flag_Saves>
+         <Flag_Steals>1</Flag_Steals>
+         <Score>0</Score>
+         <Kills>4</Kills>
+         <Assists>5</Assists>
+         <Deaths>10</Deaths>
+         <Suicides>1</Suicides>
+         <Versus>
+            <Opponent name='Silverhandx70'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='DismissedSpice1'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='LateRumble23341'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='iSupersniper'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='ResonantRhyme84'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='scorpianskill'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='StrawberryJell0'>
+               <Killed>0</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='sharplayer'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='SwungChain99498'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='AgreeingTwo999'>
+               <Killed>1</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='WhackyOcean23'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='FK Arbitor'>
+               <Killed>1</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='punckhole'>
+               <Killed>1</Killed>
+               <Killed_By>3</Killed_By>
+            </Opponent>
+            <Opponent name='PridefulSauce6'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Alberich89'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+         </Versus>
+         <Total_Medals>4</Total_Medals>
+         <Medals_Earned>
+             <Medal>Flag Taken</Medal>
+             <Medal>Bonecracker</Medal>
+             <Medal>Roadkill</Medal>
+         </Medals_Earned>
+         <Shots_Hit>136</Shots_Hit>
+         <Shots_Fired>583</Shots_Fired>
+         <Hit_Percentage>23</Hit_Percentage>
+         <Head_Shots>0</Head_Shots>
+      </Player>
+      <Player>
+         <Name>FK Arbitor</Name>
+         <Team>Blue Team</Team>
+         <Place>1st</Place>
+         <Flag_Saves>2</Flag_Saves>
+         <Flag_Steals>1</Flag_Steals>
+         <Score>0</Score>
+         <Kills>16</Kills>
+         <Assists>4</Assists>
+         <Deaths>7</Deaths>
+         <Suicides>1</Suicides>
+         <Versus>
+            <Opponent name='Silverhandx70'>
+               <Killed>1</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='DismissedSpice1'>
+               <Killed>1</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='LateRumble23341'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='iSupersniper'>
+               <Killed>3</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='ResonantRhyme84'>
+               <Killed>2</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='scorpianskill'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='StrawberryJell0'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='sharplayer'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='SwungChain99498'>
+               <Killed>1</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='AgreeingTwo999'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='WhackyOcean23'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Aeristalo'>
+               <Killed>2</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='punckhole'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='PridefulSauce6'>
+               <Killed>3</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='Alberich89'>
+               <Killed>2</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+         </Versus>
+         <Total_Medals>14</Total_Medals>
+         <Medals_Earned>
+             <Medal>Flag Carrier Kill</Medal>
+             <Medal>Flag Taken</Medal>
+             <Medal>Killing Spree</Medal>
+             <Medal>Assassin</Medal>
+             <Medal>Bonecracker</Medal>
+             <Medal>Roadkill</Medal>
+             <Medal>Double Kill</Medal>
+         </Medals_Earned>
+         <Shots_Hit>104</Shots_Hit>
+         <Shots_Fired>291</Shots_Fired>
+         <Hit_Percentage>35</Hit_Percentage>
+         <Head_Shots>0</Head_Shots>
+      </Player>
+      <Player>
+         <Name>punckhole</Name>
+         <Team>Blue Team</Team>
+         <Place>1st</Place>
+         <Flag_Saves>1</Flag_Saves>
+         <Flag_Steals>0</Flag_Steals>
+         <Score>0</Score>
+         <Kills>18</Kills>
+         <Assists>0</Assists>
+         <Deaths>5</Deaths>
+         <Suicides>2</Suicides>
+         <Versus>
+            <Opponent name='Silverhandx70'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='DismissedSpice1'>
+               <Killed>4</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='LateRumble23341'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='iSupersniper'>
+               <Killed>1</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='ResonantRhyme84'>
+               <Killed>2</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='scorpianskill'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='StrawberryJell0'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='sharplayer'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='SwungChain99498'>
+               <Killed>2</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='AgreeingTwo999'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='WhackyOcean23'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Aeristalo'>
+               <Killed>3</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='FK Arbitor'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='PridefulSauce6'>
+               <Killed>2</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Alberich89'>
+               <Killed>4</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+         </Versus>
+         <Total_Medals>20</Total_Medals>
+         <Medals_Earned>
+             <Medal>Flag Carrier Kill</Medal>
+             <Medal>Running Riot</Medal>
+             <Medal>Carjacking</Medal>
+             <Medal>Assassin</Medal>
+             <Medal>Bonecracker</Medal>
+             <Medal>Roadkill</Medal>
+             <Medal>Sniper Kill</Medal>
+             <Medal>Triple Kill</Medal>
+         </Medals_Earned>
+         <Shots_Hit>89</Shots_Hit>
+         <Shots_Fired>777</Shots_Fired>
+         <Hit_Percentage>11</Hit_Percentage>
+         <Head_Shots>2</Head_Shots>
+      </Player>
+      <Player>
+         <Name>PridefulSauce6</Name>
+         <Team>Red Team</Team>
+         <Place>1st</Place>
+         <Flag_Saves>0</Flag_Saves>
+         <Flag_Steals>0</Flag_Steals>
+         <Score>0</Score>
+         <Kills>4</Kills>
+         <Assists>3</Assists>
+         <Deaths>13</Deaths>
+         <Suicides>1</Suicides>
+         <Versus>
+            <Opponent name='Silverhandx70'>
+               <Killed>2</Killed>
+               <Killed_By>6</Killed_By>
+            </Opponent>
+            <Opponent name='DismissedSpice1'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='LateRumble23341'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='iSupersniper'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='ResonantRhyme84'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='scorpianskill'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='StrawberryJell0'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='sharplayer'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='SwungChain99498'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='AgreeingTwo999'>
+               <Killed>1</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='WhackyOcean23'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='Aeristalo'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='FK Arbitor'>
+               <Killed>1</Killed>
+               <Killed_By>3</Killed_By>
+            </Opponent>
+            <Opponent name='punckhole'>
+               <Killed>0</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='Alberich89'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+         </Versus>
+         <Total_Medals>5</Total_Medals>
+         <Medals_Earned>
+             <Medal>Carjacking</Medal>
+             <Medal>Bonecracker</Medal>
+             <Medal>Roadkill</Medal>
+         </Medals_Earned>
+         <Shots_Hit>75</Shots_Hit>
+         <Shots_Fired>419</Shots_Fired>
+         <Hit_Percentage>17</Hit_Percentage>
+         <Head_Shots>0</Head_Shots>
+      </Player>
+      <Player>
+         <Name>Alberich89</Name>
+         <Team>Red Team</Team>
+         <Place>1st</Place>
+         <Flag_Saves>0</Flag_Saves>
+         <Flag_Steals>0</Flag_Steals>
+         <Score>0</Score>
+         <Kills>1</Kills>
+         <Assists>1</Assists>
+         <Deaths>10</Deaths>
+         <Suicides>0</Suicides>
+         <Versus>
+            <Opponent name='Silverhandx70'>
+               <Killed>0</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='DismissedSpice1'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='LateRumble23341'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='iSupersniper'>
+               <Killed>0</Killed>
+               <Killed_By>1</Killed_By>
+            </Opponent>
+            <Opponent name='ResonantRhyme84'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='scorpianskill'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='StrawberryJell0'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='sharplayer'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='SwungChain99498'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='AgreeingTwo999'>
+               <Killed>1</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='WhackyOcean23'>
+               <Killed>0</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='Aeristalo'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+            <Opponent name='FK Arbitor'>
+               <Killed>0</Killed>
+               <Killed_By>2</Killed_By>
+            </Opponent>
+            <Opponent name='punckhole'>
+               <Killed>0</Killed>
+               <Killed_By>4</Killed_By>
+            </Opponent>
+            <Opponent name='PridefulSauce6'>
+               <Killed>0</Killed>
+               <Killed_By>0</Killed_By>
+            </Opponent>
+         </Versus>
+         <Total_Medals>0</Total_Medals>
+         <Medals_Earned>
+         </Medals_Earned>
+         <Shots_Hit>91</Shots_Hit>
+         <Shots_Fired>810</Shots_Fired>
+         <Hit_Percentage>11</Hit_Percentage>
+         <Head_Shots>0</Head_Shots>
+      </Player>
+   </Players>
+</Postgame_Carnage_Report>

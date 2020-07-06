@@ -1,7 +1,8 @@
 <?php
     class MatchPlayer{
         public $UUID = null;
-        public $BasePlayer = null;
+        public $Match_UUID;
+        public $Player_XUID = null;
         public $EndGameIndex = null;
         public $PrimaryColor = null;
         public $SecondaryColor = null;
@@ -16,6 +17,7 @@
         public $Rank = null;
         public $Nameplate = null;
         public $Place = null;
+        public $Score = null;
         public $Kills = null;
         public $Assists = null;
         public $Betrayals = null;
@@ -44,9 +46,10 @@
         function __construct(){
             $UUID = UUID::v4();
         }
-        function __construct1($jsonData){
+        function __construct1($match_UUID, $jsonData){
             $UUID = UUID::v4();
-            $BasePlayer = DBContext::getPlayer($jsonData["XUID"]);
+            $Match_UUID = $match_UUID;
+            $Player_XUID = $jsonData["XUID"];
             $PrimaryColor = $jsonData["PrimaryColor"];
             $SecondaryColor = $jsonData["SecondaryColor"];
             $PrimaryEmblem = $jsonData["PrimaryEmblem"];
@@ -60,6 +63,7 @@
             $Rank = $jsonData["Rank"];
             $Nameplate = $jsonData["Nameplate"];
             $Place = $jsonData["Place"];
+            $Score = $jsonData["Score"];
             $Kills = $jsonData["Kills"];
             $Assists = $jsonData["Assists"];
             $Deaths = $jsonData["Deaths"];
@@ -84,10 +88,13 @@
             $JuggTime = $jsonData["JuggTime"];
             $TerrTaken = $jsonData["TerrTaken"];
             $TerrLost = $jsonData["TerrLost"];
+            $WeaponStats = new MatchPlayerWeapon($UUID, $jsonData["WeaponData"]);
+            $MedalStats = new MatchPlayerMedal($UUID, $jsonData["MedalData"]);
         }
         function __construct2($dataRow){
             $UUID = $dataRow["UUID"];
-            $BasePlayer = DBContext::getPlayer($dataRow["XUID"]);
+            $Match_UUID = $dataRow["Match_UUID"];
+            $Player_XUID = $dataRow["Player_XUID"];
             $PrimaryColor = $dataRow["PrimaryColor"];
             $SecondaryColor = $dataRow["SecondaryColor"];
             $PrimaryEmblem = $dataRow["PrimaryEmblem"];
@@ -101,6 +108,7 @@
             $Rank = $dataRow["Rank"];
             $Nameplate = $dataRow["Nameplate"];
             $Place = $dataRow["Place"];
+            $Score = $dataRow["Score"];
             $Kills = $dataRow["Kills"];
             $Assists = $dataRow["Assists"];
             $Deaths = $dataRow["Deaths"];

@@ -1,0 +1,103 @@
+Implimentations Required:
+
+===For Servers===
+Create and store a MD5 hash of the currently Loaded Playlist.
+This is used as the primary key for validating Playlist files.
+It would be most likely reccommended to use the File Contents and not the Metadata.
+
+===For Clients===
+TBD
+
+
+Generation of a JSON file that follows the Format of stats.json, this format is
+open to changes and is a work in progress.
+
+
+Potential order of events and API Requests
+
+Server Started / Playlist Loaded:
+    1) Query /API/GET?Type=PlaylistCheck&Checksum={0}
+        1.A) Playlist Found Return Code 0
+        1.B) Playlist Not Found Return Code 1 [GOTO 2]
+        1.C) Webserver Error Return Code 500 (Handle on Server side)
+    2) Query /API/POST??Type=PlaylistUpload
+        Post Body is file of the hpl
+        1.A) Playlist Uploaded Return code 0
+        1.B) Webserver Error Return Code 500 (Handle on Server side)
+    
+Server Queries Ranked Inforation :
+    1) Query /API/GET?Type=PlaylistRanks&Checksum={0}
+        Request Body contains either JSON or Comma seperated value of player XUID's
+        1.A) Return player rank's for matching Playlist
+            Format will be in json {["XUID": "RANK"], ...}
+        1.B) Webserver Error Return Code 500 (Handle on Server side)
+    2) Query /API/GET?Type=PlaylistRank&Checksum={0}&XUID={1}
+        No Request Body
+        2.A) Return player rank for matching playlist
+            Either just return the Rank or in a single element JSON (Need to decide)
+
+Server Posts match data:
+    1) Query /API/POST?Type=GameStats&ServerID={0}
+        Request body is file of the stats json (See stats.json)
+        1.A) Upload Successful return code 0
+        1.B) Webser Error Return code 500 (Handle on Server side)
+
+
+
+
+
+
+
+Weapon Types:
+0x000 Magnum
+0x010 Plasma Pistol
+0x020 Needler
+0x030 Sub Machine Gun
+0x040 Plasma Rifle
+0x050 Battle Rifle
+0x060 Carbine
+0x070 Shotgun
+0x080 Sniper Rifle
+0x090 Beam Rifle
+0x0A0 Brute Plasma Rifle
+0x0B0 Rocket Launcher
+0x0C0 Fuel Rod Cannon
+0x0D0 Bruteshot
+0x0E0 
+0x0F0 Sentinal Beam
+0x100 
+0x110 Energy Sword
+0x120 Frag Grenade
+0x130 Plasma Grenade
+0x140 CTF Flag
+0x150 Assault Bomb
+0x160 Oddball Skull
+0x170 Small/Large Stationary Turret
+0x180 Small/Large Plasma Turret
+0x190 Banshee
+0x1A0 Ghost
+0x1B0 
+0x1C0 Scorpion machine turret
+0x1D0 Spectre Driver
+0x1E0 Spectre Gunner (turret)
+0x1F0 Warthog Driver
+0x200 Warthog Gunner (turret)
+0x210 Wraith
+0x220 Scorpion Tank / Tank Shell Cannon
+0x230 Assult Bomb Explosion
+
+
+
+Variant Types:
+1 - CTF
+2 - Slayer
+3 - Oddball
+4 - KotH
+5 - 
+6 - 
+7 - Juggernaut
+8 - Territories
+9 - Assault
+
+
+

@@ -11,11 +11,8 @@
         public $EmblemBackground = null;
         public $EmblemToggle = null;
         public $PlayerModel = null;
-        public $Team = null;
         public $Handicap = null;
-        public $Rank = null;
         public $Nameplate = null;
-        public $Place = null;
         public $Kills = null;
         public $Assists = null;
         public $Betrayals = null;
@@ -54,11 +51,8 @@
             $EmblemForeground = $jsonData["EmblemForeground"];
             $EmblemBackground = $jsonData["EmblemBackground"];
             $EmblemToggle = $jsonData["EmblemToggle"];
-            $Team = $jsonData["Team"];
             $Handicap = $jsonData["Handicap"];
-            $Rank = $jsonData["Rank"];
             $Nameplate = $jsonData["Nameplate"];
-            $Place = $jsonData["Place"];
             $Kills = $jsonData["Kills"];
             $Assists = $jsonData["Assists"];
             $Deaths = $jsonData["Deaths"];

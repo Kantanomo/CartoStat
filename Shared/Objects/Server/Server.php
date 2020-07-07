@@ -3,14 +3,14 @@
         public $XUID;
         public $Enabled;
         public $Name;
-        function __construct($jsonData){
-            $XUID = $jsonData["XUID"];
-            $Name = $jsonData["Name"];
-        }
-        function __construct1($dataRow){
-            $XUID = $dataRow["XUID"];
-            $name = $dataRow["Name"];
-            $Enabled = $dataRow["Enabled"];            
+        function __construct($data, $isNew){
+            $this->XUID = $data["XUID"];
+            $this->name = $data["Name"];
+            if($isNew){
+                $this->Enabled = 1;
+            } else {
+                $this->Enabled = $data["Enabled"];            
+            }
         }
     }
 ?>

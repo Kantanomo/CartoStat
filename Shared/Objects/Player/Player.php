@@ -1,6 +1,6 @@
 <?php
-    include './PlayerWeaponStats.php';
-    class PlayerObject {
+    include 'PlayerWeaponStats.php';
+    class Player {
         public $XUID = null;
         public $Gamertag = null;
         public $PrimaryColor = null;
@@ -38,53 +38,43 @@
         public $TerrLost  = null;
         public $WeaponStats = null;
         public $MedalStats = null;
-        function __construct(){
-        }
-        function __construct1($jsonData){
-            $XUID = $jsonData["XUID"];
-            $Gamertag = $jsonData["Gamertag"];
-            $PrimaryColor = $jsonData["PrimaryColor"];
-            $SecondaryColor = $jsonData["SecondaryColor"];
-            $PrimaryEmblem = $jsonData["PrimaryEmblem"];
-            $SecondaryEmblem = $jsonData["SecondaryEmblem"];
-            $PlayerModel = $jsonData["PlayerModel"];
-            $EmblemForeground = $jsonData["EmblemForeground"];
-            $EmblemBackground = $jsonData["EmblemBackground"];
-            $EmblemToggle = $jsonData["EmblemToggle"];
-            $Handicap = $jsonData["Handicap"];
-            $Nameplate = $jsonData["Nameplate"];
-            $Kills = $jsonData["Kills"];
-            $Assists = $jsonData["Assists"];
-            $Deaths = $jsonData["Deaths"];
-            $Betrayals = $jsonData["Betrayals"];
-            $Suicides = $jsonData["Suicides"];
-            $BestSpree = $jsonData["BestSpree"];
-            $TimeAlive  = $jsonData["TimeAlive"];
-            $FlagScores = $jsonData["FlagScores"];
-            $FlagSteals = $jsonData["FlagSteals"];
-            $FlagSaves = $jsonData["FlagSaves"];
-            $FlagUnk = $jsonData["FlagUnk"];
-            $BombScores = $jsonData["BombScores"];
-            $BombKills = $jsonData["BombKills"];
-            $BombGrabs = $jsonData["BombGrabs"];
-            $BallScore = $jsonData["BallScore"];
-            $BallKills = $jsonData["BallKills"];
-            $BallCarrierKills = $jsonData["BallCarrierKills"];
-            $KingKillsAsKing = $jsonData["KingKillsAsKing"];  
-            $KingKilledKings = $jsonData["KingKilledKings"];
-            $JuggKilledJuggs = $jsonData["JuggKilledJuggs"];
-            $JuggKillsAsJugg = $jsonData["JuggKillsAsJugg"];
-            $JuggTime = $jsonData["JuggTime"];
-            $TerrTaken = $jsonData["TerrTaken"];
-            $TerrLost = $jsonData["TerrLost"];
-        }
-        function __construct2($dataRow){
-            $xuid = $dataRow["xuid"];
-            $playerName = $dataRow["name"];
-            $emblemArray = $dataRow["emblemArray"];
-        }
-        function update(){
-            DBContext::updatePlayer($xuid, $emblemArray);
+        function __construct($data){
+            $this->XUID = $data["XUID"];
+            $this->Gamertag = $data["Gamertag"];
+            $this->PrimaryColor = $data["PrimaryColor"];
+            $this->SecondaryColor = $data["SecondaryColor"];
+            $this->PrimaryEmblem = $data["PrimaryEmblem"];
+            $this->SecondaryEmblem = $data["SecondaryEmblem"];
+            $this->PlayerModel = $data["PlayerModel"];
+            $this->EmblemForeground = $data["EmblemForeground"];
+            $this->EmblemBackground = $data["EmblemBackground"];
+            $this->EmblemToggle = $data["EmblemToggle"];
+            $this->Handicap = $data["Handicap"];
+            $this->Nameplate = $data["Nameplate"];
+            $this->Kills = $data["Kills"];
+            $this->Assists = $data["Assists"];
+            $this->Deaths = $data["Deaths"];
+            $this->Betrayals = $data["Betrayals"];
+            $this->Suicides = $data["Suicides"];
+            $this->BestSpree = $data["BestSpree"];
+            $this->TimeAlive  = $data["TimeAlive"];
+            $this->FlagScores = $data["FlagScores"];
+            $this->FlagSteals = $data["FlagSteals"];
+            $this->FlagSaves = $data["FlagSaves"];
+            $this->FlagUnk = $data["FlagUnk"];
+            $this->BombScores = $data["BombScores"];
+            $this->BombKills = $data["BombKills"];
+            $this->BombGrabs = $data["BombGrabs"];
+            $this->BallScore = $data["BallScore"];
+            $this->BallKills = $data["BallKills"];
+            $this->BallCarrierKills = $data["BallCarrierKills"];
+            $this->KingKillsAsKing = $data["KingKillsAsKing"];  
+            $this->KingKilledKings = $data["KingKilledKings"];
+            $this->JuggKilledJuggs = $data["JuggKilledJuggs"];
+            $this->JuggKillsAsJugg = $data["JuggKillsAsJugg"];
+            $this->JuggTime = $data["JuggTime"];
+            $this->TerrTaken = $data["TerrTaken"];
+            $this->TerrLost = $data["TerrLost"];
         }
     }
 ?>

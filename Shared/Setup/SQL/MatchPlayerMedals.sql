@@ -1,6 +1,5 @@
 CREATE TABLE CS_MatchPlayerMedals(
     MatchPlayer_UUID VARCHAR(36),
-    Match_UUID VARCHAR(36),
     DoubleKill SMALLINT,
     TripleKill SMALLINT,
     Killtacular SMALLINT,
@@ -8,11 +7,11 @@ CREATE TABLE CS_MatchPlayerMedals(
     Killtrocity SMALLINT,
     Killamanjaro SMALLINT,
     SniperKill SMALLINT,
-    Roadkill SMALLINT,
+    RoadKill SMALLINT,
     BoneCracker SMALLINT,
     Assassin SMALLINT,
     VehicleDestroyed SMALLINT,
-    Carjacking SMALLINT,
+    CarJacking SMALLINT,
     StickIt SMALLINT,
     KillingSpree SMALLINT,
     RunningRiot SMALLINT,
@@ -33,9 +32,7 @@ CREATE TABLE CS_MatchPlayerMedals(
     Unused6 SMALLINT,
     Unused7 SMALLINT,
     Unused8 SMALLINT,
-    PRIMARY KEY(MatchPlayer_UUID, Match_UUID),
+    PRIMARY KEY(MatchPlayer_UUID),
     FOREIGN KEY(MatchPlayer_UUID)
-        REFERENCES CS_MatchPlayer(UUID),
-    FOREIGN KEY(Match_UUID)
-        REFERENCES CS_Match(UUID)
+        REFERENCES CS_MatchPlayer(UUID)
 );

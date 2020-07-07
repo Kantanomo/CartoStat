@@ -1,6 +1,5 @@
 CREATE TABLE CS_MatchPlayerWeapon(
     MatchPlayer_UUID VARCHAR(36),
-    Match_UUID VARCHAR(36),
     MagnumKills SMALLINT,
     MagnumDeaths SMALLINT,
     MagnumSuicide SMALLINT,
@@ -217,9 +216,7 @@ CREATE TABLE CS_MatchPlayerWeapon(
     AssultBombShotsFired SMALLINT,
     AssultBombShotsHit SMALLINT,
     AssultBombHeadshot SMALLINT,
-    PRIMARY KEY(MatchPlayer_UUID, Match_UUID),
+    PRIMARY KEY(MatchPlayer_UUID),
     FOREIGN KEY(MatchPlayer_UUID)
-        REFERENCES CS_MatchPlayer(UUID),
-    FOREIGN KEY(Match_UUID)
-        REFERENCES CS_Match(UUID)
+        REFERENCES CS_MatchPlayer(UUID)
 );

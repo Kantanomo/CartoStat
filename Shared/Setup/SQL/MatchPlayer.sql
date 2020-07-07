@@ -19,6 +19,7 @@ CREATE TABLE CS_MatchPlayer(
     Place VARCHAR(16),
     Score VARCHAR(16),
     Kills SMALLINT,
+    Deaths SMALLINT,
     Assists SMALLINT,
     Betrayals SMALLINT,
     Suicides SMALLINT,
@@ -46,7 +47,7 @@ CREATE TABLE CS_MatchPlayer(
         REFERENCES CS_Player(XUID),
     FOREIGN KEY(Match_UUID)
         REFERENCES CS_Match(UUID)
-);
+) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /* Uuuuuuuuuuuuuuuuhhhhhhhhhhhhhhhhhh
 DELIMITER $$
 CREATE TRIGGER MatchPlayerInsert AFTER INSERT ON `MatchPlayer` 

@@ -154,7 +154,20 @@
             if($result == TRUE){
                 return true;
             } else {
-                ErrorOutAndExit('500', 'Server experienced and error when attempting to store a new variant');
+                echo $query;
+                ErrorOutAndExit('500', sprintf("%s\n", self::getConnection()->error));
+            }
+        }
+        public static function getVariantUUID($UUID){
+            $query = sprintf(
+                DBQueries::selectVariantUUIDQuery,
+                $UUID
+            );
+            $result = self::getConnection()->query($query);
+            if($result->num_rows == 0){
+                return null;
+            } else {
+                return new Variant($result->fetch_assoc());
             }
         }
         public static function getVariant($playlistChecksum, $variantName){
@@ -184,7 +197,7 @@
             if($result == TRUE){
                 return true;
             } else {
-                ErrorOutAndExit('500', 'Server experienced and error when attempting to store a new match');
+                ErrorOutAndExit('500', sprintf("%s\n", self::getConnection()->error));
             }
         }
 
@@ -226,6 +239,7 @@
                 $matchPlayer->Nameplate,
                 $matchPlayer->Place,
                 $matchPlayer->Score,
+                $matchPlayer->Deaths,
                 $matchPlayer->Kills,
                 $matchPlayer->Assists,
                 $matchPlayer->Betrayals,
@@ -264,14 +278,18 @@
         public static function getMatchPlayer($UUID){
             
             $query = sprintf(
-                DBContext::selectMatchPlayerQuery,
+                DBQueries::selectMatchPlayerQuery,
                 $UUID
             );
             $result = self::getConnection()->query($query);
             if($result->num_rows == 0){
                 return null;
             } else {
-                return new MatchPlayer($result->fetch_assoc());
+                $rows = array();
+                while($row = $result->fetch_assoc()) {
+                    $rows[] = new MatchPlayer($row);
+                }
+                return $rows;
             }
         }
 
@@ -332,7 +350,7 @@
             if($result->num_rows == 0){
                 return null;
             } else {
-                return new MatchPlayerMedal($result->fetch_assoc());
+                return new MatchPlayerMedal($result->fetch_row());
             }
         }
 

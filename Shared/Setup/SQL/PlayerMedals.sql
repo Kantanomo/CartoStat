@@ -35,4 +35,4 @@ CREATE TABLE CS_PlayerMedal(
     PRIMARY KEY(Player_XUID),
     FOREIGN KEY(Player_XUID)
         REFERENCES CS_Player(XUID)
-);
+) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

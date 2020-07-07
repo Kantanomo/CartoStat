@@ -12,7 +12,8 @@ CREATE TABLE CS_Variant(
         "Territories", 
         "Assault"),
     Settings TEXT,
-    PRIMARY KEY(UUID, Playlist_Checksum, Name),
+    PRIMARY KEY(UUID),
+    KEY(Playlist_Checksum, Name),
     FOREIGN KEY(Playlist_Checksum)
         REFERENCES CS_Playlist(Checksum)
-);
+) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

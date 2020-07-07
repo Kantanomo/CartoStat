@@ -1,8 +1,8 @@
 <?php
     return array(
         'Host' => 'localhost',
-        'Username' => '',
-        'Password' => '',
-        'DB' => ''
+        'Username' => 'Development',
+        'Password' => 'Mangos123!',
+        'DB' => 'cartostat'
     );
 ?>

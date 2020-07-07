@@ -6,4 +6,4 @@ CREATE TABLE CS_ServerMatch(
         REFERENCES CS_Server(XUID),
     FOREIGN KEY(Match_UUID)
         REFERENCES CS_Match(UUID)
-);
+) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

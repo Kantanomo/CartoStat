@@ -3,4 +3,4 @@ CREATE TABLE CS_Server(
     Enabled BOOLEAN DEFAULT 1,
     Name VARCHAR(16),
     PRIMARY KEY(XUID)
-);
+) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

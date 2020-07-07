@@ -34,4 +34,4 @@ CREATE TABLE CS_Player(
     TerrTaken SMALLINT DEFAULT 0,
     TerrLost SMALLINT DEFAULT 0,
     PRIMARY KEY(XUID)
-);
+) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

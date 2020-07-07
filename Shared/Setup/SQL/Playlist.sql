@@ -3,5 +3,6 @@ CREATE TABLE CS_Playlist(
     Checksum VARCHAR(32),
     Name VARCHAR(50),
     FileName VARCHAR(50),
-    PRIMARY KEY(UUID, Checksum)
-);
+    PRIMARY KEY(UUID),
+    KEY(Checksum)
+) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

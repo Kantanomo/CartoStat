@@ -219,4 +219,4 @@ CREATE TABLE CS_MatchPlayerWeapon(
     PRIMARY KEY(MatchPlayer_UUID),
     FOREIGN KEY(MatchPlayer_UUID)
         REFERENCES CS_MatchPlayer(UUID)
-);
+) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

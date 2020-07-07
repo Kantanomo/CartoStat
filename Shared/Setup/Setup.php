@@ -7,7 +7,8 @@
         $Config["Username"],
         $Config["Password"]
     );
-
+    $DB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $DB->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     $Order = [
         "Playlist",
         "Variant",
@@ -25,12 +26,15 @@
     ];
 
     foreach($Order as $value){
-        $query = file_get_contents('./SQL/' . $value . '.sql');
-        $request = $DB->prepare($query);
-        if($request->execute()){
-            echo "Created $value Table<br/>";
-        } else {
-            die(print_r($DB->errorInfo()));
+        try {
+            $query = file_get_contents('./SQL/' . $value . '.sql');
+            $request = $DB->prepare($query);
+            if($request->execute()){
+                echo "Created $value Table<br/>";
+            }
+        } catch (exception $e){
+            echo 'Exception -> ';
+            var_dump($e->getMessage());
         }
     }
 ?>

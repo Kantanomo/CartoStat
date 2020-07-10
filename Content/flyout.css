@@ -1,0 +1,51 @@
+.flyout {
+    z-index: 99;
+    width: 600px;
+    height: 807px;
+    top: 75px;
+    position: relative;
+    right: 0;
+}
+.flyout.right {
+    float:right;
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -ms-filter: fliph; /*IE*/
+    filter: fliph; /*IE*/
+}
+.flyout.left{
+    float:left;
+}
+.flyout::after{
+    content: "";
+    background: url(Images/panel-corner.png);
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: top left;
+    width: 100%;
+    height: 100%;
+}
+.flyout::before{
+    content: "";
+    background: url(Images/panel-corner.png);
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: top left;
+    width: 43%;
+    height: 35%;
+    bottom: 5px;
+    z-index: 100;
+    right: 0%;
+    transform: rotate(180deg);
+}
+.flyout > .background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    clip-path: polygon(83px 12px, 570px 12px, 570px 12%, 570px 738px, 515px 793px, 8% 793px, 28px 793px, 28px 67px);
+    background: #081327;
+    background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.12) 25%, rgba(255, 255, 255, 0.06) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, 0.15) 76%, transparent 77%, transparent);
+    background-size: 23px 21px;
+}

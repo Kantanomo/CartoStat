@@ -1,5 +1,9 @@
 <?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     class MatchPlayer{
+        const emblemURI = "http://halo.bungie.net/Stats/emblem.ashx?s=120&0=%s&1=%s&2=%s&3=%s&fi=%s&bi=%s&fl=%s";
         public $UUID = null;
         public $Match_UUID;
         public $Player_XUID = null;
@@ -143,6 +147,25 @@
            $this->TerrLost = $dataRow["TerrLost"];
            $this->MedalData = DBContext::getMatchPlayerMedal($dataRow["UUID"]);
            $this->WeaponData = DBContext::getMatchPlayerWeapon($dataRow["UUID"]);
+        }
+        public function emblemURL(){
+            return sprintf(
+                MatchPlayer::emblemURI,
+                $this->PrimaryColor,
+                $this->SecondaryColor,
+                $this->PrimaryEmblem,
+                $this->SecondaryEmblem,
+                $this->EmblemForeground,
+                $this->EmblemBackground,
+                !$this->EmblemToggle
+            );
+        }
+        public function AverageLife(){
+            if($this->Deaths == 0){
+                return $this->TimeAlive;
+            } else {
+                return ceil($this->TimeAlive / $this->Deaths);
+            }
         }
     }
 ?>

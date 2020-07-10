@@ -1,0 +1,100 @@
+.scoreboard{
+    font-weight: bold;
+    height: 610px;
+}  
+    .scoreboard p {
+        font-size: 25px;
+        color: #ffffffcc;
+        text-shadow: black 2px 2px;
+    }
+.column {
+    float:left;
+    line-height: 33px;
+    height: 34px;
+}
+.column.player {
+    width: 344px;
+    margin-right: 2px;
+    background-size: 34px 34px !important;
+    background-repeat: no-repeat !important;
+}
+    .column.header.player p {
+        margin-left: 19px;
+    }
+    .column:not(.header).player p{
+        margin-left: 40px;
+    }
+.slayer-stats {
+    color: white !important;
+}
+    .slayer-stats .score-row{    
+        height: 34px;
+    }
+        .slayer-stats .score-row:not(:first-child){
+            margin-top:2px;
+        }
+        .slayer-stats .column.header{
+            background:black;
+        }
+        .slayer-stats .column.place, .slayer-stats .column.life,
+        .slayer-stats .column.life, .slayer-stats .column.spree,
+        .slayer-stats .column.score {
+            width: 144px;
+            margin-right:2px;
+            text-align: center;
+        }
+
+.column.white {
+    background: #FDFDFF80; 
+}
+.column.steel {
+    background: #52525280;
+}
+.column.red {
+    background: #BD2B2B80;
+}
+.column.orange {
+    background: #f4781f80;
+}
+.column.gold {
+    background: #F4D12B80;
+}
+.column.olive {
+    background: #9EAC5980;
+}
+.column.green {
+    background: #21912F80;
+}
+.column.sage {
+    background: #23564480;
+}
+.column.cyan {
+    background: #15A0A080;
+}
+.column.teal {
+    background: #36747980;
+}
+.column.cobalt {
+    background: #416B8E80;
+}
+.column.blue {
+    background: #28449A80;
+}
+.column.violet {
+    background: #694DB680;
+}
+.column.purple {
+    background: #75466D80;
+}
+.column.pink {
+    background: #FB9AC880;
+}
+.column.crimson {
+    background: #97114480;
+}
+.column.brown {
+    background: #664D3D80;
+}
+.column.tan {
+    background: #B1915680;
+}

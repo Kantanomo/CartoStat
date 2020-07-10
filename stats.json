@@ -4,7 +4,9 @@
     "Variant": {
         "Name": "Test",
         "Type": 2, 
-        "Settings": "BLAH"        
+        "Settings": {
+          "Team": 1
+        }     
     },
     "Server":{
         "XUID": "12341234",

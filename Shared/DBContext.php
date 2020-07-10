@@ -127,7 +127,6 @@
         }
 
         public static function variantExists($playlistChecksum, $variantName){
-            
             $query = sprintf(
                 DBQueries::existsVariantQuery,
                 $playlistChecksum,
@@ -185,6 +184,43 @@
             }
         }
 
+        public static function getPlaylist($Checksum){
+            $query = sprintf(
+                DBQueries::selectPlaylistQuery,
+                $Checksum
+            );
+            $result = self::getConnection()->query($query);
+            if($result->num_rows == 0){
+                return null;
+            } else {
+                return new Playlist($result->fetch_assoc(), false);
+            }
+        }
+        public static function getPlaylistUUID($UUID){
+            $query = sprintf(
+                DBQueries::selectPlaylistUUIDQuery,
+                $UUID
+            );
+            $result = self::getConnection()->query($query);
+            if($result->num_rows == 0){
+                return null;
+            } else {
+                return new Playlist($result->fetch_assoc(), false);
+            }
+        }
+        
+        public static function matchExists($UUID){
+            $query = sprintf(
+                DBQueries::existsMatchQuery,
+                $UUID
+            );
+            $result = self::getConnection()->query($query);
+            if($result->num_rows == 0){
+                return false;
+            } else {
+                return true;
+            }
+        }
         public static function insertMatch($match){
             
             $query = sprintf(
@@ -212,6 +248,19 @@
                 return null;
             } else {
                 return new Match($result->fetch_assoc());
+            }
+        }
+
+        public static function getServerMatch($UUID){
+            $query = sprintf(
+                DBQueries::selectServerMatchQuery,
+                $UUID
+            );
+            $result = self::getConnection()->query($query);
+            if($result->num_rows == 0){
+                return null;
+            } else {
+                return new ServerMatch($result->fetch_assoc());
             }
         }
 

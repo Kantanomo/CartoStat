@@ -8,14 +8,14 @@
             float: right;
         }
             .action-bar .spin-controls .spin-left{
-                background: url(/Content/Images/spinners_a.png);
+                background: url(Images/spinners_a.png);
                 width: 32px;
                 height: 45px;
                 background-position: top left;
                 float: left;
             }
             .action-bar .spin-controls .spin-right{
-                background: url(/Content/Images/spinners_b.png);
+                background: url(Images/spinners_b.png);
                 width: 32px;
                 height: 45px;
                 background-position: top right;

@@ -41,6 +41,9 @@ p {
 .center {
 	text-align: center;
 }
+.background-container {
+    z-index: -1;
+}
 #background-top, #background-bottom {
 	position: fixed;
 	left: 0;

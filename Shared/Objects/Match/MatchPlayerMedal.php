@@ -109,5 +109,95 @@
            #$this->Unused7 = $dataRow[31];
            #$this->Unused8 = $dataRow[32];
         }
+        function totalMedals(){
+            return (
+                $this->DoubleKill +
+                $this->TripleKill +
+                $this->Killtacular +
+                $this->KillFrenzy +
+                $this->Killtrocity +
+                $this->Killamanjaro +
+                $this->SniperKill +
+                $this->RoadKill +
+                $this->BoneCracker +
+                $this->Assassin +
+                $this->VehicleDestroyed +
+                $this->CarJacking +
+                $this->StickIt +
+                $this->KillingSpree +
+                $this->RunningRiot +
+                $this->Rampage +
+                $this->Berserker +
+                $this->Overkill +
+                $this->FlagTaken +
+                $this->FlagCarrierKill +
+                $this->FlagReturned +
+                $this->BombPlanted +
+                $this->BombCarrierKill +
+                $this->BombReturned);
+        }
+        function topMedals(){
+            $arr = array(
+                #"DoubleKill" => $this->DoubleKill,
+               # "TripleKill" => $this->TripleKill,
+                #"Killtacular" => $this->Killtacular,
+               # "KillFrenzy" => $this->KillFrenzy,
+               # "Killtrocity" => $this->Killtrocity,
+              #  "Killamanjaro" => $this->Killamanjaro,
+                "SniperKill" => $this->SniperKill,
+                "RoadKill" => $this->RoadKill,
+                "BoneCracker" => $this->BoneCracker,
+                "Assassin" => $this->Assassin,
+                "VehicleDestroyed" => $this->VehicleDestroyed,
+                "CarJacking" => $this->CarJacking,
+                "StickIt" => $this->StickIt,
+                #"KillingSpree" => $this->KillingSpree,
+                #"RunningRiot" => $this->RunningRiot,
+                #"Rampage" => $this->Rampage,
+                #"Berserker" => $this->Berserker,
+                #"Overkill" => $this->Overkill,
+                "FlagTaken" => $this->FlagTaken,
+                "FlagCarrierKill" => $this->FlagCarrierKill,
+                "FlagReturned" => $this->FlagReturned,
+                "BombPlanted" => $this->BombPlanted,
+                "BombCarrierKill" => $this->BombCarrierKill,
+                "BombReturned" => $this->BombReturned
+            );
+            foreach ($arr as $key => $value) {
+                if($value == 0){
+                    unset($arr[$key]);
+                }
+            }
+            uasort($arr, function($item, $compare){
+                return $item <= $compare;
+            });
+            if($this->Killamanjaro > 0){
+                $arr = array("Killamanjaro" => $this->Killamanjaro) + $arr;
+            } else if($this->Killtrocity > 0) {
+                $arr = array("Killtrocity" => $this->Killtrocity) + $arr;
+            } else if($this->KillFrenzy > 0){
+                $arr = array("KillFrenzy" => $this->KillFrenzy) + $arr;
+            } else if($this->Killtacular > 0){
+                $arr = array("Killtacular" => $this->Killtacular) + $arr;
+            } else if($this->TripleKill > 0){
+                $arr = array("TripleKill" => $this->TripleKill) + $arr;
+            } else if($this->DoubleKill > 0){
+                $arr = array("DoubleKill" => $this->DoubleKill) + $arr;
+            }
+
+            if($this->Overkill > 0){
+                $arr = array("Overkill" => $this->Overkill) + $arr;
+            } else if($this->Berserker > 0){
+                $arr = array("Berserker" => $this->Berserker) + $arr;
+            } else if($this->Rampage > 0){
+                $arr = array("Rampage" => $this->Rampage) + $arr;
+            }  else if($this->RunningRiot > 0){
+                $arr = array("RunningRiot" => $this->RunningRiot) + $arr;
+            } else if($this->KillingSpree > 0){
+                $arr = array("KillingSpree" => $this->KillingSpree) + $arr;
+            }
+            
+            return array_slice($arr, 0, 7);
+        }
     }
 ?>

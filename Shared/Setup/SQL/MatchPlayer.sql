@@ -23,6 +23,10 @@ CREATE TABLE CS_MatchPlayer(
     Assists SMALLINT,
     Betrayals SMALLINT,
     Suicides SMALLINT,
+    ShotsFired SMALLINT,
+    ShotsHit SMALLINT,
+    Accuracy SMALLINT,
+    HeadShots SMALLINT,
     BestSpree SMALLINT,
     TimeAlive SMALLINT,
     FlagScores SMALLINT,
@@ -42,6 +46,7 @@ CREATE TABLE CS_MatchPlayer(
     JuggTime SMALLINT,
     TerrTaken SMALLINT,
     TerrLost SMALLINT,
+    VersusData TEXT,
     PRIMARY KEY(UUID, Match_UUID, Player_XUID),
     FOREIGN KEY(Player_XUID)
         REFERENCES CS_Player(XUID),

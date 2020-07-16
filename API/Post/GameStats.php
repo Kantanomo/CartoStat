@@ -32,10 +32,10 @@
             $match = new Match($Variant->UUID, $jsonObject["Scenario"]);
             DBContext::insertMatch($match);
             
-            $serverMatch = new ServerMatch($match->UUID, $server->XUID);
+            $serverMatch = new ServerMatch($match->UUID, $Server->XUID);
             DBContext::insertServerMatch($serverMatch);
 
-            
+
             foreach($jsonObject["Players"] as $data){
                 $Player = null;
                 if(!DBContext::playerExists($data["XUID"])){

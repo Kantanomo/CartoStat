@@ -28,6 +28,10 @@
         public $Betrayals = null;
         public $Suicides = null;
         public $BestSpree = null;
+        public $ShotsFired = null;
+        public $ShotsHit = null;
+        public $Accuracy = null;
+        public $HeadShots = null;
         public $TimeAlive = null;
         public $FlagScores = null;
         public $FlagSteals = null;
@@ -81,6 +85,10 @@
            $this->Betrayals = $jsonData["Betrayals"];
            $this->Suicides = $jsonData["Suicides"];
            $this->BestSpree = $jsonData["BestSpree"];
+           $this->ShotsFired = $jsonData["ShotsFired"];
+           $this->ShotsHit = $jsonData["ShotsHit"];
+           $this->Accuracy = (round($this->ShotsHit / $this->ShotsFired, 2) * 100);
+           $this->HeadShots = $jsonData["HeadShots"];
            $this->TimeAlive  = $jsonData["TimeAlive"];
            $this->FlagScores = $jsonData["FlagScores"];
            $this->FlagSteals = $jsonData["FlagSteals"];
@@ -99,6 +107,7 @@
            $this->JuggTime = $jsonData["JuggTime"];
            $this->TerrTaken = $jsonData["TerrTaken"];
            $this->TerrLost = $jsonData["TerrLost"];
+           $this->VersusData = $jsonData["VersusData"];
            $this->WeaponData = new MatchPlayerWeapon($this->UUID, $jsonData["WeaponData"]);
            $this->MedalData = new MatchPlayerMedal($this->UUID, $jsonData["MedalData"]);
         }
@@ -127,6 +136,10 @@
            $this->Betrayals = $dataRow["Betrayals"];
            $this->Suicides = $dataRow["Suicides"];
            $this->BestSpree = $dataRow["BestSpree"];
+           $this->ShotsFired = $dataRow["ShotsFired"];
+           $this->ShotsHit = $dataRow["ShotsHit"];
+           $this->Accuracy = $dataRow["Accuracy"];
+           $this->HeadShots = $dataRow["HeadShots"];
            $this->TimeAlive  = $dataRow["TimeAlive"];
            $this->FlagScores = $dataRow["FlagScores"];
            $this->FlagSteals = $dataRow["FlagSteals"];
@@ -145,6 +158,7 @@
            $this->JuggTime = $dataRow["JuggTime"];
            $this->TerrTaken = $dataRow["TerrTaken"];
            $this->TerrLost = $dataRow["TerrLost"];
+           $this->VersusData = json_decode($dataRow["VersusData"]);
            $this->MedalData = DBContext::getMatchPlayerMedal($dataRow["UUID"]);
            $this->WeaponData = DBContext::getMatchPlayerWeapon($dataRow["UUID"]);
         }

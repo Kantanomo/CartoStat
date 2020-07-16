@@ -20,5 +20,16 @@
             "brown",
             "tan"
         );
+        const teamColors = array(
+            "team-red",
+            "team-blue",
+            "team-yellow",
+            "team-green",
+            "team-purple",
+            "team-orange",
+            "team-brown",
+            "team-pink",
+            "team-observer"
+        );
     }
 ?>

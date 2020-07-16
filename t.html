@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <link rel="stylesheet" type="text/css" href="Content/index.css"/>
+        <link rel="stylesheet" type="text/css" href="Content/fonts.css"/>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <style>
+            canvas {
+                position: absolute;
+                top: 200px;
+                right: 200px;
+            }
+        </style>
+	</head>
+
+	<body>
+        <div class="background-container">
+            <div id="background-top"></div>
+            <div id="background-bottom"></div>
+            <div class="animated-bg first"></div>
+            <div class="animated-bg second"></div>
+            <div class="animated-bg third"></div>
+            <div class="animated-bg fourth"></div>
+            <div class="animated-bg fifth"></div>
+            <div class="animated-bg sixth"></div>
+            <div class="animated-bg seventh"></div>
+            <div class="animated-bg eigth"></div>
+            <div class="animated-bg ninth"></div>
+            <div class="animated-bg tenth"></div>
+        </div>
+		<script type="module">
+
+			import * as THREE from '/Scripts/three/three.module.js';
+
+			import { DDSLoader } from '/Scripts/three/loaders/DDSLoader.js';
+			import { MTLLoader } from '/Scripts/three/loaders/MTLLoader.js';
+			import { OBJLoader } from '/Scripts/three/loaders/OBJLoader.js';
+
+			var container;
+
+			var camera, scene, renderer;
+
+			var mouseX = 0, mouseY = 0;
+
+            var X = 500;
+            var Y = 500;
+			var windowHalfX = X / 2;
+			var windowHalfY = Y / 2;
+
+
+			init();
+			animate();
+
+
+			function init() {
+
+				container = document.createElement( 'div' );
+				document.body.appendChild( container );
+
+				camera = new THREE.PerspectiveCamera( 45, X / Y, 1, 500 );
+				camera.position.z = 100;
+
+				// scene
+
+				scene = new THREE.Scene();
+                scene.background = null;
+				var ambientLight = new THREE.AmbientLight( 0x404040 , 1);
+				scene.add( ambientLight );
+
+				var pointLight = new THREE.PointLight( 0xFFFFFF , 1 );
+				camera.add( pointLight );
+				scene.add( camera );
+
+				// model
+
+				var onProgress = function ( xhr ) {
+
+					if ( xhr.lengthComputable ) {
+
+						var percentComplete = xhr.loaded / xhr.total * 100;
+						console.log( Math.round( percentComplete, 2 ) + '% downloaded' );
+
+					}
+
+				};
+
+				var onError = function () { };
+
+				var manager = new THREE.LoadingManager();
+				manager.addHandler( /\.dds$/i, new DDSLoader() );
+
+				// comment in the following line and import TGALoader if your asset uses TGA textures
+				// manager.addHandler( /\.tga$/i, new TGALoader() );
+				new MTLLoader( manager )
+                    //.setPath( 'Content/models/Master Chief/' )
+                    .setMaterialOptions()
+					.load( 'http://localhost/mtl.php?p=5&s=5', function ( materials ) {
+
+						materials.preload();
+
+                        new OBJLoader( manager )
+                           .setMaterials(materials)
+                            //.setMaterials( materials )
+                            
+							.setPath( 'Content/models/Master Chief/' )
+							.load( 'chef.obj', function ( object ) {
+
+                                object.position.y = -35;
+                                object.rotation.y  = 30;
+
+                                console.log(object);
+                                object.children.forEach(function(child){
+                                    if(child.name.indexOf("base") === -1)
+                                        child.visible = false;
+                                });
+								scene.add( object );
+                                
+							}, onProgress, onError );
+
+					} );
+
+				//
+
+                renderer = new THREE.WebGLRenderer( { alpha: true } );
+                renderer.setClearColor( 0x00FF00, 0 );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( X, Y );
+				container.appendChild( renderer.domElement );
+
+				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+
+				//
+
+				window.addEventListener( 'resize', onWindowResize, false );
+
+			}
+
+			function onWindowResize() {
+
+				windowHalfX = X / 2;
+				windowHalfY = Y / 2;
+
+				camera.aspect = X / Y;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( X, Y );
+
+			}
+
+			function onDocumentMouseMove( event ) {
+
+				//mouseX = ( event.clientX - X ) / 2;
+				//mouseY = ( event.clientY - Y ) / 2;
+
+			}
+
+			//
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+				render();
+
+			}
+
+			function render() {
+
+				camera.position.x = 0;
+                camera.position.y = 0;
+                //camera.position.x += ( mouseX - camera.position.x ) * .05;
+				//camera.position.y += ( - mouseY - camera.position.y ) * .05;
+				camera.lookAt( scene.position );
+				renderer.render( scene, camera );
+
+			}
+
+		</script>
+
+	</body>
+</html>

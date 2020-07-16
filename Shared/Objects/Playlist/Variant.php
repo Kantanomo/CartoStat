@@ -24,7 +24,7 @@
             $this->Playlist_Checksum = $dataRow["Playlist_Checksum"];
             $this->Name = $dataRow["Name"];
             $this->Type = $dataRow["Type"];
-            $this->Settings = $dataRow["Settings"];
+            $this->Settings = json_decode($dataRow["Settings"], true);
         }
     }
 ?>

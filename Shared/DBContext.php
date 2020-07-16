@@ -147,7 +147,7 @@
                 $variant->Playlist_Checksum,
                 $variant->Name,
                 $variant->Type,
-                $variant->Settings
+                mysqli_real_escape_string(self::getConnection(),json_encode($variant->Settings))
             );
             $result = self::getConnection()->query($query);
             if($result == TRUE){
@@ -263,6 +263,20 @@
                 return new ServerMatch($result->fetch_assoc());
             }
         }
+        
+        public static function insertServerMatch($ServerMatch){
+            $query = sprintf(
+                DBQueries::insertServerMatchQuery,
+                $ServerMatch->Server_XUID,
+                $ServerMatch->Match_UUID
+            );
+            $result = self::getConnection()->query($query);
+            if($result == TRUE){
+                return true;
+            } else {
+                ErrorOutAndExit('500', sprintf("%s\n", self::getConnection()->error));
+            }
+        }
 
         public static function insertMatchPlayer($matchPlayer){
             
@@ -293,6 +307,10 @@
                 $matchPlayer->Assists,
                 $matchPlayer->Betrayals,
                 $matchPlayer->Suicides,
+                $matchPlayer->ShotsFired,
+                $matchPlayer->ShotsHit,
+                $matchPlayer->Accuracy,
+                $matchPlayer->HeadShots,
                 $matchPlayer->BestSpree,
                 $matchPlayer->TimeAlive,
                 $matchPlayer->FlagScores,
@@ -311,7 +329,8 @@
                 $matchPlayer->JuggKillsAsJugg,
                 $matchPlayer->JuggTime,
                 $matchPlayer->TerrTaken,
-                $matchPlayer->TerrLost
+                $matchPlayer->TerrLost,
+                json_encode($matchPlayer->VersusData)
             );
             $result = self::getConnection()->query($query);
             if($result == TRUE){

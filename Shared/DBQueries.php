@@ -24,7 +24,7 @@
         const insertServerMatchQuery = 'INSERT INTO CS_ServerMatch VALUES("%s", "%s");';
         const selectServerMatchQuery = 'SELECT * FROM CS_ServerMatch where Match_UUID="%s";';
 
-        const insertMatchPlayer = 'INSERT INTO CS_MatchPlayer VALUES("%s","%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s");';
+        const insertMatchPlayer = 'INSERT INTO CS_MatchPlayer VALUES("%s","%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s");';
         const selectMatchPlayerQuery = 'SELECT * FROM CS_MatchPlayer where Match_UUID = "%s";';
 
         const insertMatchPlayerMedalQuery = 'INSERT INTO CS_MatchPlayerMedals VALUES("%s", %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);';

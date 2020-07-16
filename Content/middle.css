@@ -1,10 +1,12 @@
 .middle-content {
     width: 930px;
     height: 785px;
-    float: left;
-    left:390px;
-    top: 85px;
+    /* float: left; */
+    /* left:390px; */
+    margin: 35px auto;
+    /* top: 85px; */
     position: relative;
+    z-index: 22;
 }
 .action-bar {
 

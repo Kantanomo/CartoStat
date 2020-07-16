@@ -6,6 +6,19 @@
         font-size: 25px;
         color: #ffffffcc;
         text-shadow: black 2px 2px;
+    }  
+    .scoreboard .column div {
+        font-size: 25px;
+        color: #ffffffcc;
+        text-shadow: black 2px 2px;
+    }
+    .scoreboard > div {
+        visibility: hidden;
+        display: none;
+    }
+    .scoreboard > div.is-active {
+        visibility: visible !important;
+        display: block !important;
     }
 .column {
     float:left;
@@ -24,24 +37,118 @@
     .column:not(.header).player p{
         margin-left: 40px;
     }
-.slayer-stats {
+
+.score-row.is-active .column.player{
+    outline: 2px solid #a4bacf;
+}
+
+.player-stats, .kill-stats {
     color: white !important;
 }
-    .slayer-stats .score-row{    
+    .player-stats .score-row, .kill-stats .score-row{    
         height: 34px;
     }
-        .slayer-stats .score-row:not(:first-child){
+        .player-stats .score-row:not(:first-child), .kill-stats .score-row:not(:first-child){
             margin-top:2px;
         }
-        .slayer-stats .column.header{
+        .player-stats .column.header, .kill-stats .column.header{
             background:black;
         }
-        .slayer-stats .column.place, .slayer-stats .column.life,
-        .slayer-stats .column.life, .slayer-stats .column.spree,
-        .slayer-stats .column.score {
+        .player-stats .column.place, .player-stats .column.life,
+        .player-stats .column.life, .player-stats .column.spree,
+        .player-stats .column.score, .kill-stats .column.kills,
+        .kill-stats .column.deaths, .kill-stats .column.assists,
+        .kill-stats .column.suicides {
             width: 144px;
             margin-right:2px;
             text-align: center;
+        }
+
+.team-stats {
+    color: white !important;
+}
+    .team-stats .score-row{
+        height: 34px;
+    }
+        .team-stats .score-row:not(:first-child){
+            margin-top: 2px;
+        }
+        .team-stats .column.header{
+            background:black;
+        }
+
+        .team-stats .column.team, .team-stats .column.place, .team-stats .column.score{
+            margin-right:2px;
+        }
+        .team-stats .column.team{
+            width: 430px;
+            padding-left: 30px;
+            box-sizing: border-box;
+        }
+        .team-stats .column.place, .team-stats .column.score{
+            width: 247px;
+            text-align: center;
+        }
+
+.medal-stats {
+    color: white !important;
+}
+    .medal-stats .score-row {
+        height: 34px;
+    }
+        .medal-stats .score-row:not(:first-child){
+            margin-top: 2px;
+        }  
+        .medal-stats .column.header{
+            background:black;
+        }
+        .medal-stats .column.header:not(.player){
+            text-align: center;
+        }
+        .medal-stats .column.count, .medal-stats .column.medals {
+            margin-right: 2px;
+            width: 290px;
+        }
+        .medal-stats .column.count div, .medal-stats .column.medals div {
+            margin: 0 auto;
+            width: fit-content;
+        }
+
+.versus-stats {
+    color: white !important;
+}
+    .versus-stats .score-row{
+        height: 34px;
+    }
+        .versus-stats .score-row:not(:first-child){
+            margin-top: 2px;
+        }
+        .versus-stats .column.header {
+            background:black;
+        }
+        .versus-stats .score-row .column:not(.player){
+            margin-right:2px;
+            width: 290px;
+            text-align:center;
+        }
+
+
+.weapon-stats {
+    color: white !important;
+}
+    .weapon-stats .score-row{
+        height: 34px;
+    }
+        .weapon-stats .score-row:not(:first-child){
+            margin-top: 2px;
+        }
+        .weapon-stats .column.header{
+            background: black;
+        }
+        .weapon-stats .score-row .column:not(.player){
+            margin-right:2px;
+            width: 144px;
+            text-align:center;
         }
 
 .column.white {
@@ -98,3 +205,115 @@
 .column.tan {
     background: #B1915680;
 }
+
+
+.column.team-red{
+    background: #C13D3F80;
+}
+.column.team-blue{
+    background: #3638C880;
+}
+.column.team-yellow{
+    background: #C8BA3680;
+}
+.column.team-green{
+    background: #1F891F80;
+}
+.column.team-purple{
+    background: #B53B8980;
+}
+.column.team-orange{
+    background: #DF973480;
+}
+.column.team-brown{
+    background: #74482180;
+}
+.column.team-pink{
+    background: #EB7EC480;
+}
+.column.team-observer{
+    background: #D1D1D180;
+}
+
+.postMedal{
+    display: block;
+    float: left;
+    width: 34px;
+    height: 34px;
+    background-position: 0px -2px !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
+.postMedal.DoubleKill{
+    background: url("/Content/Images/Post Game Medals/DoubleKill.png");
+}
+.postMedal.TripleKill{
+    background: url("/Content/Images/Post Game Medals/DoubleKill.png");
+}
+.postMedal.Killtacular{
+    background: url("/Content/Images/Post Game Medals/Killtacular.png");
+}
+.postMedal.KillFrenzy{
+    background: url("/Content/Images/Post Game Medals/KillFrenzy.png");
+}
+.postMedal.Killtrocity{
+    background: url("/Content/Images/Post Game Medals/Killtrocity.png");
+}
+.postMedal.Killamanjaro{
+    background: url("/Content/Images/Post Game Medals/Killamanjaro.png");
+}
+.postMedal.SniperKill{
+    background: url("/Content/Images/Post Game Medals/SniperKill.png");
+}
+.postMedal.RoadKill{
+    background: url("/Content/Images/Post Game Medals/RoadKill.png");
+}
+.postMedal.BoneCracker{
+    background: url("/Content/Images/Post Game Medals/BoneCracker.png");
+}
+.postMedal.Assassin{
+    background: url("/Content/Images/Post Game Medals/Assassin.png");
+}
+.postMedal.VehicleDestroyed{
+    background: url("/Content/Images/Post Game Medals/VehicleDestroyed.png");
+}
+.postMedal.CarJacking{
+    background: url("/Content/Images/Post Game Medals/CarJacking.png");
+}
+.postMedal.StickIt{
+    background: url("/Content/Images/Post Game Medals/StickIt.png");
+}
+.postMedal.KillingSpree{
+    background: url("/Content/Images/Post Game Medals/KillingSpree.png");
+}
+.postMedal.RunningRiot{
+    background: url("/Content/Images/Post Game Medals/RunningRiot.png");
+}
+.postMedal.Rampage{
+    background: url("/Content/Images/Post Game Medals/Rampage.png");
+}
+.postMedal.Berserker{
+    background: url("/Content/Images/Post Game Medals/Berserker.png");
+}
+.postMedal.Overkill{
+    background: url("/Content/Images/Post Game Medals/Overkill.png");
+}
+.postMedal.FlagTaken{
+    background: url("/Content/Images/Post Game Medals/FlagTaken.png");
+}
+.postMedal.FlagCarrierKill{
+    background: url("/Content/Images/Post Game Medals/FlagCarrierKill.png");
+}
+.postMedal.FlagReturned{
+    background: url("/Content/Images/Post Game Medals/FlagReturned.png");
+}
+.postMedal.BombPlanted{
+    background: url("/Content/Images/Post Game Medals/BombPlanted.png");
+}
+.postMedal.BombCarrierKill{
+    background: url("/Content/Images/Post Game Medals/BombCarrierKill.png");
+}
+.postMedal.BombReturned{
+    background: url("/Content/Images/Post Game Medals/BombReturned.png");
+}
+

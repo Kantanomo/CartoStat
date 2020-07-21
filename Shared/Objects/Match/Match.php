@@ -6,6 +6,7 @@
         public $UUID;
         public $Variant_UUID;
         public $Scenario;
+        public $Timestamp;
         public function __construct() {
             $get_arguments       = func_get_args();
             $number_of_arguments = func_num_args();
@@ -22,6 +23,7 @@
            $this->UUID = $dataRow["UUID"];
            $this->Variant_UUID = $dataRow["Variant_UUID"];
            $this->Scenario = $dataRow["Scenario"];
+           $this->Timestamp = date_create($dataRow["Match_Timestamp"]);
         }
     }
 ?>

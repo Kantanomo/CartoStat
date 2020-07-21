@@ -230,6 +230,7 @@
                 $match->Scenario
             );
             $result = self::getConnection()->query($query);
+            echo $query;
             if($result == TRUE){
                 return true;
             } else {

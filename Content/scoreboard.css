@@ -56,9 +56,15 @@
         }
         .player-stats .column.place, .player-stats .column.life,
         .player-stats .column.life, .player-stats .column.spree,
-        .player-stats .column.score, .kill-stats .column.kills,
-        .kill-stats .column.deaths, .kill-stats .column.assists,
-        .kill-stats .column.suicides {
+        .player-stats .column.score, .player-stats .column.flagsaves,
+        .player-stats .column.flagsteals, .player-stats .column.ballcarrierkills,
+        .player-stats .column.ballkills, .player-stats .column.kingskilled,
+        .player-stats .column.kingkills, .player-stats .column.jugskilled,
+        .player-stats .column.killsasjug, .player-stats .column.terrtaken,
+        .player-stats .column.terrlost, .player-stats .column.bombgrab,
+        .player-stats .column.bomberkills,
+        .kill-stats .column.kills, .kill-stats .column.deaths, 
+        .kill-stats .column.assists, .kill-stats .column.suicides {
             width: 144px;
             margin-right:2px;
             text-align: center;

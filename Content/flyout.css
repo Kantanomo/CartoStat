@@ -1,10 +1,12 @@
 .flyout {
     z-index: 99;
-    width: 600px;
-    height: 807px;
-    top: 75px;
+    width: 482px;
+    height: 748px;
+    top: 110px;
     position: relative;
     right: 0;
+    -color: #ffffffcc;
+    font-family: conduit_itc_light;
 }
 .flyout.right {
     float:right;
@@ -24,8 +26,8 @@
     position: absolute;
     background-repeat: no-repeat;
     background-position: top left;
-    width: 100%;
-    height: 100%;
+    width: 35%;
+    height: 31%;
 }
 .flyout::before{
     content: "";
@@ -44,8 +46,71 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    clip-path: polygon(83px 12px, 570px 12px, 570px 12%, 570px 738px, 515px 793px, 8% 793px, 28px 793px, 28px 67px);
+    clip-path: polygon(83px 12px, 570px 12px, 456px 12px, 456px 677px, 400px 731px, 8% 731px, 28px 731px, 28px 66px);
     background: #081327;
     background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.12) 25%, rgba(255, 255, 255, 0.06) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, 0.15) 76%, transparent 77%, transparent);
     background-size: 23px 21px;
 }
+
+.top-container {
+    height: 265px;
+}
+
+
+
+.match-map{
+    height: 241px;
+    width: 256px;
+    background-size: contain !important;
+    float: left;
+    margin-top: 12px;
+    margin-left: 28px;
+    position: relative;
+}
+    .match-map .title{
+        float: left;
+        bottom: 10px;
+        left: 10px;
+        background: #00000080;
+        padding: 5px 10px;
+        filter: contrast(1) !important;
+        max-width: 270px;
+        color: #fff;
+        position: absolute;
+        font-size: 30px;
+    }
+    .match-map.street_sweeper{
+        background: url(Images/maps/street_sweeper.png);
+    }
+    .match-times{
+        float: left;
+        margin-top: 26px;
+        width: 172px;
+        margin-left: 0px;
+        text-align: center;
+    }
+
+
+
+.bottom-container {
+    margin-left: 39px;
+    width: 406px;
+}
+    .bottom-container p, .bottom-container b {
+        font-size: 30px;
+    }
+        .bottom-container p b {
+            font-weight: 800;
+        }
+        .bottom-container p a {
+            text-decoration: underline;
+        }
+
+.match-setting{
+}
+    .match-setting b{
+        float: left;
+        width: 60%;
+    }
+    .match-setting p{
+    }

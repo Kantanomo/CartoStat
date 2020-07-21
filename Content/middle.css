@@ -1,9 +1,9 @@
 .middle-content {
     width: 930px;
     height: 785px;
-    /* float: left; */
+    float: left; 
     /* left:390px; */
-    margin: 35px auto;
+    margin: 35px 0 0 5px;
     /* top: 85px; */
     position: relative;
     z-index: 22;

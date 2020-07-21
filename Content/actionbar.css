@@ -6,6 +6,12 @@
             height: 45px;
             width: 355px;
             float: right;
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
         }
             .action-bar .spin-controls .spin-left{
                 background: url(Images/spinners_a.png);

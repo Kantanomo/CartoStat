@@ -1,4 +1,5 @@
 <?php
+
 ?>
 
 <html>
@@ -27,10 +28,10 @@
             <div class="animated-bg tenth"></div>
         </div>
         <div class="content-container">
-            <!--<div class="flyout left">
+            <div class="flyout left">
                 <div class="background">
                 </div>
-            </div>-->
+            </div>
             <div class="middle-content">
                 <div class="action-bar">
                     <div class="spin-controls">
@@ -43,15 +44,15 @@
                     
                 </div>
             </div>
-            <!--<div class="flyout right">
+            <div class="flyout right">
                 <div class="background">
                 </div>
-            </div>-->
+            </div>
         </div>
     </body>
     <script>
         document.addEventListener("DOMContentLoaded", function(){
-            var url = "http://localhost/Views/MatchDetails.php?Match_UUID=88ab624b-9d7c-4aaa-8164-67cf00d69ea9";
+            var url = "http://localhost/Views/MatchScoreBoard.php?Match_UUID=47ff2567-5e78-4c4f-9a97-a5795583402d";
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function() {
                 if (xhr.readyState == XMLHttpRequest.DONE) {
@@ -62,6 +63,15 @@
             }
             xhr.open('GET', url, true);
             xhr.send(null);
+            var url2 = "http://localhost/Views/MatchDetails.php?Match_UUID=47ff2567-5e78-4c4f-9a97-a5795583402d";
+            var xhr2 = new XMLHttpRequest();
+            xhr2.onreadystatechange = function() {
+                if (xhr2.readyState == XMLHttpRequest.DONE) {
+                    document.querySelector('.flyout.left .background').innerHTML = xhr2.responseText;
+                }
+            }
+            xhr2.open('GET', url2, true);
+            xhr2.send(null);
         });
 
     </script>

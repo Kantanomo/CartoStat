@@ -6,9 +6,10 @@
     include '../Shared/Objects/Playlist/Playlist.php';
     include '../Shared/Objects/Playlist/Variant.php';
     include '../Shared/Enum/Colors.php';
-    ini_set('display_errors', 0);
-    ini_set('display_startup_errors', 0);
-    #error_reporting(E_ALL);
+    include '../Shared/Enum/ScenarioCache.php';
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     if(!isset($_GET["Match_UUID"])){
         die("No Match Provided");
     } else if(!DBContext::matchExists($_GET["Match_UUID"])){
@@ -21,43 +22,31 @@
     $Server = DBContext::getServer($ServerMatch->Server_XUID);
     $Variant = DBContext::getVariantUUID($Match->Variant_UUID);
     $Playlist = DBContext::getPlaylist($Variant->Playlist_Checksum);
-    $Players = DBContext::getMatchPlayer($Match_UUID);
-    uasort($Players, function($item, $compare){
-        return $item->EndGameIndex >= $compare->EndGameIndex;
-    });
-    switch($Variant->Type){
-        case "Slayer":
-           includeWithVariables("MatchDetailParts/MatchSlayer.php", array("Players" => $Players, "Variant" => $Variant), true);
-        break;
-    }
-    includeWithVariables("MatchDetailParts/MatchKills.php", array("Players" => $Players, "Variant" => $Variant), true);
-    includeWithVariables("MatchDetailParts/MatchVersus.php", array("Players" => $Players, "Variant" => $Variant), true);
-    includeWithVariables("MatchDetailParts/MatchMedals.php", array("Players" => $Players, "Variant" => $Variant), true);
-    includeWithVariables("MatchDetailParts/MatchWeapons.php", array("Players" => $Players, "Variant" => $Variant), true);
-    #includeWithVariables("MatchDetailParts/MatchVersus.php", array("Players" => $Players, "Variant" => $Variant), true);
-    function includeWithVariables($filePath, $variables = array(), $print = true)
-    {
-        $output = NULL;
-        if(file_exists($filePath)){
-            extract($variables);
-            ob_start();
-            include $filePath;
-            $output = ob_get_clean();
-        }
-        if ($print) {
-            print $output;
-        }
-        return $output;
-
-    }
 ?>
-<script>
-        window["Players"] = {
-            <?php foreach($Players as $Player): ?>
-                "<?php echo $Player->Gamertag ?>":
-                    (function(){
-                        return JSON.parse('<? print(json_encode($Player)); ?>');
-                    })(),
-            <?php endforeach;?>
-        };
-</script>
+
+<div class="top-container">
+    <div class="match-map <? echo $Match->Scenario ?>">
+        <p class="title"><?php echo ScenarioCache::Names[$Match->Scenario] ?></p>
+    </div>
+    <div class="match-times">
+        <p><b>Played on:</b></p>
+        <pre><? echo date_format($Match->Timestamp, 'd/m/Y h:iA'); ?></pre>
+        <p><b>Time Ingame:</b></p>
+        <pre>30:20</pre>
+    </div>
+</div>
+<div class="bottom-container">
+    <p><b>Variant:</b> <? echo $Variant->Name ?></p>
+    <p><b>Playlist:</b> 
+        <a href="/DownloadPlaylist.php?Checksum=<? echo $Playlist->Checksum ?>">
+            <? echo $Playlist->FileName ?>
+        </a>
+    </p>
+    <hr/>
+    <? foreach($Variant->Settings as $Setting => $Value): ?>
+        <div class="match-setting">
+            <b><? echo $Setting ?></b>
+            <p><? echo $Value ?></b>
+        </div>
+    <? endforeach; ?>
+</div>

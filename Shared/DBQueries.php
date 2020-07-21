@@ -18,7 +18,7 @@
         const selectVariantUUIDQuery = 'SELECT * FROM CS_Variant where UUID = "%s";';
 
         const existsMatchQuery = 'SELECT 1 FROM CS_Match where UUID = "%s";';
-        const insertMatchQuery = 'INSERT INTO CS_Match Values("%s", "%s", "%s");';
+        const insertMatchQuery = 'INSERT INTO CS_Match (UUID, Variant_UUID, Scenario) Values("%s", "%s", "%s");';
         const selectMatchQuery = 'SELECT * FROM CS_Match where UUID = "%s";';
 
         const insertServerMatchQuery = 'INSERT INTO CS_ServerMatch VALUES("%s", "%s");';

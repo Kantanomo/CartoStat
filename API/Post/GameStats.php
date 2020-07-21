@@ -8,8 +8,6 @@
             $rawContents = file_get_contents($filePath);
             $jsonObject = json_decode($rawContents, true);
             
-            
-            
             $Server = null;
             if(!DBContext::serverExists($jsonObject["Server"]["XUID"])){
                 $Server = new Server($jsonObject["Server"], true);
@@ -34,7 +32,6 @@
             
             $serverMatch = new ServerMatch($match->UUID, $Server->XUID);
             DBContext::insertServerMatch($serverMatch);
-
 
             foreach($jsonObject["Players"] as $data){
                 $Player = null;

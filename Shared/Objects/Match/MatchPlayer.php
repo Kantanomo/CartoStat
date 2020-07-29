@@ -3,7 +3,8 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
     class MatchPlayer{
-        const emblemURI = "http://halo.bungie.net/Stats/emblem.ashx?s=120&0=%s&1=%s&2=%s&3=%s&fi=%s&bi=%s&fl=%s";
+        #const emblemURI = "http://halo.bungie.net/Stats/emblem.ashx?s=120&0=%s&1=%s&2=%s&3=%s&fi=%s&bi=%s&fl=%s";
+        const emblemURI = "/Emblem/cache.php?P=%s&S=%s&EP=%s&ES=%s&EF=%s&EB=%s&ET=%s";
         public $UUID = null;
         public $Match_UUID;
         public $Player_XUID = null;
@@ -173,6 +174,7 @@
                 $this->EmblemBackground,
                 !$this->EmblemToggle
             );
+        
         }
         public function AverageLife(){
             if($this->Deaths == 0){

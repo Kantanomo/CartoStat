@@ -1,0 +1,192 @@
+.medals {
+    height: 460px;
+}
+.medal {
+    float: left;
+    width: 105px;
+    height: 65px;
+    text-align: center;
+    margin-top:10px;
+    font-size:25px;
+}
+    .medal::before {
+        content: "";
+        width: 100%;
+        display: block;
+        background-position: center center !important;
+        height: 48px;
+        background-repeat: no-repeat !important;
+        z-index: 123;
+        margin: 0 auto;
+    }
+    .medal.DoubleKill::before{
+        background: url("Images/In Game Medals/DoubleKill.png");
+    }
+    .medal.TripleKill::before{
+        background: url("Images/In Game Medals/TripleKill.png");
+    }
+    .medal.Killtacular::before{
+        background: url("Images/In Game Medals/Killtacular.png");
+    }
+    .medal.KillFrenzy::before{
+        background: url("Images/In Game Medals/KillFrenzy.png");
+    }
+    .medal.Killtrocity::before{
+        background: url("Images/In Game Medals/Killtrocity.png");
+    }
+    .medal.Killamanjaro::before{
+        background: url("Images/In Game Medals/Killamanjaro.png");
+    }
+    .medal.SniperKill::before{
+        background: url("Images/In Game Medals/SniperKill.png");
+    }
+    .medal.RoadKill::before{
+        background: url("Images/In Game Medals/RoadKill.png");
+    }
+    .medal.BoneCracker::before{
+        background: url("Images/In Game Medals/BoneCracker.png");
+    }
+    .medal.Assassin::before{
+        background: url("Images/In Game Medals/Assassin.png");
+    }
+    .medal.VehicleDestroyed::before{
+        background: url("Images/In Game Medals/VehicleDestroyed.png");
+    }
+    .medal.CarJacking::before{
+        background: url("Images/In Game Medals/CarJacking.png");
+    }
+    .medal.StickIt::before{
+        background: url("Images/In Game Medals/StickIt.png");
+    }
+    .medal.KillingSpree::before{
+        background: url("Images/In Game Medals/KillingSpree.png");
+    }
+    .medal.RunningRiot::before{
+        background: url("Images/In Game Medals/RunningRiot.png");
+    }
+    .medal.Rampage::before{
+        background: url("Images/In Game Medals/Rampage.png");
+    }
+    .medal.Berserker::before{
+        background: url("Images/In Game Medals/Berserker.png");
+    }
+    .medal.Overkill::before{
+        background: url("Images/In Game Medals/Overkill.png");
+    }
+    .medal.FlagTaken::before{
+        background: url("Images/In Game Medals/FlagTaken.png");
+    }
+    .medal.FlagCarrierKill::before{
+        background: url("Images/In Game Medals/FlagCarrierKill.png");
+    }
+    .medal.FlagReturned::before{
+        background: url("Images/In Game Medals/FlagReturned.png");
+    }
+    .medal.BombPlanted::before{
+        background: url("Images/In Game Medals/BombPlanted.png");
+    }
+    .medal.BombCarrierKill::before{
+        background: url("Images/In Game Medals/BombCarrierKill.png");
+    }
+    .medal.BombReturned::before{
+        background: url("Images/In Game Medals/BombReturned.png");
+    }
+.weapon {
+    float: left;
+    width: 105px;
+    height: 65px;
+    text-align: center;
+    margin-top:10px;
+    font-size:25px;
+}
+    .weapon::before {
+        content: "";
+        width: 100%;
+        display: block;
+        background-position: center center !important;
+        height: 48px;
+        background-repeat: no-repeat !important;
+        z-index: 123;
+        margin: 0 auto;
+    }
+    .weapon.AssaultBomb::before{
+        background: url("Images/Weapons/AssaultBomb.png");
+    }
+    .weapon.BattleRifle{
+        width:210px;
+    }
+    .weapon.BattleRifle::before{
+        background: url("Images/Weapons/BattleRifle.png");
+    }
+    .weapon.BeamRifle{
+        width:210px;
+    }
+    .weapon.BeamRifle::before{
+        background: url("Images/Weapons/BeamRifle.png");
+    }
+    .weapon.BrutePlasmaRifle::before{
+        background: url("Images/Weapons/BrutePlasmaRifle.png");
+    }
+    .weapon.BruteShot{
+        width: 210px;
+    }
+    .weapon.BruteShot::before{
+        background: url("Images/Weapons/BruteShot.png");
+    }
+    .weapon.Carbine{
+        width: 210px;
+    }
+    .weapon.Carbine::before{
+        background: url("Images/Weapons/Carbine.png");
+    }
+    .weapon.EnergySword {
+        width:210px;
+    }
+    .weapon.EnergySword::before{
+        background: url("Images/Weapons/EnergySword.png");
+    }
+    .weapon.Flag::before{
+        background:url("Images/Weapons/Flag.png");
+    }
+    .weapon.FuelRod::before{
+        background:url("Images/Weapons/FuelRod.png");
+    }
+    .weapon.Magnum::before{
+        background:url("Images/Weapons/Magnum.png");
+    }
+    .weapon.Needler::before{
+        background:url("Images/Weapons/Needler.png");
+    }
+    .weapon.OddBall::before{
+        background:url("Images/Weapons/OddBall.png");
+    }
+    .weapon.PlasmaPistol::before{
+        background:url("Images/Weapons/PlasmaPistol.png");
+    }
+    .weapon.PlasmaRifle::before{
+        background:url("Images/Weapons/PlasmaRifle.png");
+    }
+    .weapon.RocketLauncher{
+        width:210px;
+    }
+    .weapon.RocketLauncher::before{
+        background:url("Images/Weapons/RocketLauncher.png");
+    }
+    .weapon.SentinelBeam::before{
+        background:url("Images/Weapons/SentinelBeam.png");
+    }
+    .weapon.Shotgun{
+        width:210px;
+    }
+    .weapon.Shotgun::before{
+        background:url("Images/Weapons/Shotgun.png");
+    }
+    .weapon.SmG::before{
+        background:url("Images/Weapons/SmG.png");
+    }
+    .weapon.SniperRifle{
+        width: 210px;
+    }
+    .weapon.SniperRifle::before{
+        background:url("Images/Weapons/SniperRifle.png");
+    }

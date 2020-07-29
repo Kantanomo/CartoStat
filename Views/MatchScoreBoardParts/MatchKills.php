@@ -29,7 +29,7 @@
         }
     ?>
         <div class = "score-row">
-            <div class="column player <? echo $Color ?>" style="background-image:url(<? echo  $Player->emblemURL(); ?>">
+            <div class="column player <? echo $Color ?>" style="background-image:url(<? echo  $Player->emblemURL(); ?>);">
                 <p><? echo $Player->Gamertag ?></p>
             </div>
             <div class="column kills <?php echo $Color ?>">

@@ -26,8 +26,8 @@
     position: absolute;
     background-repeat: no-repeat;
     background-position: top left;
-    width: 35%;
-    height: 31%;
+    width: 52%;
+    height: 38%;
 }
 .flyout::before{
     content: "";
@@ -92,7 +92,7 @@
 
 
 
-.bottom-container {
+.flyout.left .bottom-container {
     margin-left: 39px;
     width: 406px;
 }
@@ -113,4 +113,41 @@
         width: 60%;
     }
     .match-setting p{
+    }
+
+
+.flyout.right .top-container{
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -ms-filter: fliph;
+    filter: fliph;
+    width: 430px;
+    height: 165px;
+    padding-top: 13px;
+    padding-right: 27px;
+    text-align: center;
+}
+.flyout.right .bottom-container {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -ms-filter: fliph;
+    filter: fliph;
+    padding-right: 27px;
+    width: 430px;
+    height: 505px;
+}
+    .flyout.right .bottom-container > div{
+        visibility: hidden;
+        display: none;
+    }
+        .flyout.right .bottom-container > div.is-active{
+            visibility: visible;
+            display: block;
+        }
+    .flyout.right  pre{
+        margin:5px;
     }

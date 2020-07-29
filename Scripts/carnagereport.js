@@ -8,6 +8,8 @@ var PostGameCarnage = function PostGameCarnage(){
     this.scorePanels = null;
     this.currentPanelIndex = 0;
     this.currentPanel = null;
+    this.details = null;
+    this.players = null;
     this.init();
 };
 
@@ -24,23 +26,78 @@ PostGameCarnage.prototype.init = function(){
     this.spinRight.addEventListener('click', function(){
         _this.nextPanel();
     });
+
+    this.details = {
+        "Gamertag" : document.querySelector('[data-elm="player-gamertag"]'),
+        "Dominated": document.querySelector('[data-elm="player-dominated"]'),
+        "DominatedBy": document.querySelector('[data-elm="player-dominatedby"]'),
+        "DoubleKill": document.querySelector('.flyout.right .doublekill'),
+        "TripleKill": document.querySelector('.flyout.right .triplekill'),
+        "Killtacular": document.querySelector('.flyout.right .Killtacular'),
+        "KillFrenzy": document.querySelector('.flyout.right .KillFrenzy'),
+        "Killtrocity": document.querySelector('.flyout.right .Killtrocity'),
+        "Killamanjaro": document.querySelector('.flyout.right .Killamanjaro'),
+        "SniperKill": document.querySelector('.flyout.right .SniperKill'),
+        "RoadKill": document.querySelector('.flyout.right .RoadKill'),
+        "BoneCracker": document.querySelector('.flyout.right .BoneCracker'),
+        "Assassin": document.querySelector('.flyout.right .Assassin'),
+        "VehicleDestroyed": document.querySelector('.flyout.right .VehicleDestroyed'),
+        "CarJacking": document.querySelector('.flyout.right .CarJacking'),
+        "StickIt": document.querySelector('.flyout.right .StickIt'),
+        "KillingSpree": document.querySelector('.flyout.right .KillingSpree'),
+        "RunningRiot": document.querySelector('.flyout.right .RunningRiot'),
+        "Rampage": document.querySelector('.flyout.right .Rampage'),
+        "Berserker": document.querySelector('.flyout.right .Berserker'),
+        "Overkill": document.querySelector('.flyout.right .Overkill'),
+        "FlagTaken": document.querySelector('.flyout.right .FlagTaken'),
+        "FlagCarrierKill": document.querySelector('.flyout.right .FlagCarrierKill'),
+        "FlagReturned": document.querySelector('.flyout.right .FlagReturned'),
+        "BombPlanted": document.querySelector('.flyout.right .BombPlanted'),
+        "BombCarrierKill": document.querySelector('.flyout.right .BombCarrierKill'),
+        "BombReturned": document.querySelector('.flyout.right .BombReturned'),
+        "Weapons": {
+            "PlasmaPistol": document.querySelector('.flyout.right .PlasmaPistol'),
+            "PlasmaRifle": document.querySelector('.flyout.right .PlasmaRifle'),
+            "BrutePlasmaRifle": document.querySelector('.flyout.right .BrutePlasmaRifle'),
+            "Magnum": document.querySelector('.flyout.right .Magnum'),
+            "Needler": document.querySelector('.flyout.right .Needler'),
+            "SubMachineGun": document.querySelector('.flyout.right .SmG'),
+            "SentinalBeam": document.querySelector('.flyout.right .SentinelBeam'),
+            "FuelRodCannon": document.querySelector('.flyout.right .FuelRod'),
+            "BattleRifle": document.querySelector('.flyout.right .BattleRifle'),
+            "BeamRifle": document.querySelector('.flyout.right .BeamRifle'),
+            "Bruteshot": document.querySelector('.flyout.right .BruteShot'),
+            "Carbine": document.querySelector('.flyout.right .Carbine'),
+            "RocketLauncher": document.querySelector('.flyout.right .RocketLauncher'),
+            "Shotgun": document.querySelector('.flyout.right .PlasmaPistol'),
+            "SniperRifle": document.querySelector('.flyout.right .SniperRifle'),
+            "EnergySword": document.querySelector('.flyout.right .EnergySword'),
+            "AssaultBomb": document.querySelector('.flyout.right .AssaultBomb'),
+            "CTFFlag": document.querySelector('.flyout.right .Flag'),
+            "OddballSkull": document.querySelector('.flyout.right .OddBall')
+        }
+    };
 };
 
 PostGameCarnage.prototype.loadPanels = function(){
     var _this = this;
     this.scorePanels = document.querySelectorAll('.scoreboard > div');
+    this.players = window["Players"];
+
     this.scorePanels.forEach(function(panel){
         panel.querySelectorAll('.column.player').forEach(function(player){
             player.addEventListener('click', function(){
-                _this.switchActive(player.querySelector('p').innerHTML);
+                _this.switchActivePlayer(player.querySelector('p').innerHTML);
                 _this.switchVersus(player.querySelector('p').innerText);
+                _this.switchPlayerDetails(player.querySelector('p').innerText);
             });
         });
        
     });
     this.changePanel(0);
-    this.switchActive(window["Players"][Object.keys(window["Players"])[0]].Gamertag);
+    this.switchActivePlayer(window["Players"][Object.keys(window["Players"])[0]].Gamertag);
     this.switchVersus(window["Players"][Object.keys(window["Players"])[0]].Gamertag);
+    this.switchPlayerDetails(window["Players"][Object.keys(window["Players"])[0]].Gamertag);
 };
 
 PostGameCarnage.prototype.changePanel = function(panelIndex){
@@ -65,7 +122,7 @@ PostGameCarnage.prototype.previousPanel = function(){
         this.changePanel(this.currentPanelIndex - 1);
 };
 
-PostGameCarnage.prototype.switchActive = function(playerName){
+PostGameCarnage.prototype.switchActivePlayer = function(playerName){
     this.scorePanels.forEach(function(panel){
         panel.querySelectorAll('.column.player').forEach(function(player){
             player.parentElement.classList.remove('is-active');
@@ -78,7 +135,7 @@ PostGameCarnage.prototype.switchActive = function(playerName){
 };
 
 PostGameCarnage.prototype.switchVersus = function(playerName){
-    var selectedPlayer = window["Players"][playerName];
+    var selectedPlayer = this.players[playerName];
     var versusPanel = this.scoreboard.querySelector('.versus-stats');
     var rows = versusPanel.querySelectorAll('.score-row:not(.header)');
     for(var i = 0; i < rows.length; i++){
@@ -87,6 +144,52 @@ PostGameCarnage.prototype.switchVersus = function(playerName){
     }
 };
 
+PostGameCarnage.prototype.switchPlayerDetails = function(playerName){
+    var selectedPlayer = this.players[playerName];
+    this.details["Gamertag"].innerText = playerName;
+
+    var DominatedIndex = null;
+    var DominatedVal = 1; //Has to be above 0
+    for(var key in selectedPlayer["VersusData"]){
+        if(selectedPlayer["VersusData"][key][0] > DominatedVal){
+            DominatedVal = selectedPlayer["VersusData"][key][0];
+            DominatedIndex = key;
+        }
+    }
+    this.details["Dominated"].innerText = (DominatedIndex !== null) ?
+        this.getPlayerByEndGameIndex(DominatedIndex).Gamertag : " ";
+
+    var DominatedByIndex = null;
+    var DominatedByVal = 1; //Has to be above 0
+    for(var key in selectedPlayer["VersusData"]){
+        if(selectedPlayer["VersusData"][key][1] > DominatedByVal){
+            DominatedByVal = selectedPlayer["VersusData"][key][0];
+            DominatedByIndex = key;
+        }
+    }
+    this.details["DominatedBy"].innerText = (DominatedIndex !== null) ?
+        this.getPlayerByEndGameIndex(DominatedByIndex).Gamertag : " ";
+
+    for(var key in selectedPlayer["MedalData"]){
+        if(Object.keys(this.details).indexOf(key) !== -1){
+            this.details[key].innerText = selectedPlayer["MedalData"][key];
+        }
+    }
+    for(var key in this.details["Weapons"]){
+        var Total = 0;
+        Total += parseInt(selectedPlayer["WeaponData"][key + "Kills"]);
+        Total += parseInt(selectedPlayer["WeaponData"][key + "Headshot"]);
+        this.details["Weapons"][key].innerText = Total;
+    }
+};
+
+PostGameCarnage.prototype.getPlayerByEndGameIndex = function(endGameIndex){
+    for(var key in this.players){
+        if(this.players[key].EndGameIndex == endGameIndex){
+            return this.players[key];
+        }
+    }
+}
 
 document.addEventListener("DOMContentLoaded", function(){
     window["PostGameCarnage"] = new PostGameCarnage();

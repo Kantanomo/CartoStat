@@ -5,9 +5,16 @@ var PostGameCarnage = function PostGameCarnage(){
     this.spinLeft = null;
     this.spinRight = null;
     this.spinText = null;
+    this.detailbar = document.querySelector('.detail-spinner');
+    this.detailSpinLeft = null;
+    this.detailSpinRight = null;
+    this.detailSpinText = null;
+    this.medalsPanel = document.querySelector('.bottom-container .medals');
+    this.weaponsPanel = document.querySelector('.bottom-container .weapons');
     this.scorePanels = null;
     this.currentPanelIndex = 0;
     this.currentPanel = null;
+    this.currentDetail = "Medals";
     this.details = null;
     this.players = null;
     this.init();
@@ -18,6 +25,9 @@ PostGameCarnage.prototype.init = function(){
     this.spinLeft = this.actionbar.querySelector('.spin-left');
     this.spinRight = this.actionbar.querySelector('.spin-right');
     this.spinText = this.actionbar.querySelector('.spin-text');
+    this.detailSpinLeft = this.detailbar.querySelector('.spin-left');
+    this.detailSpinRight = this.detailbar.querySelector('.spin-right');
+    this.detailSpinText = this.detailbar.querySelector('.spin-text');
 
     this.spinLeft.addEventListener('click', function(){
         _this.previousPanel();
@@ -27,34 +37,44 @@ PostGameCarnage.prototype.init = function(){
         _this.nextPanel();
     });
 
+    this.detailSpinLeft.addEventListener('click', function(){
+        _this.switchDetail();
+    });
+
+    this.detailSpinRight.addEventListener('click', function(){
+        _this.switchDetail();
+    });
+
     this.details = {
         "Gamertag" : document.querySelector('[data-elm="player-gamertag"]'),
         "Dominated": document.querySelector('[data-elm="player-dominated"]'),
         "DominatedBy": document.querySelector('[data-elm="player-dominatedby"]'),
-        "DoubleKill": document.querySelector('.flyout.right .doublekill'),
-        "TripleKill": document.querySelector('.flyout.right .triplekill'),
-        "Killtacular": document.querySelector('.flyout.right .Killtacular'),
-        "KillFrenzy": document.querySelector('.flyout.right .KillFrenzy'),
-        "Killtrocity": document.querySelector('.flyout.right .Killtrocity'),
-        "Killamanjaro": document.querySelector('.flyout.right .Killamanjaro'),
-        "SniperKill": document.querySelector('.flyout.right .SniperKill'),
-        "RoadKill": document.querySelector('.flyout.right .RoadKill'),
-        "BoneCracker": document.querySelector('.flyout.right .BoneCracker'),
-        "Assassin": document.querySelector('.flyout.right .Assassin'),
-        "VehicleDestroyed": document.querySelector('.flyout.right .VehicleDestroyed'),
-        "CarJacking": document.querySelector('.flyout.right .CarJacking'),
-        "StickIt": document.querySelector('.flyout.right .StickIt'),
-        "KillingSpree": document.querySelector('.flyout.right .KillingSpree'),
-        "RunningRiot": document.querySelector('.flyout.right .RunningRiot'),
-        "Rampage": document.querySelector('.flyout.right .Rampage'),
-        "Berserker": document.querySelector('.flyout.right .Berserker'),
-        "Overkill": document.querySelector('.flyout.right .Overkill'),
-        "FlagTaken": document.querySelector('.flyout.right .FlagTaken'),
-        "FlagCarrierKill": document.querySelector('.flyout.right .FlagCarrierKill'),
-        "FlagReturned": document.querySelector('.flyout.right .FlagReturned'),
-        "BombPlanted": document.querySelector('.flyout.right .BombPlanted'),
-        "BombCarrierKill": document.querySelector('.flyout.right .BombCarrierKill'),
-        "BombReturned": document.querySelector('.flyout.right .BombReturned'),
+        "Medals": {
+            "DoubleKill": document.querySelector('.flyout.right .doublekill'),
+            "TripleKill": document.querySelector('.flyout.right .triplekill'),
+            "Killtacular": document.querySelector('.flyout.right .Killtacular'),
+            "KillFrenzy": document.querySelector('.flyout.right .KillFrenzy'),
+            "Killtrocity": document.querySelector('.flyout.right .Killtrocity'),
+            "Killamanjaro": document.querySelector('.flyout.right .Killamanjaro'),
+            "SniperKill": document.querySelector('.flyout.right .SniperKill'),
+            "RoadKill": document.querySelector('.flyout.right .RoadKill'),
+            "BoneCracker": document.querySelector('.flyout.right .BoneCracker'),
+            "Assassin": document.querySelector('.flyout.right .Assassin'),
+            "VehicleDestroyed": document.querySelector('.flyout.right .VehicleDestroyed'),
+            "CarJacking": document.querySelector('.flyout.right .CarJacking'),
+            "StickIt": document.querySelector('.flyout.right .StickIt'),
+            "KillingSpree": document.querySelector('.flyout.right .KillingSpree'),
+            "RunningRiot": document.querySelector('.flyout.right .RunningRiot'),
+            "Rampage": document.querySelector('.flyout.right .Rampage'),
+            "Berserker": document.querySelector('.flyout.right .Berserker'),
+            "Overkill": document.querySelector('.flyout.right .Overkill'),
+            "FlagTaken": document.querySelector('.flyout.right .FlagTaken'),
+            "FlagCarrierKill": document.querySelector('.flyout.right .FlagCarrierKill'),
+            "FlagReturned": document.querySelector('.flyout.right .FlagReturned'),
+            "BombPlanted": document.querySelector('.flyout.right .BombPlanted'),
+            "BombCarrierKill": document.querySelector('.flyout.right .BombCarrierKill'),
+            "BombReturned": document.querySelector('.flyout.right .BombReturned'),
+        },
         "Weapons": {
             "PlasmaPistol": document.querySelector('.flyout.right .PlasmaPistol'),
             "PlasmaRifle": document.querySelector('.flyout.right .PlasmaRifle'),
@@ -69,7 +89,7 @@ PostGameCarnage.prototype.init = function(){
             "Bruteshot": document.querySelector('.flyout.right .BruteShot'),
             "Carbine": document.querySelector('.flyout.right .Carbine'),
             "RocketLauncher": document.querySelector('.flyout.right .RocketLauncher'),
-            "Shotgun": document.querySelector('.flyout.right .PlasmaPistol'),
+            "Shotgun": document.querySelector('.flyout.right .Shotgun'),
             "SniperRifle": document.querySelector('.flyout.right .SniperRifle'),
             "EnergySword": document.querySelector('.flyout.right .EnergySword'),
             "AssaultBomb": document.querySelector('.flyout.right .AssaultBomb'),
@@ -122,6 +142,21 @@ PostGameCarnage.prototype.previousPanel = function(){
         this.changePanel(this.currentPanelIndex - 1);
 };
 
+PostGameCarnage.prototype.switchDetail = function(detailIndex){
+    if(this.currentDetail == "Medals"){
+        this.medalsPanel.classList.remove('is-active');
+        this.weaponsPanel.classList.add('is-active');
+        this.currentDetail = "Weapons";
+        this.detailSpinText.innerText = "Weapons";
+    } else if(this.currentDetail == "Weapons"){
+        this.medalsPanel.classList.add('is-active');
+        this.weaponsPanel.classList.remove('is-active');
+        this.currentDetail = "Medals";
+        this.detailSpinText.innerText = "Medals";
+    }
+}
+
+
 PostGameCarnage.prototype.switchActivePlayer = function(playerName){
     this.scorePanels.forEach(function(panel){
         panel.querySelectorAll('.column.player').forEach(function(player){
@@ -171,15 +206,24 @@ PostGameCarnage.prototype.switchPlayerDetails = function(playerName){
         this.getPlayerByEndGameIndex(DominatedByIndex).Gamertag : " ";
 
     for(var key in selectedPlayer["MedalData"]){
-        if(Object.keys(this.details).indexOf(key) !== -1){
-            this.details[key].innerText = selectedPlayer["MedalData"][key];
+        if(Object.keys(this.details["Medals"]).indexOf(key) !== -1){
+            this.details["Medals"][key].innerText = selectedPlayer["MedalData"][key];
         }
     }
     for(var key in this.details["Weapons"]){
-        var Total = 0;
-        Total += parseInt(selectedPlayer["WeaponData"][key + "Kills"]);
-        Total += parseInt(selectedPlayer["WeaponData"][key + "Headshot"]);
-        this.details["Weapons"][key].innerText = Total;
+        //var Text = "";
+        //Text += parseInt(selectedPlayer["WeaponData"][key + "Kills"]) + parseInt(selectedPlayer["WeaponData"][key + "Headshot"]) + "";
+        //Text += selectedPlayer["WeaponData"][key + "ShotsFired"] + "/";
+        //Text += selectedPlayer["WeaponData"][key + "ShotsHit"] + "(";
+        //Text += (parseInt(selectedPlayer["WeaponData"][key + "ShotsHit"]) / parseInt(selectedPlayer["WeaponData"][key + "ShotsFired"])) + "%)"; 
+        this.details["Weapons"][key].querySelector('.Kills').innerText = "Kills: " + (parseInt(selectedPlayer["WeaponData"][key + "Kills"]) + parseInt(selectedPlayer["WeaponData"][key + "Headshot"]));
+        this.details["Weapons"][key].querySelector('.shotsfired').innerText = "Shots Fired: " + selectedPlayer["WeaponData"][key + "ShotsFired"];
+        this.details["Weapons"][key].querySelector('.shotshit').innerText = "Shots Hit: " + selectedPlayer["WeaponData"][key + "ShotsHit"];
+        var acc = (parseInt(selectedPlayer["WeaponData"][key + "ShotsHit"]) / parseInt(selectedPlayer["WeaponData"][key + "ShotsFired"]));
+        if(acc == Infinity || acc == NaN)
+            acc = 0;
+        this.details["Weapons"][key].querySelector('.accuracy').innerText = "Accuracy: " + acc + "%";
+        this.details["Weapons"][key].querySelector('.headshots').innerText = "Headshots: " + parseInt(selectedPlayer["WeaponData"][key + "Headshot"]);
     }
 };
 

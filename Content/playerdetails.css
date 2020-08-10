@@ -1,4 +1,56 @@
-.medals {
+.rivalry{
+    float:right;
+    width: 245px;
+}
+
+.detail-spinner{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    height: 45px;
+    width: 195px;
+    bottom: 0;
+    position: absolute;
+    left: 10px;
+}
+
+    .detail-spinner .spin-controls .spin-left{
+        background: url(Images/spinners_a.png);
+        width: 32px;
+        height: 45px;
+        background-position: top left;
+        float: left;
+    }
+    .detail-spinner .spin-controls .spin-right{
+        background: url(Images/spinners_b.png);
+        width: 32px;
+        height: 45px;
+        background-position: top right;
+        float: right;
+    }
+    .detail-spinner .spin-controls .spin-text{
+        margin:0 auto;
+        font-size: 25px;
+        text-align: center;
+        display: block;
+        float: left;
+        width: 130px;
+        /* color: white; */
+        font-size: 35px;
+        line-height: 48px;
+        color: #ffffffcc;
+        text-shadow: black 2px 2px;
+        text-transform: uppercase;
+        font-family: conduit_itc_light;
+    }
+
+
+
+
+.flyout.right .medals {
     height: 460px;
 }
 .medal {
@@ -93,100 +145,116 @@
     }
 .weapon {
     float: left;
-    width: 105px;
-    height: 65px;
+    width: 50%;
+    height: 52px;
     text-align: center;
-    margin-top:10px;
-    font-size:25px;
+    font-size: 25px;
 }
+    .weapon .popout {
+        display:none;
+    }
+    .weapon:hover .popout{
+        display: block;
+        display: block;
+        width: 300px;
+        background: #081327;
+        border: 1px solid #686f7b;
+        z-index: 100;
+        margin-left: 70px;
+        position: absolute;
+    }
+    .weapon:nth-of-type(even):hover .popout {
+        margin-right: 70px !important;
+        margin-left: -145px !important;
+    }
+    .weapon:nth-of-type(odd) {
+        border-right: 1px solid;
+        box-sizing: border-box;
+    }
     .weapon::before {
         content: "";
-        width: 100%;
         display: block;
+        background: none !important;
         background-position: center center !important;
-        height: 48px;
+        height: 27px;
         background-repeat: no-repeat !important;
         z-index: 123;
         margin: 0 auto;
     }
     .weapon.AssaultBomb::before{
         background: url("Images/Weapons/AssaultBomb.png");
-    }
-    .weapon.BattleRifle{
-        width:210px;
+        content: "Assault bomb";
     }
     .weapon.BattleRifle::before{
         background: url("Images/Weapons/BattleRifle.png");
-    }
-    .weapon.BeamRifle{
-        width:210px;
+        content: "Battle Rifle";
     }
     .weapon.BeamRifle::before{
         background: url("Images/Weapons/BeamRifle.png");
+        content: "Beam Rifle";
     }
     .weapon.BrutePlasmaRifle::before{
         background: url("Images/Weapons/BrutePlasmaRifle.png");
-    }
-    .weapon.BruteShot{
-        width: 210px;
+        content: "Brute Plasma Rifle";
     }
     .weapon.BruteShot::before{
         background: url("Images/Weapons/BruteShot.png");
-    }
-    .weapon.Carbine{
-        width: 210px;
+        content: "Brute Shot";
     }
     .weapon.Carbine::before{
         background: url("Images/Weapons/Carbine.png");
-    }
-    .weapon.EnergySword {
-        width:210px;
+        content: "Carbine";
     }
     .weapon.EnergySword::before{
         background: url("Images/Weapons/EnergySword.png");
+        content: "Energy Sword";
     }
     .weapon.Flag::before{
         background:url("Images/Weapons/Flag.png");
+        content: "Flag";
     }
     .weapon.FuelRod::before{
         background:url("Images/Weapons/FuelRod.png");
+        content: "Fuel Rod";
     }
     .weapon.Magnum::before{
         background:url("Images/Weapons/Magnum.png");
+        content: "Magnum";
     }
     .weapon.Needler::before{
         background:url("Images/Weapons/Needler.png");
+        content: "Needler";
     }
     .weapon.OddBall::before{
         background:url("Images/Weapons/OddBall.png");
+        content: "Odd Ball";
     }
     .weapon.PlasmaPistol::before{
         background:url("Images/Weapons/PlasmaPistol.png");
+        content: "Plasma Pistol";
     }
     .weapon.PlasmaRifle::before{
         background:url("Images/Weapons/PlasmaRifle.png");
-    }
-    .weapon.RocketLauncher{
-        width:210px;
+        content: "Plasma Rifle";
     }
     .weapon.RocketLauncher::before{
         background:url("Images/Weapons/RocketLauncher.png");
+        content: "Rocket Launcher";
     }
     .weapon.SentinelBeam::before{
         background:url("Images/Weapons/SentinelBeam.png");
-    }
-    .weapon.Shotgun{
-        width:210px;
+        content: "Sentinal Beam";
     }
     .weapon.Shotgun::before{
         background:url("Images/Weapons/Shotgun.png");
+        content: "Shotgun";
     }
     .weapon.SmG::before{
         background:url("Images/Weapons/SmG.png");
-    }
-    .weapon.SniperRifle{
-        width: 210px;
+        content: "Sub-machine Gun";
     }
     .weapon.SniperRifle::before{
         background:url("Images/Weapons/SniperRifle.png");
+        content: "Sniper Rifle";
     }
+    

@@ -153,7 +153,6 @@
             if($result == TRUE){
                 return true;
             } else {
-                echo $query;
                 ErrorOutAndExit('500', sprintf("%s\n", self::getConnection()->error));
             }
         }
@@ -230,7 +229,6 @@
                 $match->Scenario
             );
             $result = self::getConnection()->query($query);
-            echo $query;
             if($result == TRUE){
                 return true;
             } else {
@@ -339,7 +337,6 @@
                 DBContext::insertMatchPlayerWeapon($matchPlayer->WeaponData);
                 return true;
             } else {
-                echo $query;
                 ErrorOutAndExit('500', sprintf("%s\n", self::getConnection()->error));
             }
         }
@@ -404,7 +401,6 @@
             if($result == TRUE){
                 return true;
             } else {
-                echo $query;
                 ErrorOutAndExit('500', sprintf("%s\n", self::getConnection()->error));
             }
         }

@@ -20,7 +20,7 @@
 .flyout.left{
     float:left;
 }
-.flyout::after{
+.flyout::before{
     content: "";
     background: url(Images/panel-corner.png);
     position: absolute;
@@ -29,7 +29,7 @@
     width: 52%;
     height: 38%;
 }
-.flyout::before{
+.flyout::after{
     content: "";
     background: url(Images/panel-corner.png);
     position: absolute;

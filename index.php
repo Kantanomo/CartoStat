@@ -49,14 +49,23 @@
                 <div class="background">
                     <div class="top-container">
                         <p><h1 data-elm="player-gamertag">Kantanomo</h1></p>
-                        <pre></pre>
-                        <p><b>Dominated:</b></p>
-                        <pre data-elm="player-dominated">Adolf</pre>
-                        <p><b>Dominated By:</b></p>
-                        <pre data-elm="player-dominatedby">Hitler</pre>
+                        <div class="detail-spinner">
+                            <div class="spin-controls">
+                                <div class="spin-left"></div>
+                                <p class="spin-text">Medals</p>
+                                <div class="spin-right"></div>
+                            </div>
+                        </div>     
+                        <div class="rivalry">
+                            <p><b>Dominated:</b></p>
+                            <pre data-elm="player-dominated"></pre>
+                            <p><b>Dominated By:</b></p>
+                            <pre data-elm="player-dominatedby"></pre>
+                        </div>
+     
                     </div>
                     <div class="bottom-container">
-                        <div class="medals">
+                        <div class="medals is-active" data-title="Medals">
                             <div class="medal DoubleKill">
                             </div>
                             <div class="medal TripleKill">
@@ -106,38 +115,197 @@
                             <div class="medal BombReturned">
                             </div>
                         </div>
-                        <div class="weapons is-active">
-                            <div class="weapon PlasmaPistol"></div>
-                            <div class="weapon PlasmaRifle"></div>
-                            <div class="weapon BrutePlasmaRifle"></div>
-                            <div class="weapon Magnum"></div>
-                            <div class="weapon Needler"></div>
-
-                            <div class="weapon SmG"></div>
-                            <div class="weapon SentinelBeam"></div>
-                            <div class="weapon FuelRod"></div>
-
-
-                            <div class="weapon BattleRifle"></div>
-                            <div class="weapon BeamRifle"></div>
-                            
-                            <div class="weapon BruteShot"></div>
-                            <div class="weapon Carbine"></div>
-                            
-                           
-                            
-                            
-
-                            <div class="weapon RocketLauncher"></div>
-                            <div class="weapon Shotgun"></div>
-                            
-                            <div class="weapon SniperRifle"></div>
-                            <div class="weapon EnergySword"></div>
-
-                            <div class="weapon AssaultBomb" style="margin-left: 50px;"></div>
-                            <div class="weapon Flag"></div>
-                            <div class="weapon OddBall"></div>
-
+                        <div class="weapons" data-title="Weapons">
+                            <div class="weapon PlasmaPistol">
+                                <div class="popout">
+                                    <div class="image"></div>
+                                    <p class="kills"></p>
+                                    <p class="shotsfired"></p>
+                                    <p class="shotshit"></p>
+                                    <p class="accuracy"></p>
+                                    <p class="headshots"></p>
+                                </div>
+                            </div>
+                            <div class="weapon PlasmaRifle">
+                                <div class="popout">
+                                    <div class="image"></div>
+                                    <p class="kills"></p>
+                                    <p class="shotsfired"></p>
+                                    <p class="shotshit"></p>
+                                    <p class="accuracy"></p>
+                                    <p class="headshots"></p>
+                                </div>
+                            </div>
+                            <div class="weapon BrutePlasmaRifle">
+                                <div class="popout">
+                                    <div class="image"></div>
+                                    <p class="kills"></p>
+                                    <p class="shotsfired"></p>
+                                    <p class="shotshit"></p>
+                                    <p class="accuracy"></p>
+                                    <p class="headshots"></p>
+                                </div>
+                            </div>
+                            <div class="weapon Magnum">
+                                <div class="popout">
+                                    <div class="image"></div>
+                                    <p class="kills"></p>
+                                    <p class="shotsfired"></p>
+                                    <p class="shotshit"></p>
+                                    <p class="accuracy"></p>
+                                    <p class="headshots"></p>
+                                </div>
+                            </div>
+                            <div class="weapon Needler">
+                                <div class="popout">
+                                    <div class="image"></div>
+                                    <p class="kills"></p>
+                                    <p class="shotsfired"></p>
+                                    <p class="shotshit"></p>
+                                    <p class="accuracy"></p>
+                                    <p class="headshots"></p>
+                                </div>
+                            </div>
+                            <div class="weapon SmG">
+                                <div class="popout">
+                                    <div class="image"></div>
+                                    <p class="kills"></p>
+                                    <p class="shotsfired"></p>
+                                    <p class="shotshit"></p>
+                                    <p class="accuracy"></p>
+                                    <p class="headshots"></p>
+                                </div>
+                            </div>
+                            <div class="weapon SentinelBeam">
+                                <div class="popout">
+                                    <div class="image"></div>
+                                    <p class="kills"></p>
+                                    <p class="shotsfired"></p>
+                                    <p class="shotshit"></p>
+                                    <p class="accuracy"></p>
+                                    <p class="headshots"></p>
+                                </div>
+                            </div>
+                            <div class="weapon FuelRod">
+                                <div class="popout">
+                                    <div class="image"></div>
+                                    <p class="kills"></p>
+                                    <p class="shotsfired"></p>
+                                    <p class="shotshit"></p>
+                                    <p class="accuracy"></p>
+                                    <p class="headshots"></p>
+                                </div>
+                            </div>
+                            <div class="weapon BattleRifle">
+                                <div class="popout">
+                                    <div class="image"></div>
+                                    <p class="kills"></p>
+                                    <p class="shotsfired"></p>
+                                    <p class="shotshit"></p>
+                                    <p class="accuracy"></p>
+                                    <p class="headshots"></p>
+                                </div>
+                            </div>
+                            <div class="weapon BeamRifle">
+                                <div class="popout">
+                                    <div class="image"></div>
+                                    <p class="kills"></p>
+                                    <p class="shotsfired"></p>
+                                    <p class="shotshit"></p>
+                                    <p class="accuracy"></p>
+                                    <p class="headshots"></p>
+                                </div>
+                            </div>
+                            <div class="weapon BruteShot">
+                                <div class="popout">
+                                    <div class="image"></div>
+                                    <p class="kills"></p>
+                                    <p class="shotsfired"></p>
+                                    <p class="shotshit"></p>
+                                    <p class="accuracy"></p>
+                                    <p class="headshots"></p>
+                                </div>
+                            </div>
+                            <div class="weapon Carbine">
+                                <div class="popout">
+                                    <div class="image"></div>
+                                    <p class="kills"></p>
+                                    <p class="shotsfired"></p>
+                                    <p class="shotshit"></p>
+                                    <p class="accuracy"></p>
+                                    <p class="headshots"></p>
+                                </div>
+                            </div>
+                            <div class="weapon RocketLauncher">
+                                <div class="popout">
+                                    <div class="image"></div>
+                                    <p class="kills"></p>
+                                    <p class="shotsfired"></p>
+                                    <p class="shotshit"></p>
+                                    <p class="accuracy"></p>
+                                    <p class="headshots"></p>
+                                </div>
+                            </div>
+                            <div class="weapon Shotgun">
+                                <div class="popout">
+                                    <div class="image"></div>
+                                    <p class="kills"></p>
+                                    <p class="shotsfired"></p>
+                                    <p class="shotshit"></p>
+                                    <p class="accuracy"></p>
+                                    <p class="headshots"></p>
+                                </div>
+                            </div>
+                            <div class="weapon SniperRifle">
+                                <div class="popout">
+                                    <div class="image"></div>
+                                    <p class="kills"></p>
+                                    <p class="shotsfired"></p>
+                                    <p class="shotshit"></p>
+                                    <p class="accuracy"></p>
+                                    <p class="headshots"></p>
+                                </div>
+                            </div>
+                            <div class="weapon EnergySword">
+                                <div class="popout">
+                                    <div class="image"></div>
+                                    <p class="kills"></p>
+                                    <p class="shotsfired"></p>
+                                    <p class="shotshit"></p>
+                                    <p class="accuracy"></p>
+                                    <p class="headshots"></p>
+                                </div>
+                            </div>
+                            <div class="weapon AssaultBomb">
+                                <div class="popout">
+                                    <div class="image"></div>
+                                    <p class="kills"></p>
+                                    <p class="shotsfired"></p>
+                                    <p class="shotshit"></p>
+                                    <p class="accuracy"></p>
+                                    <p class="headshots"></p>
+                                </div>
+                            </div>
+                            <div class="weapon Flag">
+                                <div class="popout">
+                                    <div class="image"></div>
+                                    <p class="kills"></p>
+                                    <p class="shotsfired"></p>
+                                    <p class="shotshit"></p>
+                                    <p class="accuracy"></p>
+                                    <p class="headshots"></p>
+                                </div>
+                            </div>
+                            <div class="weapon OddBall">
+                                <div class="popout">
+                                    <div class="image"></div>
+                                    <p class="kills"></p>
+                                    <p class="shotsfired"></p>
+                                    <p class="shotshit"></p>
+                                    <p class="accuracy"></p>
+                                    <p class="headshots"></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -5,6 +5,7 @@
     include '../Shared/Objects/Playlist/Playlist.php';
     include '../Shared/Objects/Playlist/Variant.php';
     function ProcessGameStats($filePath){
+            $start_time = microtime(true); 
             $rawContents = file_get_contents($filePath);
             $jsonObject = json_decode($rawContents, true);
             
@@ -42,6 +43,8 @@
                 $MatchPlayer = new MatchPlayer($match->UUID, $data);
                 DBContext::insertMatchPlayer($MatchPlayer);
             }
-            echo 'Hey, Thats pretty cool';
+            $end_time = microtime(true); 
+            $execution_time = ($end_time - $start_time); 
+            echo 'Hey, Thats pretty cool' . $execution_time . "s";
     }
 ?>

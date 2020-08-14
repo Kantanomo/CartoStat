@@ -211,11 +211,6 @@ PostGameCarnage.prototype.switchPlayerDetails = function(playerName){
         }
     }
     for(var key in this.details["Weapons"]){
-        //var Text = "";
-        //Text += parseInt(selectedPlayer["WeaponData"][key + "Kills"]) + parseInt(selectedPlayer["WeaponData"][key + "Headshot"]) + "";
-        //Text += selectedPlayer["WeaponData"][key + "ShotsFired"] + "/";
-        //Text += selectedPlayer["WeaponData"][key + "ShotsHit"] + "(";
-        //Text += (parseInt(selectedPlayer["WeaponData"][key + "ShotsHit"]) / parseInt(selectedPlayer["WeaponData"][key + "ShotsFired"])) + "%)"; 
         this.details["Weapons"][key].querySelector('.Kills').innerText = "Kills: " + (parseInt(selectedPlayer["WeaponData"][key + "Kills"]) + parseInt(selectedPlayer["WeaponData"][key + "Headshot"]));
         this.details["Weapons"][key].querySelector('.shotsfired').innerText = "Shots Fired: " + selectedPlayer["WeaponData"][key + "ShotsFired"];
         this.details["Weapons"][key].querySelector('.shotshit').innerText = "Shots Hit: " + selectedPlayer["WeaponData"][key + "ShotsHit"];

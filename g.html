@@ -40,27 +40,23 @@
 			var camera, scene, renderer;
 
 			var mouseX = 0, mouseY = 0;
-
-            var X = 1000;
-            var Y = 1000;
+            var X = 600;
+            var Y = 900;
 			var windowHalfX = X / 2;
 			var windowHalfY = Y / 2;
-
-
             var mixer;
             var clock = new THREE.Clock();
-
 			init();
 			animate();
-
-
 			function init() {
 
 				container = document.createElement( 'div' );
 				document.body.appendChild( container );
 
-				camera = new THREE.PerspectiveCamera( 45, X / Y, 1, 500 );
-				camera.position.z = 200;
+                camera = new THREE.PerspectiveCamera( 35, X / Y, 1, 500 );
+                window["camera"] = camera;
+                
+				camera.position.z = 250;
 
 				// scene
 
@@ -96,10 +92,16 @@
                 var bodyBump = textureLoader.load(`Content\\models\\Masterchief\\mc_bitmaps\\masterchief_bump.png`);
                 var brMetalTex = textureLoader.load(`Content\\models\\Masterchief\\battle_rifle\\battle_rifle.png`);
                 var brLensTex = textureLoader.load(`Content\\models\\Masterchief\\battle_rifle\\battle_rifle.png`);
+                var material = new THREE.MeshBasicMaterial( {
+                        color: 0x000,
+                        map: bodyTex,
+                        transparent: false
+                    });
                 bodyTex.flipY = false;
                 bodyBump.flipY = false;
                 loader.load( 'Content\\models\\Masterchief\\Masterchief.glb', ( gltf ) => {
                     var model = gltf.scene;
+
                     //model.material = new THREE.MeshBasicMaterial({map: textureLoader.load(`Content\\models\\Masterchief\\mc_bitmaps\\masterchief.png`)});
                     model.traverse ( ( o ) => {
                         if ( o.isMesh ) {
@@ -108,6 +110,7 @@
                         //o.material = new THREE.MeshBasicMaterial({map: textureLoader.load(`Content\\models\\Masterchief\\mc_bitmaps\\masterchief.png`)});
                             o.transparent = false;
                             o.transparency = 0;
+                            o.material.side = THREE.FrontSide;
                             if(o.material.name === "battle_rifle_metal"){
                                 o.material.map = brMetalTex;
                             } else if(o.material.name === "battle_rifle_lens"){
@@ -115,20 +118,28 @@
                             } else {
                                 o.material.map = bodyTex;
                                 o.material.lightMap = bodyBump;
+                                o.material.transparent = false;
+                                o.material.transmission = 1;
                             }
                         }
                     } );
                     scene.add( model );
                     mixer= new THREE.AnimationMixer(model);
                     gltf.animations.forEach((clip) => {mixer.clipAction(clip).play(); });
+                    gltf.scene.traverse( function ( child ) {
+                        if ( child.isMesh ) { 
+
+                        }
+                    });
                 } );
+                
 				// comment in the following line and import TGALoader if your asset uses TGA textures
 				// manager.addHandler( /\.tga$/i, new TGALoader() );
 				
 				//
 
                 renderer = new THREE.WebGLRenderer( { alpha: true } );
-                renderer.setClearColor( 0x00FF00, 0 );
+                //renderer.setClearColor( 0x00FF00, 0 );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( X, Y );
 				container.appendChild( renderer.domElement );
@@ -155,8 +166,8 @@
 
 			function onDocumentMouseMove( event ) {
 
-				//mouseX = ( event.clientX - X ) / 2;
-				//mouseY = ( event.clientY - Y ) / 2;
+				mouseX = ( event.clientX - X ) / 2;
+				mouseY = ( event.clientY - Y ) / 2;
 
 			}
 
@@ -179,8 +190,7 @@
 				renderer.render( scene, camera );
                 var delta = clock.getDelta();
                 mixer.update( delta );
-			}
-
+            }
 		</script>
 
 	</body>

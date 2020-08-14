@@ -1,0 +1,23 @@
+.profile-header {
+    height: 50px;
+    margin-top: 20px;
+    width: 990px;
+}
+    .profile-header .header-actions{
+        float: left;
+        width: 465px;
+        height: 100%;
+        padding-left: 20px;
+        font-size: 45px !important;
+        box-sizing: border-box;
+    }
+        .profile-header .header-actions a:hover{
+            color: #d3ebff;
+        }
+    .profile-header .header-gamertag{
+        float: left;
+        text-align: center;
+        margin-top: 0;
+        width: calc(100% - 465px);
+        font-size: 45px !important;
+    }

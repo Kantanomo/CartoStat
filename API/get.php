@@ -39,5 +39,16 @@
                 ErrorOutAndExit('500', "Match_UUID Parameter is missing.");
             }
         break;
+        case GetType::PlaylistCheck:
+            if(isset($_GET["Playlist_Checksum"])){
+                if(DBContext::playlistExists($_GET["Playlist_Checksum"])){
+                    header("HTTP/1.0 200 Playlist Found");
+                } else{
+                    header("HTTP/1.0 201 Playlist not found");
+                }
+            } else {
+                header("HTTP/1.0 500 Paramters missing");
+            }
+        break;
     }
 ?>

@@ -34,6 +34,7 @@
         const selectMatchPlayerWeaponQuery = 'SELECT * FROM CS_MatchPlayerWeapon WHERE MatchPlayer_UUID = "%s";';
 
         const selectPlaylistQuery = 'SELECT * FROM CS_Playlist WHERE Checksum = "%s";';
+        const insertPlaylistQuery = 'INSERT INTO CS_Playlist VALUES("%s", "%s", "%s", "%s");';
         const selectPlaylistUUIDQuery = 'SELECT * FROM CS_Playlist WHERE UUID = "%s";';
 
         const selectPlaylistRank = 'SELECT * FROM CS_PlaylistRank WHERE Playlist_Checksum = "%s" and Player_XUID = "%s";';

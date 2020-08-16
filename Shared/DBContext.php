@@ -182,7 +182,18 @@
                 return new Variant($result->fetch_assoc());
             }
         }
-
+        public static function playlistExists($Checksum){
+            $query = sprintf(
+                DBQueries::selectPlaylistQuery,
+                $Checksum
+            );
+            $result = self::getConnection()->query($query);
+            if($result->num_rows == 0){
+                return false;
+            } else {
+                return true;
+            }
+        }
         public static function getPlaylist($Checksum){
             $query = sprintf(
                 DBQueries::selectPlaylistQuery,
@@ -205,6 +216,21 @@
                 return null;
             } else {
                 return new Playlist($result->fetch_assoc(), false);
+            }
+        }
+        public static function insertPlaylist($playlist){
+            $query = sprintf(
+                DBQueries::insertPlaylistQuery,
+                $playlist->UUID,
+                $playlist->Checksum,
+                $playlist->Name,
+                $playlist->FileName
+            );
+            $result = self::getConnection()->query($query);
+            if($result == TRUE){
+                return true;
+            } else {
+                ErrorOutAndExit('500', sprintf("%s\n", self::getConnection()->error));
             }
         }
         public static function getPlaylistRank($playlist_Checksum, $xuid){

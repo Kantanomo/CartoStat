@@ -1,0 +1,61 @@
+[custom variant]
+name=Zombies
+;Dawn of the Dead
+base variant=Team Slayer
+Number of Rounds=3 Round 
+Round Time Limit=10 minutes
+team changing=off
+friendly fire=off
+shield type=no shields
+motion sensor=off
+primary light vehicle=none
+secondary light vehicle=none
+primary heavy vehicle=none
+banshee=off
+primary turret=none
+secondary turret=none
+starting weapon=magnum
+secondary weapon=shotgun
+weapons on map=none
+starting grenades=off
+grenades on map=off
+active camo on map=off
+overshields=off
+;Slayer variant
+
+[match]
+variant=Zombies
+map=Foundation
+[match]
+variant=Zombies
+map=lockout
+[match]
+variant=Zombies
+map=Turf
+[match]
+variant=Zombies
+map=zanzibar 
+[match]
+variant=Zombies
+map=Ivory Tower
+[match]
+variant=Zombies
+map=Backwash
+[match]
+variant=Zombies
+map=burial mounds
+[match]
+variant=Zombies
+map=gemini
+[match]
+variant=Zombies
+map=ascension
+[match]
+variant=Zombies
+map=coagulation
+[match]
+variant=Zombies
+map=Elongation
+[match]
+variant=Zombies
+map=headlong

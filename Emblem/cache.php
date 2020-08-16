@@ -8,7 +8,7 @@
     $EmblemForeground = $_GET["EF"];
     $EmblemToggle = $_GET["ET"];
     $image_path = $_SERVER['DOCUMENT_ROOT'] . '/Emblem/Cache/';
-    $image_filename = $PrimaryColor . $SecondaryColor . $PrimaryEmblem . $SecondaryEmblem . $EmblemForeground . $EmblemBackground . $EmblemToggle . ".jpg";
+    $image_filename = $PrimaryColor . $SecondaryColor . $PrimaryEmblem . $SecondaryEmblem . $EmblemForeground . $EmblemBackground . $EmblemToggle . ".png";
     if(!file_exists($image_path.$image_filename)){
         $URI = sprintf(
             emblemURI,
@@ -25,8 +25,16 @@
         chmod($image_path.$image_filename,0755);
         fwrite($local_image_file, $image_to_fetch);
         fclose($local_image_file);
+        $oimg = imagecreatefromjpeg('Cache/' . $image_filename);
+        $oimgx = imagesx($oimg);
+        $oimgy = imagesy($oimg);
+        $nx = $oimgx * 1.5;
+        $ny = $oimgy * 1.5;
+        $nimage = imagecreatetruecolor($nx, $ny);
+        imagecopyresampled($nimage, $oimg, 0, 0, 0, 0, $ny, $nx, $oimgx, $oimgy);
+        imagepng($nimage, $image_path.$image_filename);
     }
-    $img = imagecreatefromjpeg('Cache/'.$image_filename);
+    $img = imagecreatefrompng('Cache/'.$image_filename);
     header('Content-type: image/png');
     imagepng($img);
 ?>

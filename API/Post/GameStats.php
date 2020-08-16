@@ -3,7 +3,9 @@
     include '../Shared/Objects/Server/Server.php';
     include '../Shared/Objects/Match/Match.php';
     include '../Shared/Objects/Playlist/Playlist.php';
+    include '../Shared/Objects/Playlist/PlaylistRank.php';
     include '../Shared/Objects/Playlist/Variant.php';
+    include 'GameStats/Ranking.php';
     function ProcessGameStats($filePath){
             $start_time = microtime(true); 
             $rawContents = file_get_contents($filePath);
@@ -43,6 +45,7 @@
                 $MatchPlayer = new MatchPlayer($match->UUID, $data);
                 DBContext::insertMatchPlayer($MatchPlayer);
             }
+            CalculateMatchResults($Variant, $jsonObject["PlaylistChecksum"], $jsonObject["Players"]);
             $end_time = microtime(true); 
             $execution_time = ($end_time - $start_time); 
             echo 'Hey, Thats pretty cool' . $execution_time . "s";

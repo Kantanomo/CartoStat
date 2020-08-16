@@ -20,4 +20,28 @@
         margin-top: 0;
         width: calc(100% - 465px);
         font-size: 45px !important;
+        color: #d3ebff;
+    }
+
+.profile-container {
+    padding: 0 125px;
+    margin-top: 100px;
+    height: 720px;
+}
+    .profile-container .column {
+        float: left;
+        width: calc(100% / 3);
+        height:100%;
+    }
+
+.profile-details {
+
+}
+    .profile-details .top-row {
+
+    }
+    .profile-details .top-row .profile-emblem{
+        float:left;
+        height: 120px;
+        width: 120px;
     }

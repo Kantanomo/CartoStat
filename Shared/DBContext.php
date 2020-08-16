@@ -207,7 +207,50 @@
                 return new Playlist($result->fetch_assoc(), false);
             }
         }
-        
+        public static function getPlaylistRank($playlist_Checksum, $xuid){
+            $query = sprintf(
+                DBQueries::selectPlaylistRank,
+                $playlist_Checksum, $xuid
+            );
+            $result = self::getConnection()->query($query);
+            if($result->num_rows == 0){
+                $temp = new PlaylistRank($playlist_Checksum, $xuid);
+                self::insertPlaylistRank($temp);
+                return $temp;
+            } else {
+                return new PlaylistRank($result->fetch_assoc());
+            }
+        }
+        public static function insertPlaylistRank($playlistRank){
+            $query = sprintf(
+                DBQueries::insertPlaylistRank,
+                $playlistRank->UUID,
+                $playlistRank->Playlist,
+                $playlistRank->XUID,
+                $playlistRank->XP,
+                $playlistRank->Rank
+            );
+            $result = self::getConnection()->query($query);
+            if($result == TRUE){
+                return true;
+            } else {
+                ErrorOutAndExit('500', sprintf("%s\n", self::getConnection()->error));
+            }
+        }
+        public static function updatePlaylistRank($xp, $rank, $uuid){
+            $query = sprintf(
+                DBQueries::updatePlaylistRank,
+                $xp,
+                $rank,
+                $uuid
+            );
+            $result = self::getConnection()->query($query);
+            if($result == TRUE){
+                return true;
+            } else {
+                ErrorOutAndExit('500', sprintf("%s\n", self::getConnection()->error));
+            }
+        }
         public static function matchExists($UUID){
             $query = sprintf(
                 DBQueries::existsMatchQuery,

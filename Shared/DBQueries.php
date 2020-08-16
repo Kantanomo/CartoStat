@@ -35,5 +35,9 @@
 
         const selectPlaylistQuery = 'SELECT * FROM CS_Playlist WHERE Checksum = "%s";';
         const selectPlaylistUUIDQuery = 'SELECT * FROM CS_Playlist WHERE UUID = "%s";';
+
+        const selectPlaylistRank = 'SELECT * FROM CS_PlaylistRank WHERE Playlist_Checksum = "%s" and Player_XUID = "%s";';
+        const insertPlaylistRank = 'INSERT INTO CS_PlaylistRank VALUES("%s", "%s", "%s", "%s", "%s");';
+        const updatePlaylistRank = 'UPDATE CS_PlaylistRank SET XP = "%s", Rank = "%s" WHERE UUID = "%s"';
     }
 ?>

@@ -88,7 +88,11 @@
            $this->BestSpree = $jsonData["BestSpree"];
            $this->ShotsFired = $jsonData["ShotsFired"];
            $this->ShotsHit = $jsonData["ShotsHit"];
-           $this->Accuracy = (round($this->ShotsHit / $this->ShotsFired, 2) * 100);
+           $Acc = 0;
+           if($this->ShotsFired != "0" && $this->ShotsHit != "0"){
+                $Acc =(round($this->ShotsHit / $this->ShotsFired, 2) * 100);
+           }
+           $this->Accuracy = $Acc;
            $this->HeadShots = $jsonData["HeadShots"];
            $this->TimeAlive  = $jsonData["TimeAlive"];
            $this->FlagScores = $jsonData["FlagScores"];

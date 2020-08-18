@@ -12,13 +12,12 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
-    include 'Get/GameStats.php';
     include '../Shared/DBContext.php';
     include '../Shared/Error.php';
     include '../Shared/Enum/GetType.php';
     include '../Shared/UploadHandler.php';
     include '../Shared/Objects/UUID.php';
-
+    include 'Get/PlaylistRanks.php';
 
     //Global DB Connection for the entire scope
     $GLOBALS["db"] = DBContext::getConnection();
@@ -33,6 +32,7 @@
 
     switch($_GET["Type"]){
         case GetType::GameStats:
+            include 'Get/GameStats.php';
             if(isset($_GET["Match_UUID"])){
                 echo RetrieveGameStats($_GET["Match_UUID"]);
             } else {
@@ -47,6 +47,15 @@
                     header("HTTP/1.0 201 Playlist not found");
                 }
             } else {
+                header("HTTP/1.0 500 Paramters missing");
+            }
+        break;
+        case GetType::PlaylistRanks:
+            
+            if(isset($_GET["Playlist_Checksum"]) && isset($_GET["Player_XUIDS"])){
+                header("HTTP/1.0 200");
+                echo RetrievePlayerRanks($_GET["Playlist_Checksum"], $_GET["Player_XUIDS"]);
+            } else{
                 header("HTTP/1.0 500 Paramters missing");
             }
         break;

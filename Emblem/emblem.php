@@ -75,12 +75,14 @@
         $output = imagecreatetruecolor($GLOBALS["EmblemWidth"], $GLOBALS["EmblemHeight"]);
         $background = imagecolorallocate($output , 0, 0, 0);
         imageAlphaBlending($output, true);
+        imageantialias($output, true);
         imagesavealpha($output, true);
         if($toggle == false){
             $foregroundOne = imagecreatefrompng("foreground_parts/" . $index . "_0.png");
             
             imagecolortransparent($foregroundOne, $background);
             imageAlphaBlending($foregroundOne, false);
+            imageantialias($foregroundOne, true);
             imagesavealpha($foregroundOne, true);
             //SwapColor($foregroundOne, $GLOBALS["PrimaryReplace"], $primaryColor);
             SwapTransparent($foregroundOne, $primaryColor, true);
@@ -89,6 +91,7 @@
         $foregroundTwo = imagecreatefrompng("foreground_parts/" . $index . "_1.png");
         imagecolortransparent($foregroundTwo, $background);
         imagesavealpha($foregroundTwo, true);
+        imageantialias($foregroundTwo, true);
         //SwapColor($foregroundTwo, $GLOBALS["SecondaryReplace"], $secondaryColor);
         SwapTransparent($foregroundTwo, $secondaryColor, true);
         imagecopymerge_alpha($output, $foregroundTwo, 0, 0, 0, 0, 256, 256, 100);
@@ -109,6 +112,7 @@
             $backgroundOne = imagecreatefrompng("background_l/" . $index . ".png");
             $background = imagecolorallocate($backgroundOne , 0, 0, 0);
             imagecolortransparent($backgroundOne, $background);   
+            imageantialias($backgroundOne, true);
             imageAlphaBlending($backgroundOne, false);
             imagesavealpha($backgroundOne, true);
             SwapTransparent($backgroundOne, $primaryColor, true);
@@ -116,12 +120,18 @@
             return $backgroundOne;
         }
     }
-    $background = CreateBackGround($EB, Colors::colors[array_keys(Colors::colors)[$SC]], Colors::colors[array_keys(Colors::colors)[$PE]]);
-    $foreground = CreateForeground ($EF, $ET, Colors::colors[array_keys(Colors::colors)[$PE]], Colors::colors[array_keys(Colors::colors)[$PS]]);
-    $emblem = imagecreatetruecolor($EmblemWidth, $EmblemHeight);
-    imagecopymerge_alpha($emblem, $background, 0,0,0,0, $EmblemWidth, $EmblemHeight, 100);
-    imagecopymerge_alpha($emblem, $foreground, 0,0,0,0, $EmblemWidth, $EmblemHeight, 100);
+    $image_path = $_SERVER['DOCUMENT_ROOT'] . '/Emblem/Cache/';
+    $image_filename = $PC . $SC . $PE . $PS . $EF . $EB . $ET . ".png";
+    if(!file_exists($image_path.$image_filename)){
+        $background = CreateBackGround($EB, Colors::colors[array_keys(Colors::colors)[$SC]], Colors::colors[array_keys(Colors::colors)[$PE]]);
+        $foreground = CreateForeground ($EF, $ET, Colors::colors[array_keys(Colors::colors)[$PE]], Colors::colors[array_keys(Colors::colors)[$PS]]);
+        $emblem = imagecreatetruecolor($EmblemWidth, $EmblemHeight);
+        imageantialias($emblem, true);
+        imagecopymerge_alpha($emblem, $background, 0,0,0,0, $EmblemWidth, $EmblemHeight, 100);
+        imagecopymerge_alpha($emblem, $foreground, 0,0,0,0, $EmblemWidth, $EmblemHeight, 100);
+        imagepng($emblem, $image_path.$image_filename);
+    }
+    $e = imagecreatefrompng($image_path.$image_filename);
     header('Content-type: image/png');
-    imagepng($emblem);
-
+    imagepng($e);
 ?>

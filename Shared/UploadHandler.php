@@ -8,7 +8,8 @@
             $type = $_FILES['file']['type'];
             $size = $_FILES['file']['size'];
             $tmp_name = $_FILES['file']['tmp_name'];
-            if($type == 'application/json' || $type == 'text/xml' || $type == 'application/xml' || $type == 'application/octet-stream'){
+            //if($type == 'application/json' || $type == 'text/xml' || $type == 'application/xml' || $type == 'application/octet-stream'){
+            if(true){
                 if($size != 0){
                     if(move_uploaded_file($tmp_name, $uploaddir.$name)){
                         return $uploaddir.$name;

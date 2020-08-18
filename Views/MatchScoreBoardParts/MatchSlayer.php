@@ -1,6 +1,6 @@
 <?php
 ?>
-<?php if($Variant->Settings["Team"] == 1){
+<?php if($Variant->Settings["Team Play"] == 1){
     
     $teamScores = array();
     foreach($Players as $Player){
@@ -109,13 +109,13 @@
     <?php foreach($Players as $Player):?>
     <?
         #if(isset($Variant->Settings["Team"])){
-            if($Variant->Settings["Team"] == 1){
+            if($Variant->Settings["Team Play"] == 1){
                 $Color = Colors::teamColors[$Player->Team];
          #   } else {
           #      $Color = Colors::colors[$Player->PrimaryColor];    
            # }
         } else {
-            $Color = Colors::colors[$Player->PrimaryColor];
+            $Color = array_keys(Colors::colors)[$Player->PrimaryColor];
         }
     ?>
         <div class = "score-row">

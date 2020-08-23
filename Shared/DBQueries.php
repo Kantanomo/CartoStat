@@ -5,7 +5,7 @@
         const insertServerQuery = 'INSERT INTO CS_Server VALUES(%s, 1, "%s");';
 
         const existsPlayerQuery = 'SELECT 1 FROM CS_Player where XUID = %s;';
-        const selectPlayerQuery = 'SELECT * FROM CS_player where player_xuid = %s;';
+        const selectPlayerQuery = 'SELECT * FROM CS_player where XUID = "%s";';
         const insertPlayerQuery = 'INSERT INTO CS_Player (XUID, Gamertag, PrimaryColor, SecondaryColor, PrimaryEmblem, SecondaryEmblem, EmblemForeground, EmblemBackground, EmblemToggle, PlayerModel, NamePlate) VALUES(%s, "%s", %s, %s, %s, %s, %s, %s, %s, %s, %s);';
 
         const insertPlayerWeaponStats = "";

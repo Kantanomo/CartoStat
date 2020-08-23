@@ -1,5 +1,4 @@
 <?php
-    include "ServerMatch.php";
     class Server {
         public $XUID;
         public $Enabled;

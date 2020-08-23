@@ -51,6 +51,7 @@
             }
         break;
         case GetType::PlaylistRanks:
+            include_once '../Shared/DB/PlaylistQueries.php';
             include 'Get/PlaylistRanks.php';
             if(isset($_GET["Playlist_Checksum"]) && isset($_GET["Player_XUIDS"])){
                 header("HTTP/1.0 200");

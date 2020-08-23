@@ -1,48 +1,49 @@
 <?php
+
     function ProcessGameStats($filePath){
         #$start_time = microtime(true); 
         $rawContents = file_get_contents($filePath);
         $jsonObject = json_decode($rawContents, true);
         
         $Server = null;
-        if(!DBContext::serverExists($jsonObject["Server"]["XUID"])){
+        if(!ServerQueries::serverExists($jsonObject["Server"]["XUID"])){
             $Server = new Server($jsonObject["Server"], true);
-            DBContext::insertServer($Server);
+            ServerQueries::insertServer($Server);
         } else {
-            $Server = DBContext::getServer($jsonObject["Server"]["XUID"]);
+            $Server = ServerQueries::getServer($jsonObject["Server"]["XUID"]);
         }
 
         $Variant = null;
-        if(!DBContext::variantExists($jsonObject["PlaylistChecksum"], $jsonObject["Variant"]["Name"])){
+        if(!PlaylistQueries::variantExists($jsonObject["PlaylistChecksum"], $jsonObject["Variant"]["Name"])){
             $Variant = new Variant(
                 $jsonObject["PlaylistChecksum"], 
                 $jsonObject["Variant"]
             );
-            DBContext::insertVariant($Variant);
+            PlaylistQueries::insertVariant($Variant);
         } else {
-            $Variant = DBContext::getVariant($jsonObject["PlaylistChecksum"], $jsonObject["Variant"]["Name"]);
+            $Variant = PlaylistQueries::getVariant($jsonObject["PlaylistChecksum"], $jsonObject["Variant"]["Name"]);
         }
         
         $match = new Match($Variant->UUID, $jsonObject["Scenario"]);
-        DBContext::insertMatch($match);
+        MatchQueries::insertMatch($match);
         
         $serverMatch = new ServerMatch($match->UUID, $Server->XUID);
-        DBContext::insertServerMatch($serverMatch);
+        ServerQueries::insertServerMatch($serverMatch);
 
         foreach($jsonObject["Players"] as $data){
             $Player = null;
-            if(!DBContext::playerExists($data["XUID"])){
+            if(!PlayerQueries::playerExists($data["XUID"])){
                 $Player = new Player($data);
-                DBContext::insertPlayer($Player);
+                PlayerQueries::insertPlayer($Player);
             }
             $MatchPlayer = new MatchPlayer($match->UUID, $data);
-            DBContext::insertMatchPlayer($MatchPlayer);
+            MatchQueries::insertMatchPlayer($MatchPlayer);
         }
         
         if($Server->Enabled == 1)
             CalculateMatchResults($Variant, $jsonObject["PlaylistChecksum"], $jsonObject["Players"]);
         #$end_time = microtime(true); 
         #$execution_time = ($end_time - $start_time); 
-        #echo 'Hey, Thats pretty cool' . $execution_time . "s";
+        echo 'Hey, Thats pretty cool';
     }
 ?>

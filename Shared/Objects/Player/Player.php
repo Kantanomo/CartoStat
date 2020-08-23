@@ -1,6 +1,6 @@
 <?php
-    include 'PlayerWeaponStats.php';
     class Player {
+        const emblemURI = "./Emblem/emblem.php?P=%s&S=%s&EP=%s&ES=%s&EF=%s&EB=%s&ET=%s";
         public $XUID = null;
         public $Gamertag = null;
         public $PrimaryColor = null;
@@ -49,7 +49,7 @@
             $this->EmblemForeground = $data["EmblemForeground"];
             $this->EmblemBackground = $data["EmblemBackground"];
             $this->EmblemToggle = $data["EmblemToggle"];
-            $this->Handicap = $data["Handicap"];
+            //$this->Handicap = $data["Handicap"];
             $this->Nameplate = $data["Nameplate"];
             $this->Kills = $data["Kills"];
             $this->Assists = $data["Assists"];
@@ -75,6 +75,18 @@
             $this->JuggTime = $data["JuggTime"];
             $this->TerrTaken = $data["TerrTaken"];
             $this->TerrLost = $data["TerrLost"];
+        }
+        public function emblemURL(){
+            return sprintf(
+                MatchPlayer::emblemURI,
+                $this->PrimaryColor,
+                $this->SecondaryColor,
+                $this->PrimaryEmblem,
+                $this->SecondaryEmblem,
+                $this->EmblemForeground,
+                $this->EmblemBackground,
+                $this->EmblemToggle
+            );
         }
     }
 ?>

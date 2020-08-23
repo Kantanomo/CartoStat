@@ -1,7 +1,5 @@
 <?php
-    include 'MatchPlayer.php';
-    include 'MatchPlayerMedal.php';
-    include 'MatchPlayerWeapon.php';
+
     class Match{
         public $UUID;
         public $Variant_UUID;

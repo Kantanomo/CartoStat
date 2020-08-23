@@ -13,16 +13,10 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
     
-    include '../Shared/DBContext.php';
-    include '../Shared/Error.php';
-    include '../Shared/Enum/PostType.php';
-    include '../Shared/UploadHandler.php';
-    include '../Shared/Objects/UUID.php';
-    
-
-
-    //Global DB Connection for the entire scope
-    $GLOBALS["db"] = DBContext::getConnection();
+    include_once '../Shared/DBContext.php';
+    include_once '../Shared/Error.php';
+    include_once '../Shared/Enum/PostType.php';
+    include_once '../Shared/UploadHandler.php';
 
     //This Script should only accept post requests.
     if ($_SERVER['REQUEST_METHOD'] != 'POST') {
@@ -36,23 +30,22 @@
     
     switch($_POST["Type"]){
         case PostType::GameStats:
-            include 'Post/GameStats.php';
-            include 'Post/GameStats/Ranking.php';
-            include "../Shared/Objects/Player/Player.php";
-            include '../Shared/Objects/Server/Server.php';
-            include '../Shared/Objects/Match/Match.php';
-            include '../Shared/Objects/Playlist/PlaylistRank.php';
-            include '../Shared/Objects/Playlist/Variant.php';
+            include_once 'Post/GameStats.php';
+            include_once 'Post/GameStats/Ranking.php';
+            include_once '../Shared/DB/PlayerQueries.php';
+            include_once '../Shared/DB/MatchQueries.php';
+            include_once '../Shared/DB/ServerQueries.php';
+            include_once '../Shared/DB/PlaylistQueries.php';
             $uploadedFilePath = StoreUpload();
             ProcessGameStats($uploadedFilePath);
             header("HTTP/1.0 200 Game Stats Processed");
         break;
         case PostType::PlaylistUpload:
-            include '../Shared/Objects/Playlist/Playlist.php';
+            include_once '../Shared/DB/PlaylistQueries.php';
             if(isset($_POST["Playlist_Checksum"])){
-                if(!DBContext::playlistExists($_POST["Playlist_Checksum"])){
+                if(!PlaylistQueries::playlistExists($_POST["Playlist_Checksum"])){
                     $uploadedFilePath = StoreUpload($_POST["Playlist_Checksum"]);
-                    DBContext::insertPlaylist(
+                    PlaylistQueries::insertPlaylist(
                         new Playlist(
                             array(
                                 "Checksum" => $_POST["Playlist_Checksum"],

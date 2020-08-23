@@ -1,7 +1,4 @@
 <?php
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
     class MatchPlayer{
         #const emblemURI = "http://halo.bungie.net/Stats/emblem.ashx?s=120&0=%s&1=%s&2=%s&3=%s&fi=%s&bi=%s&fl=%s";
         const emblemURI = "./Emblem/emblem.php?P=%s&S=%s&EP=%s&ES=%s&EF=%s&EB=%s&ET=%s";
@@ -164,8 +161,8 @@
            $this->TerrTaken = $dataRow["TerrTaken"];
            $this->TerrLost = $dataRow["TerrLost"];
            $this->VersusData = json_decode($dataRow["VersusData"]);
-           $this->MedalData = DBContext::getMatchPlayerMedal($dataRow["UUID"]);
-           $this->WeaponData = DBContext::getMatchPlayerWeapon($dataRow["UUID"]);
+           $this->MedalData = MatchQueries::getMatchPlayerMedal($dataRow["UUID"]);
+           $this->WeaponData = MatchQueries::getMatchPlayerWeapon($dataRow["UUID"]);
         }
         public function emblemURL(){
             return sprintf(
@@ -178,7 +175,6 @@
                 $this->EmblemBackground,
                 $this->EmblemToggle
             );
-        
         }
         public function AverageLife(){
             if($this->Deaths == 0){

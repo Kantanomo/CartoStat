@@ -1,10 +1,9 @@
 <?php
     include "../Shared/DBContext.php";
-    include "../Shared/Objects/Player/Player.php";
-    include '../Shared/Objects/Server/Server.php';
-    include '../Shared/Objects/Match/Match.php';
-    include '../Shared/Objects/Playlist/Playlist.php';
-    include '../Shared/Objects/Playlist/Variant.php';
+    include "../Shared/DB/PlayerQueries.php";
+    include "../Shared/DB/ServerQueries.php";
+    include "../Shared/DB/MatchQueries.php";
+    include "../Shared/DB/PlaylistQueries.php";
     include '../Shared/Enum/Colors.php';
     include '../Shared/Enum/ScenarioCache.php';
     ini_set('display_errors', 1);
@@ -12,16 +11,16 @@
     error_reporting(E_ALL);
     if(!isset($_GET["Match_UUID"])){
         die("No Match Provided");
-    } else if(!DBContext::matchExists($_GET["Match_UUID"])){
+    } else if(!MatchQueries::matchExists($_GET["Match_UUID"])){
         die("Invalid Match Provided");
     }
     $Match_UUID = $_GET["Match_UUID"];
     $DataArray = array();
-    $Match = DBContext::getMatch($Match_UUID);
-    $ServerMatch = DBContext::getServerMatch($Match_UUID);
-    $Server = DBContext::getServer($ServerMatch->Server_XUID);
-    $Variant = DBContext::getVariantUUID($Match->Variant_UUID);
-    $Playlist = DBContext::getPlaylist($Variant->Playlist_Checksum);
+    $Match = MatchQueries::getMatch($Match_UUID);
+    $ServerMatch = ServerQueries::getServerMatch($Match_UUID);
+    $Server = ServerQueries::getServer($ServerMatch->Server_XUID);
+    $Variant = PlaylistQueries::getVariantUUID($Match->Variant_UUID);
+    $Playlist = PlaylistQueries::getPlaylist($Variant->Playlist_Checksum);
 ?>
 
 <div class="top-container">

@@ -6,7 +6,7 @@
     function GetCurrentStandings($Playlist_Checksum, $Players){
         $StandingArray = array();
         for($i = 0; $i < count($Players); $i++){
-            $StandingArray[$i] = DBContext::getPlaylistRank($Playlist_Checksum, $Players[$i]["XUID"]);
+            $StandingArray[$i] = PlaylistQueries::getPlaylistRank($Playlist_Checksum, $Players[$i]["XUID"]);
         }
         return $StandingArray;
     }
@@ -134,7 +134,7 @@
                 if($PlayerStandings[$i]->XP < 0){
                     $PlayerStandings[$i]->XP = 0;
                 }
-                DBContext::updatePlaylistRank($PlayerStandings[$i]->XP, XPToRank($PlayerStandings[$i]->XP), $PlayerStandings[$i]->UUID);
+                PlaylistQueries::updatePlaylistRank($PlayerStandings[$i]->XP, XPToRank($PlayerStandings[$i]->XP), $PlayerStandings[$i]->UUID);
             }
         }
     }

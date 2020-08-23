@@ -1,5 +1,4 @@
 <?php
-print_r($_GET)
 ?>
 
 <html>
@@ -302,7 +301,7 @@ print_r($_GET)
     <script>
         document.addEventListener("DOMContentLoaded", function(){
             var matchUUID = "<?php echo $_GET["UUID"]; ?>";
-            var url = "http://localhost/Views/MatchScoreBoard.php?Match_UUID=" + matchUUID;
+            var url = "/Views/MatchScoreBoard.php?Match_UUID=" + matchUUID;
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function() {
                 if (xhr.readyState == XMLHttpRequest.DONE) {
@@ -313,7 +312,7 @@ print_r($_GET)
             }
             xhr.open('GET', url, true);
             xhr.send(null);
-            var url2 = "http://localhost/Views/MatchDetails.php?Match_UUID=" + matchUUID;
+            var url2 = "/Views/MatchDetails.php?Match_UUID=" + matchUUID;
             var xhr2 = new XMLHttpRequest();
             xhr2.onreadystatechange = function() {
                 if (xhr2.readyState == XMLHttpRequest.DONE) {

@@ -1,17 +1,21 @@
 <?php
-
+        include "./Shared/DBContext.php";
+        include "./Shared/DB/PlayerQueries.php";
+        include "./Shared/Objects/Player/Player.php";
+        include './Shared/Objects/Server/Server.php';
+        include './Shared/Objects/Match/Match.php';
+        include './Shared/Objects/Playlist/Playlist.php';
+        include './Shared/Objects/Playlist/Variant.php';
+        include './Shared/Enum/Colors.php';
+        include './Shared/Enum/ScenarioCache.php';
+        $Player = PlayerQueries::getPlayer("1234561000159307");
 ?>
 
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="Content/index.css"/>
         <link rel="stylesheet" type="text/css" href="Content/fonts.css"/>
-        <link rel="stylesheet" type="text/css" href="Content/flyout.css"/>
-        <link rel="stylesheet" type="text/css" href='Content/middle.css'/>
         <link rel="stylesheet" type="text/css" href='Content/profile.css'/>
-        <link rel="stylesheet" type="text/css" href='Content/actionbar.css'/>
-        <link rel="stylesheet" type="text/css" href='Content/playerdetails.css'/>
-        <script src="Scripts/carnagereport.js"></script>
     </head>
     <body style="overflow-x:hidden">
         <?php include './Views/Background.php'; ?>
@@ -19,14 +23,18 @@
             <div class="header-actions">
                 <a href="#">Home</a>
             </div>
-            <p class="header-gamertag">Kantanomo</p>
+            <p class="header-gamertag"><? echo $Player->Gamertag ?></p>
         </div>
 
         <div class="profile-container">
             <div class="column profile-details">
                 <div class="top-row">
                     <div class="profile-emblem">
-                        <img src="http://localhost/Emblem/emblem.php?P=3&S=1&EP=3&ES=0&EF=30&EB=14&ET=0"/>
+                        <img src="<? echo $Player->emblemURL() ?>"/>
+                    </div>
+                    <div class="profile-detail">
+                        <p>Matches Played:</p>
+                        <pre>
                     </div>
                 </div>
                 <div class="bottom-row">

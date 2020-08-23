@@ -120,9 +120,9 @@
             return $backgroundOne;
         }
     }
-    $image_path = $_SERVER['DOCUMENT_ROOT'] . '/Emblem/Cache/';
+    $image_path = dirname(__FILE__) . '/Cache/';
     $image_filename = $PC . $SC . $PE . $PS . $EF . $EB . $ET . ".png";
-    if(!file_exists($image_path.$image_filename)){
+    if(!file_exists($image_path.$image_filename)) {
         $background = CreateBackGround($EB, Colors::colors[array_keys(Colors::colors)[$SC]], Colors::colors[array_keys(Colors::colors)[$PE]]);
         $foreground = CreateForeground ($EF, $ET, Colors::colors[array_keys(Colors::colors)[$PE]], Colors::colors[array_keys(Colors::colors)[$PS]]);
         $emblem = imagecreatetruecolor($EmblemWidth, $EmblemHeight);
@@ -133,5 +133,6 @@
     }
     $e = imagecreatefrompng($image_path.$image_filename);
     header('Content-type: image/png');
+    
     imagepng($e);
 ?>

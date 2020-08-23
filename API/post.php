@@ -18,7 +18,7 @@
     include '../Shared/Enum/PostType.php';
     include '../Shared/UploadHandler.php';
     include '../Shared/Objects/UUID.php';
-    include '../Shared/Objects/Playlist/Playlist.php';
+    
 
 
     //Global DB Connection for the entire scope
@@ -37,10 +37,18 @@
     switch($_POST["Type"]){
         case PostType::GameStats:
             include 'Post/GameStats.php';
+            include 'Post/GameStats/Ranking.php';
+            include "../Shared/Objects/Player/Player.php";
+            include '../Shared/Objects/Server/Server.php';
+            include '../Shared/Objects/Match/Match.php';
+            include '../Shared/Objects/Playlist/PlaylistRank.php';
+            include '../Shared/Objects/Playlist/Variant.php';
             $uploadedFilePath = StoreUpload();
             ProcessGameStats($uploadedFilePath);
+            header("HTTP/1.0 200 Game Stats Processed");
         break;
         case PostType::PlaylistUpload:
+            include '../Shared/Objects/Playlist/Playlist.php';
             if(isset($_POST["Playlist_Checksum"])){
                 if(!DBContext::playlistExists($_POST["Playlist_Checksum"])){
                     $uploadedFilePath = StoreUpload($_POST["Playlist_Checksum"]);

@@ -17,7 +17,7 @@
     include '../Shared/Enum/GetType.php';
     include '../Shared/UploadHandler.php';
     include '../Shared/Objects/UUID.php';
-    include 'Get/PlaylistRanks.php';
+
 
     //Global DB Connection for the entire scope
     $GLOBALS["db"] = DBContext::getConnection();
@@ -51,7 +51,7 @@
             }
         break;
         case GetType::PlaylistRanks:
-            
+            include 'Get/PlaylistRanks.php';
             if(isset($_GET["Playlist_Checksum"]) && isset($_GET["Player_XUIDS"])){
                 header("HTTP/1.0 200");
                 echo RetrievePlayerRanks($_GET["Playlist_Checksum"], $_GET["Player_XUIDS"]);

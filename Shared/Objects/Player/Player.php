@@ -88,5 +88,8 @@
                 $this->EmblemToggle
             );
         }
+        public function getMatchCount(){
+            return PlayerQueries::playerMatchCount($this->XUID);
+        }
     }
 ?>

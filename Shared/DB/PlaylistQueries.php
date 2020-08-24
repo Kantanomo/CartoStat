@@ -15,6 +15,8 @@
         const insertPlaylistRank = 'INSERT INTO CS_PlaylistRank VALUES("%s", "%s", "%s", "%s", "%s");';
         const updatePlaylistRank = 'UPDATE CS_PlaylistRank SET XP = "%s", Rank = "%s" WHERE UUID = "%s"';
 
+        const getPlayerMatchCount = 'SELECT COUNT(UUID) as "Match Count" FROM `cs_matchplayer` where Player_XUID = "%s";';
+        
         public static function variantExists($playlistChecksum, $variantName){
             $query = sprintf(
                 self::existsVariantQuery,

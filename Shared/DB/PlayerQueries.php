@@ -9,6 +9,9 @@
         const insertPlayerWeaponStats = "";
         const updatePlayerWeaponStats = "";
         const selectPlayerWeaponStats = "";
+
+        const getPlayerMatchCount = 'SELECT COUNT(UUID) as "Count" FROM `CS_MatchPlayer` where Player_XUID = "%s";';
+
         public static function playerExists($XUID){
             
             $query = sprintf(
@@ -64,6 +67,18 @@
                 return null;
             } else {
                 return new PlayerWeaponStats($result->fetch_assoc());
+            }
+        }
+        public static function playerMatchCount($playerXUID){
+            $query = sprintf(
+                self::getPlayerMatchCount,
+                $playerXUID
+            );
+            $result = DBContext::getConnection()->query($query);
+            if($result->num_rows == 0){
+                return 0;
+            } else {
+                return $result->fetch_assoc()["Count"];
             }
         }
     }

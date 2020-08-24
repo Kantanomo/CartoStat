@@ -1,11 +1,9 @@
 <?php
-        include "./Shared/DBContext.php";
-        include "./Shared/DB/PlayerQueries.php";
-        include "./Shared/Objects/Player/Player.php";
-        include './Shared/Objects/Server/Server.php';
-        include './Shared/Objects/Match/Match.php';
-        include './Shared/Objects/Playlist/Playlist.php';
-        include './Shared/Objects/Playlist/Variant.php';
+        include_once "./Shared/DBContext.php";
+        include_once "./Shared/DB/PlayerQueries.php";
+        include_once "./Shared/DB/MatchQueries.php";
+        include_once "./Shared/DB/ServerQueries.php";
+        include_once "./Shared/DB/PlaylistQueries.php";
         include './Shared/Enum/Colors.php';
         include './Shared/Enum/ScenarioCache.php';
         $Player = PlayerQueries::getPlayer("1234561000159307");
@@ -23,18 +21,18 @@
             <div class="header-actions">
                 <a href="#">Home</a>
             </div>
-            <p class="header-gamertag"><? echo $Player->Gamertag ?></p>
+            <p class="header-gamertag"><? echo $Player->Gamertag; ?></p>
         </div>
 
         <div class="profile-container">
             <div class="column profile-details">
                 <div class="top-row">
                     <div class="profile-emblem">
-                        <img src="<? echo $Player->emblemURL() ?>"/>
+                        <img src="<? echo $Player->emblemURL(); ?>"/>
                     </div>
                     <div class="profile-detail">
                         <p>Matches Played:</p>
-                        <pre>
+                        <pre><? echo $Player->getMatchCount(); ?>
                     </div>
                 </div>
                 <div class="bottom-row">

@@ -2,56 +2,56 @@
     class RankTables {
         //RankTables::AllowdRankDiff[PlayerRank]([0] Lowest)([1] Highest)  
         const AllowedRankDiff = array(
-            array(1,11),
-            array(1,11),
-            array(1,11),
-            array(1,11),
-            array(1,11),
-            array(1,11),
-            array(1,13),
-            array(1,14),
-            array(1,15),
-            array(1,16),
-            array(1,17),
-            array(7,18),
+            array(0,10), #Rank 1
+            array(0,10), #2
+            array(0,10), #3
+            array(0,10), #4
+            array(0,10), #5
+            array(0,10), #6
+            array(0,12), #7
+            array(0,13), #8
+            array(0,14),
+            array(0,15),
+            array(0,16),
+            array(6,17),
+            array(6,18),
             array(7,19),
             array(8,20),
             array(9,21),
-            array(10,22),
+            array(10,23),
             array(11,24),
             array(12,25),
             array(13,26),
             array(14,27),
             array(15,28),
             array(16,29),
-            array(17,30),
+            array(16,30),
             array(17,31),
             array(18,32),
-            array(19,33),
+            array(19,34),
             array(20,35),
             array(21,36),
-            array(22,37),
-            array(23,39),
-            array(24,41),
-            array(25,43),
-            array(26,45),
-            array(27,47),
+            array(22,38),
+            array(23,40),
+            array(24,42),
+            array(25,44),
+            array(26,46),
+            array(26,48),
             array(27,49),
-            array(28,50),
-            array(29,50),
-            array(30,50),
-            array(30,50),
-            array(31,50),
-            array(31,50),
-            array(32,50),
-            array(32,50),
-            array(33,50),
-            array(33,50),
-            array(34,50),
-            array(34,50),
-            array(35,50),
-            array(35,50),
-            array(36,50)
+            array(28,49),
+            array(29,49),
+            array(29,49),
+            array(30,49),
+            array(30,49),
+            array(31,49),
+            array(31,49),
+            array(32,49),
+            array(32,49),
+            array(33,49),
+            array(33,49),
+            array(34,49),
+            array(34,49),
+            array(35,49)
         );
         //RankTables::WinLostFactors[PlayerRank]([0] Win Factor)([1] Loss Factor)
         const WinLossFactors = array(
@@ -106,8 +106,7 @@
             array(0.55,1),
             array(0.5,1)
         );
-        //RankTables::DiffChart[Diff]
-        //([0]Higher Win)([1]Higher Loss)([2]Lower Win)([3]Lower Loss)
+        //RankTables::DiffChart[Diff]  ([0]Higher Win)([1]Higher Loss)([2]Lower Win)([3]Lower Loss)
         const DiffChart = array(
             array(100,100,100,100),
             array(92,108,108,92),

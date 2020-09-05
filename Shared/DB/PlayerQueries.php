@@ -1,7 +1,7 @@
 <?php
     $dir = dirname(__FILE__);
-    include_once $dir . "\..\Objects\Player\Player.php";
-    include_once $dir . "\..\Objects\Player\PlayerWeaponStats.php";
+    include_once $dir . "/../Objects/Player/Player.php";
+    include_once $dir . "/../Objects/Player/PlayerWeaponStats.php";
     class PlayerQueries {
         const existsPlayerQuery = 'SELECT 1 FROM CS_Player where XUID = %s;';
         const selectPlayerQuery = 'SELECT * FROM CS_player where XUID = "%s";';

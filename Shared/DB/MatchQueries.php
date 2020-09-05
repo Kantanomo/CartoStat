@@ -1,5 +1,5 @@
 <?php
-    $dir = dirname(__FILE__) . "\..\Objects\Match\\";
+    $dir = dirname(__FILE__) . "/../Objects/Match/";
     include_once $dir . "Match.php";
     include_once $dir . "MatchPlayer.php";
     include_once $dir . "MatchPlayerMedal.php";

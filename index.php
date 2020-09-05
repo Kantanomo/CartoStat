@@ -32,7 +32,9 @@
                     </div>
                     <div class="profile-detail">
                         <p>Matches Played:</p>
-                        <pre><? echo $Player->getMatchCount(); ?>
+                        <pre><? echo $Player->getMatchCount(); ?></pre>
+                        <p>Win Loss:</p>
+                        <pre>10 - 30 (33%)</pre>
                     </div>
                 </div>
                 <div class="bottom-row">

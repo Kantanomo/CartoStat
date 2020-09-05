@@ -24,7 +24,7 @@
             $this->Playlist = $Playlist_Checksum;
             $this->XUID = $XUID;
             $this->XP = 0;
-            $this->Rank = 0;
+            $this->Rank = "0";
         }
     }
 ?>

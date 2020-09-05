@@ -44,6 +44,5 @@
             CalculateMatchResults($Variant, $jsonObject["PlaylistChecksum"], $jsonObject["Players"]);
         #$end_time = microtime(true); 
         #$execution_time = ($end_time - $start_time); 
-        echo 'Hey, Thats pretty cool';
     }
 ?>

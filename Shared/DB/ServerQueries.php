@@ -1,5 +1,5 @@
 <?php 
-    $dir = dirname(__FILE__) . "\..\Objects\Server\\";
+    $dir = dirname(__FILE__) . "/../Objects/Server/";
     include_once $dir . "Server.php";
     include_once $dir . "ServerMatch.php";
     class ServerQueries {

@@ -16,7 +16,6 @@
     include '../Shared/Error.php';
     include '../Shared/Enum/GetType.php';
     include '../Shared/UploadHandler.php';
-    include '../Shared/Objects/UUID.php';
 
 
     //Global DB Connection for the entire scope
@@ -40,8 +39,9 @@
             }
         break;
         case GetType::PlaylistCheck:
+            include_once '../Shared/DB/PlaylistQueries.php';
             if(isset($_GET["Playlist_Checksum"])){
-                if(DBContext::playlistExists($_GET["Playlist_Checksum"])){
+                if(PlaylistQueries::playlistExists($_GET["Playlist_Checksum"])){
                     header("HTTP/1.0 200 Playlist Found");
                 } else{
                     header("HTTP/1.0 201 Playlist not found");
@@ -52,7 +52,7 @@
         break;
         case GetType::PlaylistRanks:
             include_once '../Shared/DB/PlaylistQueries.php';
-            include 'Get/PlaylistRanks.php';
+            include_once 'Get/PlaylistRanks.php';
             if(isset($_GET["Playlist_Checksum"]) && isset($_GET["Player_XUIDS"])){
                 header("HTTP/1.0 200");
                 echo RetrievePlayerRanks($_GET["Playlist_Checksum"], $_GET["Player_XUIDS"]);

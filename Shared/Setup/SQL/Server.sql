@@ -1,6 +1,9 @@
 CREATE TABLE CS_Server(
     XUID BIGINT UNSIGNED,
-    Enabled BOOLEAN DEFAULT 1,
+    Enabled BOOLEAN DEFAULT 0,
+    RanksEnabled BOOLEAN DEFAULT 0,
     Name VARCHAR(16),
+    IP VARCHAR(39),
+    AuthKey VARCHAR(32),
     PRIMARY KEY(XUID)
 ) Engine=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;

@@ -32,35 +32,79 @@
         case PostType::GameStats:
             include_once 'Post/GameStats.php';
             include_once 'Post/GameStats/Ranking.php';
+            include_once 'Post/ServerAuthentication.php';
             include_once '../Shared/DB/PlayerQueries.php';
             include_once '../Shared/DB/MatchQueries.php';
             include_once '../Shared/DB/ServerQueries.php';
             include_once '../Shared/DB/PlaylistQueries.php';
-            $uploadedFilePath = StoreUpload();
-            ProcessGameStats($uploadedFilePath);
-            header("HTTP/1.0 200 Game Stats Processed");
+            if(isset($_POST["AuthToken"])){
+                if(VerifyJWT($_POST["AuthToken"])){
+                    $uploadedFilePath = StoreUpload();
+                    ProcessGameStats($uploadedFilePath, GetJWTXUID($_POST["AuthToken"]));
+                    header("HTTP/1.0 200 Game Stats Processed");
+                } else {
+                    header("HTTP/1.0 500 Invalid Token");
+                }
+            } else {
+                header("HTTP/1.0 500 Missing Token");
+            }
         break;
         case PostType::PlaylistUpload:
             include_once '../Shared/DB/PlaylistQueries.php';
-            if(isset($_POST["Playlist_Checksum"])){
-                if(!PlaylistQueries::playlistExists($_POST["Playlist_Checksum"])){
-                    $uploadedFilePath = StoreUpload($_POST["Playlist_Checksum"]);
-                    PlaylistQueries::insertPlaylist(
-                        new Playlist(
-                            array(
-                                "Checksum" => $_POST["Playlist_Checksum"],
-                                "Name" => $_FILES['file']['name'],
-                                "FileName" => $_POST["Playlist_Checksum"] . "_" . $_FILES['file']['name']
-                            ), 
-                            true
-                            )
-                        );
-                    header("HTTP/1.0 200 Playlist Uploaded");
+            include_once 'Post/ServerAuthentication.php';
+            if(isset($_POST["Playlist_Checksum"]) && isset($_POST["AuthToken"])){
+                if(VerifyJWT($_POST["AuthToken"])){
+                    if(!PlaylistQueries::playlistExists($_POST["Playlist_Checksum"])){
+                        $uploadedFilePath = StoreUpload($_POST["Playlist_Checksum"]);
+                        PlaylistQueries::insertPlaylist(
+                            new Playlist(
+                                array(
+                                    "Checksum" => $_POST["Playlist_Checksum"],
+                                    "Name" => $_FILES['file']['name'],
+                                    "FileName" => $_POST["Playlist_Checksum"] . "_" . $_FILES['file']['name']
+                                ), 
+                                true
+                                )
+                            );
+                        header("HTTP/1.0 200 Playlist Uploaded");
+                    } else {
+                        header("HTTP/1.0 201 Playlist Already Exists");
+                    }
                 } else {
-                    header("HTTP/1.0 201 Playlist Already Exists");
+                    header("HTTP/1.0 500 Invalid Token");
                 }
             } else{
-                ErrorOutAndExit('500', 'Inavlid Parameters were recieved.');
+                header("HTTP/1.0 500 Invalid Parameters");
+            }
+        break;
+        case PostType::ServerRegistration:
+            if(isset($_POST["AuthKey"]) && isset($_POST["Server_XUID"]) && isset($_POST["Server_Name"])){
+                include_once '../Shared/DB/ServerQueries.php';
+                include_once 'Post/ServerAuthentication.php';
+                NewServerRegistration($_POST["Server_XUID"], $_POST["Server_Name"], $_POST["AuthKey"]);
+                header("HTTP/1.0 200 Server Registered");
+            }
+            else{
+                header("HTTP/1.0 500 Invalid Parameters");
+            }
+        break;
+        case PostType::ServerLogin:
+            if(isset($_POST["AuthKey"])){
+                include_once '../Shared/DB/ServerQueries.php';
+                include_once 'Post/ServerAuthentication.php';
+                ServerLogin($_POST["AuthKey"]);
+            }
+            else{
+                header("HTTP/1.0 500 Invalid Parameters");
+            }
+        break;
+        case "TestLogin":
+            if(isset($_POST["JWT"])){
+                include_once '../Shared/DB/ServerQueries.php';
+                include_once 'Post/ServerAuthentication.php';
+                if(VerifyJWT($_POST["JWT"])){
+                    echo "Yes";
+                }
             }
         break;
     }

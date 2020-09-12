@@ -3,6 +3,7 @@
         'Host' => 'localhost',
         'Username' => 'Development',
         'Password' => 'Mangos123!',
-        'DB' => 'cartostat'
+        'DB' => 'cartostat',
+        'Secret' => 'YouWish'
     );
 ?>

@@ -39,23 +39,43 @@
             }
         break;
         case GetType::PlaylistCheck:
+            include_once 'Get/ServerAuthentication.php';
             include_once '../Shared/DB/PlaylistQueries.php';
-            if(isset($_GET["Playlist_Checksum"])){
-                if(PlaylistQueries::playlistExists($_GET["Playlist_Checksum"])){
-                    header("HTTP/1.0 200 Playlist Found");
-                } else{
-                    header("HTTP/1.0 201 Playlist not found");
+            if(isset($_GET["Playlist_Checksum"]) && isset($_GET["AuthToken"])){
+                if(VerifyJWT($_GET["AuthToken"])){
+                    if(PlaylistQueries::playlistExists($_GET["Playlist_Checksum"])){
+                        header("HTTP/1.0 200 Playlist Found");
+                    } else{
+                        header("HTTP/1.0 201 Playlist not found");
+                    }
+                } else {
+                    header("HTTP/1.0 202 Invalid Token");    
                 }
             } else {
-                header("HTTP/1.0 500 Paramters missing");
+                header("HTTP/1.0 203 Paramters missing");
             }
         break;
         case GetType::PlaylistRanks:
             include_once '../Shared/DB/PlaylistQueries.php';
+            include_once '../Shared/DB/ServerQueries.php';
+            include_once '../Shared/DB/PlayerQueries.php';
             include_once 'Get/PlaylistRanks.php';
-            if(isset($_GET["Playlist_Checksum"]) && isset($_GET["Player_XUIDS"])){
+            if(isset($_GET["Playlist_Checksum"]) && isset($_GET["Player_XUIDS"]) && isset($_GET["Server_XUID"])){
                 header("HTTP/1.0 200");
-                echo RetrievePlayerRanks($_GET["Playlist_Checksum"], $_GET["Player_XUIDS"]);
+                echo RetrievePlayerRanks($_GET["Server_XUID"], $_GET["Playlist_Checksum"], $_GET["Player_XUIDS"]);
+            } else{
+                header("HTTP/1.0 500 Paramters missing");
+            }
+        break;
+        case GetType::ServerRegistrationCheck:
+            include_once '../Shared/DB/ServerQueries.php';
+            if(isset($_GET["Server_XUID"])){
+                if(ServerQueries::serverExists($_GET["Server_XUID"])){
+                    header("HTTP/1.0 200");
+                } else {
+                    header("HTTP/1.0 201");
+                    echo ServerQueries::generateUniqueAuthKey();
+                }
             } else{
                 header("HTTP/1.0 500 Paramters missing");
             }

@@ -133,7 +133,7 @@
             if($result->num_rows == 0){
                 $temp = new PlaylistRank($playlist_Checksum, $xuid);
                 self::insertPlaylistRank($temp);
-                return $temp;
+                return self::getPlaylistRank($playlist_Checksum, $xuid);
             } else {
                 return new PlaylistRank($result->fetch_assoc());
             }

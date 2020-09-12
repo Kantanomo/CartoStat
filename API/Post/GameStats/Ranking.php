@@ -2,7 +2,7 @@
     include 'RankTables.php';
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
-    $GLOBALS["LOGGING"] = FALSE;
+    $GLOBALS["LOGGING"] = TRUE;
     error_reporting(E_ALL);
     function GetCurrentStandings($Playlist_Checksum, $Players){
         $StandingArray = array();
@@ -34,16 +34,18 @@
         if($BaseRate == 0)
             $BaseRate = 1;
         if($Variant->Settings["Team Play"] == "1"){
-            if($GLOBALS["LOGGING"])
+            if($GLOBALS["LOGGING"]){
                 $myfile = fopen($Playlist_Checksum . strtotime("10 September 2000") . ".txt", "w");
+            }
             for($x = 0; $x < count($Players); $x++){
                 $item = $Players[$x];
                 $itemPlace = preg_replace("/[^0-9]/", "", $item["Place"]);
                 $itemStanding = $PlayerStandings[$x];
                 $XPMod[$x] = 0;
                 $TeamBaseRate = 0;
-                if($GLOBALS["LOGGING"])
+                if($GLOBALS["LOGGING"]){
                     fwrite($myfile, "Calculating Stats for " . $item["Gamertag"] . "\n");
+                }
                 for($y = 0; $y < count($Players); $y++){
                     if($x != $y && $Players[$x]["Team"] != $Players[$y]["Team"]){
                         $TeamBaseRate++;
@@ -111,6 +113,8 @@
                         }
                     }
                 }
+                if($TeamBaseRate == 0)
+                    $TeamBaseRate = 1;
                 if($GLOBALS["LOGGING"]){
                     fwrite($myfile, $TeamBaseRate . "\n");
                     fwrite($myfile, $Players[$x]["Gamertag"] . " Rank: " . XPToRank($PlayerStandings[$x]->XP) . " Previous XP: " . $PlayerStandings[$x]->XP . " New Xp: " . ($PlayerStandings[$x]->XP + $XPMod[$x] / $TeamBaseRate) . " New Rank:" . XPToRank(($PlayerStandings[$x]->XP + $XPMod[$x] / $TeamBaseRate)) . " Gained XP: " . ($XPMod[$x] / $TeamBaseRate) . "\r\n");

@@ -6,9 +6,7 @@
     include "../Shared/DB/PlaylistQueries.php";
     include '../Shared/Enum/Colors.php';
     include '../Shared/Enum/ScenarioCache.php';
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
+
     if(!isset($_GET["Match_UUID"])){
         die("No Match Provided");
     } else if(!MatchQueries::matchExists($_GET["Match_UUID"])){

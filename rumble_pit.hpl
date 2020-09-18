@@ -1,0 +1,78 @@
+[playlist]
+;Rumble Pit
+;Put your skill and wits to the test against up to seven opponents.
+;last updated 04.07.2007
+;ranking=Yes
+;min players=6
+;max players=8
+;Team Count=None
+;Min Party Size=1
+;Max Party Size=1
+Shuffle=Yes
+Pregame Team Selection Delay=1
+Pregame Delay=1
+Postgame Delay=1
+
+[custom variant]
+name=Slayer Pro
+base variant=Slayer
+round time limit=10 minutes
+resolve ties=off
+motion sensor=off
+team changing=off
+starting weapon=battle rifle
+secondary weapon=magnum
+overshields=off
+active camo on map=off
+primary heavy vehicle=none
+
+
+[match]
+Variant=Slayer Pro
+map=Ascension
+;weight=
+minimum players=6
+maximum players=8
+
+[match]
+Variant=Slayer Pro
+map=Ivory Tower
+;weight=
+minimum players=6
+maximum players=8
+
+[match]
+variant=Slayer Pro
+map=Foundation
+;weight=
+minimum players=6
+maximum players=8
+
+[match]
+variant=Slayer Pro
+map=Gemini
+;weight=
+minimum players=6
+maximum players=8
+
+[match]
+Variant=Slayer Pro
+map=lockout
+;weight=
+minimum players=6
+maximum players=8
+
+[match]
+Variant=Slayer Pro
+map=midship
+;weight=
+minimum players=6
+maximum players=8
+
+[match]
+Variant=Slayer Pro
+map=warlock
+;weight=
+minimum players=6
+maximum players=8
+

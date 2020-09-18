@@ -72,6 +72,8 @@
             if(isset($_GET["Server_XUID"])){
                 if(ServerQueries::serverExists($_GET["Server_XUID"])){
                     header("HTTP/1.0 200");
+                    $Server = ServerQueries::getServer($_GET["Server_XUID"]);
+                    print(json_encode(["Registered" => true, "RanksEnabled" => ($Server->RanksEnabled == 1) ? "true" : "false", "StatsEnabled" => ($Server->Enabled == 1) ? "true" : "false"]));
                 } else {
                     header("HTTP/1.0 201");
                     echo ServerQueries::generateUniqueAuthKey();

@@ -92,6 +92,7 @@
             if(isset($_POST["AuthKey"])){
                 include_once '../Shared/DB/ServerQueries.php';
                 include_once 'Post/ServerAuthentication.php';
+                file_put_contents('./log_'.date("j.n.Y").'.log', $_POST["AuthKey"], FILE_APPEND);
                 ServerLogin($_POST["AuthKey"]);
             }
             else{

@@ -4,6 +4,7 @@
     include_once $dir . "MatchPlayer.php";
     include_once $dir . "MatchPlayerMedal.php";
     include_once $dir . "MatchPlayerWeapon.php";
+    include_once $dir . "MatchPlayerDamageReport.php";
     class MatchQueries{
         const existsMatchQuery = 'SELECT 1 FROM CS_Match where UUID = "%s";';
         const insertMatchQuery = 'INSERT INTO CS_Match (UUID, Variant_UUID, Scenario) Values("%s", "%s", "%s");';
@@ -14,6 +15,9 @@
         const selectMatchPlayerMedalQuery = 'SELECT * FROM CS_MatchPlayerMedals WHERE MatchPlayer_UUID = "%s";';
         const insertMatchPlayerWeaponQuery = 'INSERT INTO CS_MatchPlayerWeapon VALUES("%s", %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);';
         const selectMatchPlayerWeaponQuery = 'SELECT * FROM CS_MatchPlayerWeapon WHERE MatchPlayer_UUID = "%s";';
+        const insertMatchPlayerDamageReportQuery = 'INSERT INTO CS_MatchPlayerDamageReport VALUES(null, "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s", "%s");';
+        const selectMatchPlayerDamageReporyQuery = 'SELECT * FROM CS_MatchPlayerDamageReport WHERE MatchPlayer_UUID = "%s";';
+
         public static function matchExists($UUID){
             $query = sprintf(
                 self::existsMatchQuery,
@@ -112,7 +116,10 @@
             $result = DBContext::getConnection()->query($query);
             if($result == TRUE){
                 self::insertMatchPlayerMedal($matchPlayer->MedalData);
-                self::insertMatchPlayerWeapon($matchPlayer->WeaponData);
+                foreach($matchPlayer->DamageData as $DamageReport => $a){
+                    self::insertMatchPlayerDamageReport($a);
+                }
+                //self::insertMatchPlayerWeapon($matchPlayer->WeaponData);
                 return true;
             } else {
                 ErrorOutAndExit('500', sprintf("%s\n", self::getConnection()->error));
@@ -431,6 +438,27 @@
             } else {
                 
                 ErrorOutAndExit('500', sprintf("%s\n", self::getConnection()->error));
+            }
+        }
+
+        public static function insertMatchPlayerDamageReport($damageType){
+            $query = sprintf(
+                self::insertMatchPlayerDamageReportQuery,
+                $damageType->MatchPlayer_UUID,
+                $damageType->Type,
+                $damageType->Kills,
+                $damageType->Deaths,
+                $damageType->Betrayals,
+                $damageType->Suicides,
+                $damageType->ShotsFired,
+                $damageType->ShotsHit,
+                $damageType->Headshots
+            );
+            $result = DBContext::getConnection()->query($query);
+            if($result == true){
+                return true;
+            } else {
+                ErrorOutAndExit('500', sprintf("%s\n", DBContext::getConnection()->error));
             }
         }
 

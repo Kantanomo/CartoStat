@@ -11,11 +11,7 @@
         $signature = $parts[2];        
         $compareSignature = hash_hmac('sha256', $header . "." . $payload, $Config["Secret"], false);
         $compare = Base64UrlEncode($compareSignature);
-        $myfile = fopen("trace.txt", "w");
-        fwrite($myfile, $JWT . "\n");
-        fwrite($myfile, $Config["Secret"] . "\n");
-        fwrite($myfile, $signature . " - " . $compare);
-        fclose($myfile);
+       
         if($signature != $compare)
             return false;
 

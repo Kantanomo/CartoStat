@@ -19,7 +19,8 @@
         "Match",
         "MatchPlayer",
         "MatchPlayerMedals",
-        "MatchPlayerWeapon",
+        "MatchPlayerDamageReport",
+        //"MatchPlayerWeapon",
         "Server",
         "ServerMatch",
         "Triggers"

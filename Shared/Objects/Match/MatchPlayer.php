@@ -48,7 +48,7 @@
         public $JuggTime = null;
         public $TerrTaken = null;
         public $TerrLost  = null;
-        public $WeaponData = null;
+        public $DamageData = null;
         public $MedalData = null;
         public function __construct() {
             $get_arguments       = func_get_args();
@@ -110,7 +110,11 @@
            $this->TerrTaken = $jsonData["TerrTaken"];
            $this->TerrLost = $jsonData["TerrLost"];
            $this->VersusData = $jsonData["VersusData"];
-           $this->WeaponData = new MatchPlayerWeapon($this->UUID, $jsonData["WeaponData"]);
+           //$this->WeaponData = new MatchPlayerWeapon($this->UUID, $jsonData["WeaponData"]);
+           $this->DamageData = array();
+           foreach($jsonData["DamageData"] as $Type => $DamageReport){
+               $this->DamageData[] = new MatchPlayerDamageReport($this->UUID, $Type, $DamageReport);
+           }
            $this->MedalData = new MatchPlayerMedal($this->UUID, $jsonData["MedalData"]);
         }
         function __construct1($dataRow){
@@ -162,7 +166,7 @@
            $this->TerrLost = $dataRow["TerrLost"];
            $this->VersusData = json_decode($dataRow["VersusData"]);
            $this->MedalData = MatchQueries::getMatchPlayerMedal($dataRow["UUID"]);
-           $this->WeaponData = MatchQueries::getMatchPlayerWeapon($dataRow["UUID"]);
+           //$this->WeaponData = MatchQueries::getMatchPlayerWeapon($dataRow["UUID"]);
         }
         public function emblemURL(){
             return sprintf(
